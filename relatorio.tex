@@ -1,0 +1,171 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage[utf8]{inputenc}
+
+
+\usepackage{ae,aecompl}
+\usepackage{pslatex}
+\usepackage{epsfig}
+\usepackage{geometry}
+\usepackage{url}
+\usepackage{textcomp}
+\usepackage{ae}
+\usepackage{subfig}
+\usepackage{indentfirst}
+\usepackage{textcomp}
+\usepackage{color}
+\usepackage{setspace}
+\usepackage{verbatim}
+\usepackage{mathtools}
+\usepackage{amsmath}
+
+
+\usepackage[compact]{titlesec}
+\titlespacing{\section}{0pt}{*0}{*0}
+\titlespacing{\subsection}{0pt}{*0}{*0}
+\titlespacing{\subsubsection}{0pt}{*0}{*0}
+
+\linespread{1.5}
+\geometry{ 
+  a4paper,	% Formato do papel
+  tmargin=25mm,	% Margem superior
+  bmargin=25mm,	% Margem inferior
+  lmargin=20mm,	% Margem esquerda
+  rmargin=20mm,	% Margem direita
+  footskip=10mm	% Espaço entre o rodapé e o fim do texto
+}
+\include{abaco} 
+\renewcommand{\thetable}{\Roman{table}}
+\newcommand{\x} {$\bullet$}
+
+
+\begin{document}
+% CAPA
+  \thispagestyle{empty}
+  
+  \begin{minipage}[h]{0.10\linewidth}
+    \ABACO{1}{9}{6}{9}{0.5} 
+  \end{minipage}
+  \begin{minipage}[h!]{0.7\linewidth}
+    \vspace*{\fill}
+    \centering
+    {\large \textbf{UNIVERSIDADE~ESTADUAL~DE~CAMPINAS}}\\ 
+    {\large INSTITUTO~DE~COMPUTAÇÃO}                   
+    \vspace*{\fill} 
+  \end{minipage}
+    \\\vspace{0.5cm}
+  
+  \begin{center} 
+    \rule{11.0cm}{0.4pt}\vspace*{-\baselineskip}\vspace{-2.0pt}
+    \rule{11.0cm}{1.6pt} \vspace*{-2.0pt}\\
+      {\Large \textsc{Relatório do projeto de MC548}}\\
+	\vspace*{-\baselineskip}\vspace{4.2pt} \rule{11.0cm}{0.4pt}
+	\vspace*{-\baselineskip}\vspace{3.2pt} \rule{11.0cm}{1.6pt}\\
+    {\textsl{}}
+    \\\vspace{1cm}
+    \begin{tabular}{ll}
+   \textbf{Aluno}:   Murilo~Fossa~Vicentini &
+      \textbf{RA}:          082335 \\ 
+      \textbf{Aluno}:        Tiago~Chedraoui~Silva & 
+      \textbf{RA}:        082941 \\
+    \end{tabular}
+  \end{center}
+  \vspace{0.5cm}
+
+  % Sumário
+  \tableofcontents
+
+\vspace{2mm}
+\newpage
+
+\section{Integrantes}
+   \begin{tabular}{rl}
+      \textbf{Aluno}:   Murilo~Fossa~Vicentini &
+      \textbf{RA}:          082335 \\ 
+      \textbf{Aluno}:        Tiago~Chedraoui~Silva & 
+      \textbf{RA}:        082941 \\
+    \end{tabular}
+
+
+% ******************************************************
+% Parte 1
+% ******************************************************
+ 
+\section{Parte 1}
+
+\subsection{{[}nd30{]}}
+\subsubsection*{Variáveis usadas no modelo}
+\subsubsection*{Retrições do modelo}
+\subsubsection*{Função objetivo}
+
+\subsection{{[}mn27{]}}
+\subsubsection*{Variáveis usadas no modelo}
+\subsubsection*{Retrições do modelo}
+\subsubsection*{Função objetivo}
+
+\subsection{{[}ss2{]}}
+\subsubsection*{Variáveis usadas no modelo}
+\subsubsection*{Retrições do modelo}
+\subsubsection*{Função objetivo}
+
+\subsection{{[}ss15{]}}
+\subsubsection*{Variáveis usadas no modelo}
+\subsubsection*{Retrições do modelo}
+\subsubsection*{Função objetivo}
+
+\subsection{{[}mn22{]}}
+\subsubsection*{Variáveis usadas no modelo}
+\subsubsection*{Retrições do modelo}
+\subsubsection*{Função objetivo}
+
+
+% ******************************************************
+% Parte 1 resultados
+% ******************************************************
+
+\subsection{Resultados}
+
+% Export from lyx and paste here!
+
+\begin{table}[h!]
+\begin{centering}
+\begin{tabular}{|c|c|c|c|}
+\hline 
+ID exercício & 1 & 2 & 3\tabularnewline
+\hline 
+\hline 
+{[}nd30{]}  &  &  & \tabularnewline
+\hline 
+ {[}mn27{]} &  &  & \tabularnewline
+\hline 
+ {[}ss2{]} &  &  & \tabularnewline
+\hline 
+{[}ss15{]} &  &  & \tabularnewline
+\hline 
+ {[}mn22{]} &  &  & \tabularnewline
+\hline 
+\end{tabular}
+\par\end{centering}
+
+\caption{Resultados da parte 1}
+\end{table}
+
+% ******************************************************
+% Parte 2
+% ******************************************************
+
+\subsection{Parte 2}
+
+
+
+% ******************************************************
+% REFERENCIAS BIBLIOGRÁFICAS
+% ******************************************************
+% \section{Referências}
+\bibliographystyle{plain}
+\begin{small}
+  \bibliography{referencias}
+\end{small}
+
+\end{document}
