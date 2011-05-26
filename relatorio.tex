@@ -100,9 +100,44 @@
 \subsubsection*{Função objetivo}
 
 \subsection{{[}mn27{]}}
+
 \subsubsection*{Variáveis usadas no modelo}
+\begin{itemize}
+\item Para cada vértice $u \in V$ e para cada cor $k \in \{1 ... m\}$, criou-se
+a variável binária $x_{uk}$. $x_{uk}=1$ se e somente se o vertíce $u$ foi
+colorido com a cor $k$.
+
+\item Criou-se uma variável binária $y_k$ para toda cor $k \in \{1 ... m\}$. $k=1$ se
+e somente se pelo menos um vértice recebeu essa cor.
+\end{itemize}
+
 \subsubsection*{Retrições do modelo}
+\begin{itemize}
+
+\item Todo vértice deve receber exatamente uma cor
+\begin{equation*}
+  \sum_{k=1}^{m}x_{uk}=1, \forall u \in V
+\end{equation*}
+
+\item Se um vértice recebe a cor k, esta deve ser usada
+\begin{equation*}
+  x_{uk} \leq y_k, \forall u \in V, k \in \{1 ... m\}
+\end{equation*}
+
+\item Os Vértices vizinhos não podem ter a mesma cor
+\begin{equation*}
+  x_{uk} + x_{vk} \leq 1, \forall (u,v) \in E, k \in \{1 ... m\}
+\end{equation*}
+ 
+\end{itemize}
+
+
 \subsubsection*{Função objetivo}
+Objetivo: minimizar o número de cores usadas:
+\begin{equation}
+min\sum_{k=1}^{m}y_k
+\end{equation}
+
 
 \subsection{{[}ss2{]}}
 \subsubsection*{Variáveis usadas no modelo}
