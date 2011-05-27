@@ -96,15 +96,52 @@
 
 \subsection{{[}nd30{]}}
 \subsubsection*{Variáveis usadas no modelo}
+\begin{itemize}
+\item Para cada aresta $(i,j) \in A$ , criou-se
+a variável binária $y_{ij}$ que assume valor $y_{ij}=1$ se e somente se a aresta (i,j)
+pertence ao caminho mínimo.
+\end{itemize}
+
 \subsubsection*{Retrições do modelo}
+\begin{itemize}
+
+\item Todo vértice diferente do inicial e do final deve conter ou
+  nenhuma aresta entrando e saindo ou uma entrando e saindo.
+\begin{equation*}
+  \sum_{i \in V}^{m}y_{ik}=\sum_{j \in V}^{m}y_{kj}, \forall k \in V,
+  \forall (i,k) e (k,j) \in A 
+\end{equation*}
+
+\item Peso total do caminho não deve exceder K
+\begin{equation*}
+\sum_{{i,j} \in A}w_{i,j}y_{i,j} \leq K
+\end{equation*}
+
+\item Deve existir uma aresta que sai de s
+\begin{equation*}
+\sum_{j \in V}y_{s,j} = 1 
+\end{equation*}
+
+\item Deve existir uma aresta que chega em t
+\begin{equation*}
+\sum_{j \in V}y_{j,t} = 1 
+\end{equation*}
+
+\end{itemize}
+
+
 \subsubsection*{Função objetivo}
+Objetivo: minimizar o custo do caminho 
+\begin{equation}
+min\sum_{{i,j} \in A}c_{i,j}y_{i,j}
+\end{equation}
 
 \subsection{{[}mn27{]}}
 
 \subsubsection*{Variáveis usadas no modelo}
 \begin{itemize}
 \item Para cada vértice $u \in V$ e para cada cor $k \in \{1 ... m\}$, criou-se
-a variável binária $x_{uk}$. $x_{uk}=1$ se e somente se o vertíce $u$ foi
+a variável binária $x_{uk}$ que assume valor $x_{uk}=1$ se e somente se o vertíce $u$ foi
 colorido com a cor $k$.
 
 \item Criou-se uma variável binária $y_k$ para toda cor $k \in \{1 ... m\}$. $k=1$ se
