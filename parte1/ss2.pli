@@ -24,7 +24,7 @@ param t {T};
 param d {T};
 /* task's deadline */
 
-param M:=200000;
+param M:=50;
 /* A large number*/
 
 var x {i in T,j in T}, binary;
@@ -42,16 +42,10 @@ s.t. order{(i,j) in S}: x[i,j]=1;
 s.t. min_end{i in T}: t[i]<=E[i];
 /* At leats it will cost the time to do the task*/
 
-s.t. ending1 {i in T,j in T:i!=j}: E[i]<=E[j]-t[j]+(1-x[i,j])*M;
-/* valido se i precede j */	
-
-s.t. ending2 {i in T,j in T:i!=j}: E[j]<=E[i]-t[i]+M*x[i,j];	
-/* valido j precede i */	
-
 var y{T}, binary;
 /* task i is late? */
 
-s.t. late {i in T}:M*y[i]>=E[i]-d[i];
+s.t. ending {j in T}:sum{i in T:i!=j} (x[i,j]*t[i]) <= d[j]-t[j]+ M*y[j];
 /* If task is late y=1 */
 
 minimize deadline_not_accomplished: sum {i in T} y[i];
