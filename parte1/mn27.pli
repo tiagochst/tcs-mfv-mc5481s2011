@@ -7,16 +7,13 @@
 #   Murilo Fossa Vicentini
 #   Tiago Chedraoui Silva
 
-param n;
-/*number of vertex*/
-
-set V:= 1..n; 
+set V; 
 /* n vertex */
 
 set E within {i in V, j in V: i<j}; 
 /* edges of undirect graph */
 
-set C:= 1..n;
+set C:= V;
 /* n avaiable colors */
 
 var x{u in V,k in C}, binary;
@@ -36,10 +33,3 @@ s.t. edge{(u,v) in E,k in C}: x[u,k]+x[v,k]<=1;
 
 minimize num_color: sum{k in C } y[k];
 /* number of colors used*/
-
-data;
-
-param n:=3; /*three vertex*/
-set E:=(1,2) (1,3) ; /* all neighbours*/
-
-end;

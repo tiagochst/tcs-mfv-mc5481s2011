@@ -1,0 +1,59 @@
+# MIN COST WITH WEIGHT PROBLEM
+#
+# This problem finds a path between two vertex
+# with minimal cost and such that the weight
+# does not pass a limit
+#
+# Authors:
+#   Murilo Fossa Vicentini
+#   Tiago Chedraoui Silva
+
+
+set C dimen 2;
+/* Trash ?*/ 
+
+set V; 
+/* n vertex */
+
+set A within {i in V, j in V: i!=j}; 
+/* edges of direct graph */
+
+param s in V;
+/*source vertex*/
+
+param t in V;
+/*destination vertex*/
+
+param c {A};
+/* cost of edges */
+
+param w {A};
+/*wight of vertex*/
+
+param K, integer;
+/* limit weight*/
+
+var y {A}, binary;
+/* Used Edges*/
+
+is_path {k in V: (k != s) and (k!= t)}:
+    sum {i in V: (i,k) in A} y[i,k] =	
+    sum {j in V: (k,j) in A} y[k,j] ;
+/* For each node diffent from s and t
+ * There should be an incoming and outcoming 
+ * vertex */
+
+
+outcoming_s: sum {j in V: (s,j) in A} y[s,j] =1;
+/* Certifies  that there is an egde outcoming from s */
+
+incoming_t: sum {j in V: (j,t) in A} y[j,t] =1;
+/* Certifies  that there is an edge incoming in t */
+
+
+sa_weight: sum {(i,j) in A} w[i,j]*y[i,j]<=K;
+/*sum of used edges should be smaller than K*/
+
+minimize totalcost: sum {(i,j) in A} c[i,j]*y[i,j];
+/*Objective*/
+
