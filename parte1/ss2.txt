@@ -1,7 +1,7 @@
 Problem:    ss2
-Rows:       49
-Columns:    42 (42 integer, 36 binary)
-Non-zeros:  114
+Rows:       43
+Columns:    36 (36 integer, 36 binary)
+Non-zeros:  108
 Status:     INTEGER OPTIMAL
 Objective:  deadline_not_accomplished = 1 (MINimum)
 
@@ -43,19 +43,13 @@ Objective:  deadline_not_accomplished = 1 (MINimum)
     34 order[3,4]                  1             1             = 
     35 order[4,5]                  1             1             = 
     36 order[5,6]                  1             1             = 
-    37 min_end[1]                 -1                          -1 
-    38 min_end[2]                 -1                          -1 
-    39 min_end[3]                 -1                          -1 
-    40 min_end[4]                 -2                          -2 
-    41 min_end[5]                 -1                          -1 
-    42 min_end[6]                 -8                          -8 
-    43 ending[1]                   0                          -0 
-    44 ending[2]                   2                           3 
-    45 ending[3]                   1                           1 
-    46 ending[4]                   3                           8 
-    47 ending[5]                   5                           9 
-    48 ending[6]                 -44                          -0 
-    49 deadline_not_accomplished
+    37 ending[1]                   0                          -0 
+    38 ending[2]                   2                           3 
+    39 ending[3]                   1                           1 
+    40 ending[4]                   3                           8 
+    41 ending[5]                   5                           9 
+    42 ending[6]                 -44                          -0 
+    43 deadline_not_accomplished
                                    1                             
 
    No. Column name       Activity     Lower bound   Upper bound
@@ -90,18 +84,12 @@ Objective:  deadline_not_accomplished = 1 (MINimum)
     28 x[6,4]       *              0             0             1 
     29 x[5,6]       *              1             0             1 
     30 x[6,5]       *              0             0             1 
-    31 E[1]         *              1             0               
-    32 E[2]         *              1             0               
-    33 E[3]         *              1             0               
-    34 E[4]         *              2             0               
-    35 E[5]         *              1             0               
-    36 E[6]         *              8             0               
-    37 y[1]         *              0             0             1 
-    38 y[2]         *              0             0             1 
-    39 y[3]         *              0             0             1 
-    40 y[4]         *              0             0             1 
-    41 y[5]         *              0             0             1 
-    42 y[6]         *              1             0             1 
+    31 y[1]         *              0             0             1 
+    32 y[2]         *              0             0             1 
+    33 y[3]         *              0             0             1 
+    34 y[4]         *              0             0             1 
+    35 y[5]         *              0             0             1 
+    36 y[6]         *              1             0             1 
 
 Integer feasibility conditions:
 

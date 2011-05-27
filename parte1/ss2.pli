@@ -30,17 +30,11 @@ param M:=50;
 var x {i in T,j in T}, binary;
 /* i preced j*/
 
-var E {i in T} >=0, integer;
-/* task's end time*/
-
 s.t. loop{j in T, i in T:j!=i}: x[i,j]+x[j,i]=1;
 /* Only one preciding other */
 
 s.t. order{(i,j) in S}: x[i,j]=1;
 /* order respected? */
-
-s.t. min_end{i in T}: t[i]<=E[i];
-/* At leats it will cost the time to do the task*/
 
 var y{T}, binary;
 /* task i is late? */
