@@ -1,0 +1,14 @@
+# SCHEDULING PROBLEM
+#
+# This problem finds a sort of the tasks
+# that minimize the number of deadline not 
+# accomplished
+#
+# Authors:
+#   Murilo Fossa Vicentini
+#   Tiago Chedraoui Silva
+
+set T;
+/* n tasks */
+
+set S within {i in T, j in V: i!=j}; 

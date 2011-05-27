@@ -1,0 +1,58 @@
+# SCHEDULING PROBLEM
+#
+# This problem finds a sort of the tasks
+# that minimize the number of deadline not 
+# accomplished
+#
+# Authors:
+#   Murilo Fossa Vicentini
+#   Tiago Chedraoui Silva
+
+
+param n;
+/* number of tasks*/
+
+set T :=1..n;
+/* n tasks */
+
+set S within {i in T, j in T: i!=j}; 
+/* order */
+
+param t {T};
+/* task's duration  */
+
+param d {T};
+/* task's deadline */
+
+param M:=200000;
+/* A large number*/
+
+var x {i in T,j in T}, binary;
+/* i preced j*/
+
+var E {i in T} >=0, integer;
+/* task's end time*/
+
+s.t. loop{j in T, i in T:j!=i}: x[i,j]+x[j,i]=1;
+/* Only one preciding other */
+
+s.t. order{(i,j) in S}: x[i,j]=1;
+/* order respected? */
+
+s.t. min_end{i in T}: t[i]<=E[i];
+/* At leats it will cost the time to do the task*/
+
+s.t. ending1 {i in T,j in T:i!=j}: E[i]<=E[j]-t[j]+(1-x[i,j])*M;
+/* valido se i precede j */	
+
+s.t. ending2 {i in T,j in T:i!=j}: E[j]<=E[i]-t[i]+M*x[i,j];	
+/* valido j precede i */	
+
+var y{T}, binary;
+/* task i is late? */
+
+s.t. late {i in T}:M*y[i]>=E[i]-d[i];
+/* If task is late y=1 */
+
+minimize deadline_not_accomplished: sum {i in T} y[i];
+/* Objective: minimize number of late tasks */
