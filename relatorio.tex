@@ -178,8 +178,45 @@ min\sum_{k=1}^{m}y_k
 
 \subsection{{[}ss2{]}}
 \subsubsection*{Variáveis usadas no modelo}
+\begin{itemize}
+\item Criou-se uma variável binária $x_{ij}$ para toda tarefa $i, j
+  \in T$ que recebe valor $x_{ij}=1$ se e somente se a
+tarefa $i$ precede $j$.
+
+\item Para cada tarefa $i \in T$ criou-se uma variável binária $y_{i}$
+  que recebe valor $y_{i}=1$ se e somente se a tarefa i não cumprio o deadline.
+\end{itemize}
+
 \subsubsection*{Retrições do modelo}
+\begin{itemize}
+
+\item Todo par de tarefas $(i,j)$ deve ter uma precedência, em que se $i$
+  precede $j$, $j$ não pode preceder $i$. 
+\begin{equation*}
+  x_{ji}+x_{ij}=1, \forall i,j \in T
+\end{equation*}
+
+\item Para cada par de tarefas $(i,j)$ em S, a tarefa $i$,
+  obrigatoriamente tem que preceder $j$. 
+\begin{equation*}
+  x_{ij} = 1, \forall (i,j) \in S
+\end{equation*}
+
+\item Se uma $j$ tarefa é precedida por outras n tarefas, o tempo de
+  término da tarefa $j$ deve ser no mínimo o tempo de execução de todas
+  as tarefas predecessoras, mais o seu tempo para ser executada. Se
+  for esse término for menor que o deadline, $y_{j}=0$, senão $y_{j}=1$ 
+\begin{equation*}
+ \sum_{i \in T, i \neq j} x_{ij}*t_{i} \leq d_{j}-t_{j}+ M*y_{j} \forall j \in T
+\end{equation*}
+ 
+\end{itemize}
+
 \subsubsection*{Função objetivo}
+Objetivo: minimizar o número de tarefas que terminem fora do prazo:
+\begin{equation}
+min\sum_{i=1}^{n}y_i
+\end{equation}
 
 \subsection{{[}ss15{]}}
 \subsubsection*{Variáveis usadas no modelo}
