@@ -140,12 +140,12 @@ min\sum_{{i,j} \in A}c_{i,j}y_{i,j}
 
 \subsubsection*{Variáveis usadas no modelo}
 \begin{itemize}
-\item Para cada vértice $u \in V$ e para cada cor $k \in \{1 ... m\}$, criou-se
+\item Para cada vértice $u \in V$ e para cada cor $k \in \{1,2,...,m\}$, criou-se
 a variável binária $x_{uk}$ que assume valor $x_{uk}=1$ se e somente se o vertíce $u$ foi
 colorido com a cor $k$.
 
-\item Criou-se uma variável binária $y_k$ para toda cor $k \in \{1 ... m\}$. $k=1$ se
-e somente se pelo menos um vértice recebeu essa cor.
+\item Criou-se uma variável binária $y_k$ para toda cor $k \in
+  \{1,2,...,m\}$. $y_k=1$ se e somente se pelo menos um vértice recebeu essa cor.
 \end{itemize}
 
 \subsubsection*{Retrições do modelo}
@@ -220,8 +220,56 @@ min\sum_{i=1}^{n}y_i
 
 \subsection{{[}ss15{]}}
 \subsubsection*{Variáveis usadas no modelo}
+\begin{itemize}
+\item Criou-se uma variável binária $x_{ij}$ para todo projeto $i, j
+  \in J$ que recebe valor $x_{ij}=1$ se e somente se o projeto $i$ precede $j$.
+
+\item Para cada projeto $j \in J$ e cada tarefa $i \in T$ criou-se uma variável inteira $end_{j,i}$
+  que recebe valor o valor de término da tarefa $i$ do projeto $j$.
+\end{itemize}
+
 \subsubsection*{Retrições do modelo}
+\begin{itemize}
+\item Todo par de projetos $(i,j)$ deve ter uma precedência, em que se $i$
+  precede $j$, $j$ não pode preceder $i$. 
+\begin{equation*}
+  x_{ji}+x_{ij}=1, \forall i,j \in J
+\end{equation*}
+
+\item Toda tarefa $i \in T$ do projeto  $j \in J$ tem um tempo mínimo de execução antes de terminar. 
+\begin{equation*}
+  end_{ji} \geq t_{j,i}, \forall i \in T, \forall j \in J
+\end{equation*}
+
+\item Se um projeto $j$ precede um projeto $i$ o tempo de término da
+  tarefa $k$ do projeto $i$ deve ser maior que o tempo de término da
+  tarefa $z$ do projeto $j$ mais o seu tempo de execução.
+ 
+\begin{equation*}
+  end_{ji} \geq t_{j,i}+ end_{j-1,i}, \forall i \in T, \forall j \in J
+  : j>1 
+\end{equation*}
+
+\item A tarefa $k$ do projeto $j$ precede a tarefa $z$ do mesmo
+  projeto, logo o tempo de término da
+  tarefa $z$ deve ser maior que o tempo de término da
+  tarefa $k$ mais o seu tempo de execução.
+ 
+\begin{equation*}
+  end_{ji} \geq t_{j,i}+ end_{j,i-1}, \forall i \in T: i>1 , \forall j \in J
+\end{equation*}
+ 
+\end{itemize}
+
+
 \subsubsection*{Função objetivo}
+Objetivo: minimizar a soma do tempo de término das tarefas:
+\begin{equation}
+min\sum_{j \in J}end_{j,m}
+\end{equation}
+Em que $m$ é o tempo em que a última tarefa do projeto é executada
+(tarefa no último processador).
+
 
 \subsection{{[}mn22{]}}
 \subsubsection*{Variáveis usadas no modelo}
