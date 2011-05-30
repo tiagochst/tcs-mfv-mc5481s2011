@@ -1,0 +1,47 @@
+# ROOMS ALLOCATING MACHINES
+#
+# This problem finds a least cost of pieces production
+# allocating machines and pieces in rooms
+#
+# Authors:
+#   Murilo Fossa Vicentini
+#   Tiago Chedraoui Silva
+
+set V; 
+/* machines */
+
+set U; 
+/* pieces */
+
+set E within {m in V, p in U}; 
+/* a piece p must be construct by machine m  */
+
+set R:= V;
+/* avaiable rooms */
+
+param K;
+param c{E};
+
+var x{m in V,r in R}, binary;
+/* is machine m in room r? */
+
+var y{p in U,r in R}, binary;
+/* is piece p in room r? */
+
+var rdiff{m in V,p in U}, integer,<=1,>=-1 ;
+/* is piece p in same room as x? */
+
+s.t. nroom{m in V}: sum{r in R}x[m,r]=1;
+/* Machine should be in only one room*/
+
+s.t. nproom{p in U}: sum{r in R}y[p,r]=1;
+/* Pieces should be in only one room*/
+
+s.t. sameroom{m in V,p in U,r in R}: rdiff[m,p]>=x[m,r]-y[p,r];
+/* Same rooms?*/
+
+s.t. room_limit{r in R}: sum{m in V}x[m,r]<=K;
+/* Number of machines per room is limited to K*/
+
+minimize cost_transp: sum{(i,j) in E} c[i,j]*(rdiff[i,j]);
+/* cost of transport a piece between rooms*/
