@@ -50,5 +50,9 @@ s.t. time2{j in J,i in T: j>1}:
    end[j,i] >= t[j,i]+ end[j-1,i];
 /* does my preceding project ended? */
 
-minimize time_accomplished: sum {j in J} end[j,m];
+var fim integer, >=0;
+s.t. all{j in J}:fim>=end[j,m];
+/* end of execution is the end of last project */
+
+minimize  time_accomplished: fim;
 /* Objective: minimize ending of tasks */

@@ -225,6 +225,10 @@ min\sum_{i=1}^{n}y_i
 
 \item Para cada projeto $j \in J$ e cada tarefa $i \in T$ criou-se uma variável inteira $end_{j,i}$
   que recebe valor o valor de término da tarefa $i$ do projeto $j$.
+
+\item Criou-se uma varível inteira $fim$ que recebe o tempo de término
+  do último projeto.
+
 \end{itemize}
 
 \subsubsection*{Retrições do modelo}
@@ -257,17 +261,23 @@ min\sum_{i=1}^{n}y_i
 \begin{equation*}
   end_{ji} \geq t_{j,i}+ end_{j,i-1}, \forall i \in T: i>1 , \forall j \in J
 \end{equation*}
+
+\item O tempo total da execução dos projetos deve ser igual ao tempo
+  do último terminar.
  
+\begin{equation*}
+ fim>= end_{jm} \forall \forall j \in J
+\end{equation*}
+Em que $m$ é o tempo em que a última tarefa do projeto é executada
+(tarefa no último processador).
 \end{itemize}
 
 
 \subsubsection*{Função objetivo}
-Objetivo: minimizar a soma do tempo de término das tarefas:
+Objetivo: minimizar o tempo de término de todos os projetos:
 \begin{equation}
-min\sum_{j \in J}end_{j,m}
+min fim
 \end{equation}
-Em que $m$ é o tempo em que a última tarefa do projeto é executada
-(tarefa no último processador).
 
 
 \subsection{{[}mn22{]}}
