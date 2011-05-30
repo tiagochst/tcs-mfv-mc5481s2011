@@ -1,0 +1,56 @@
+# SCHEDULING PROBLEM
+#
+# This problem finds a sort of the tasks
+# that minimize the number of deadline not 
+# accomplished
+#
+# Authors:
+#   Murilo Fossa Vicentini
+#   Tiago Chedraoui Silva
+
+
+param n;
+/* number of projects*/
+
+
+param m;
+/* number of tasks and processor*/
+
+set J :=1..n;
+/*  projects */
+
+set T :=1..m;
+/*  tasks */
+
+set P :=1..m;
+/*  processors */
+
+param t {i in T, j in J}; 
+/* task's duration  */
+
+param M:=50;
+/* A large number*/
+
+var x {i in T,j in J,p in P}, binary;
+/* taks of project j is executed in processor m*/
+
+var y {i in T,j in J,a in T,b in J}, binary;
+/* taks i of project j precedes task a of project j m*/
+
+s.t. only_one_order{i in T,j in J,a in T,b in J}: y[i,j,a,b]+y[a,b,i,j]=1;
+/* if task i of proj j is executed first
+ then task of proj b then the a should
+ not preced i */
+
+s.t. procesor_order{j in J, i in T}: x[i,j,i]=1;
+/* a tasks with smaller index i should be done 
+   in processor with same index  */
+
+var end {i in T,j in J,k in P }, integer, >=0;
+/* taks i of project j precedes task a of project j m*/
+s.t. time{j in J,k in P,i in T}: 
+     end[i,j,k] >= max(t[i,j],t[i,j]);
+/*     end[i,j,k] >= max(end[i-1,j,k-1]+t[i,j],end[i,j-1,k]+t[i,j]);*/
+/*Nem rolou isso aqui =/ não dode ter variaveis*/
+/*minimize time_accomplished: sum {j in J} end[m,j,m];*/
+/* Objective: minimize ending of tasks */
