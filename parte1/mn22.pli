@@ -28,7 +28,7 @@ var x{m in V,r in R}, binary;
 var y{p in U,r in R}, binary;
 /* is piece p in room r? */
 
-var rdiff{m in V,p in U}, integer,<=1,>=-1 ;
+var rdiff{m in V,p in U}, integer,binary ;
 /* is piece p in same room as x? */
 
 s.t. nroom{m in V}: sum{r in R}x[m,r]=1;
