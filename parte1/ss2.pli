@@ -44,3 +44,6 @@ s.t. ending {j in T}:sum{i in T:i!=j} (x[i,j]*t[i]) <= d[j]-t[j]+ M*y[j];
 
 minimize deadline_not_accomplished: sum {i in T} y[i];
 /* Objective: minimize number of late tasks */
+
+solve;
+printf "%d",sum {i in T} y[i] > "ss2.out";

@@ -45,3 +45,7 @@ s.t. room_limit{r in R}: sum{m in V}x[m,r]<=K;
 
 minimize cost_transp: sum{(i,j) in E} c[i,j]*(rdiff[i,j]);
 /* cost of transport a piece between rooms*/
+
+solve;
+
+printf "%d",sum{(i,j) in E} c[i,j]*(rdiff[i,j]) > "mn22.out";

@@ -8,7 +8,6 @@
 #   Murilo Fossa Vicentini
 #   Tiago Chedraoui Silva
 
-
 set C dimen 2;
 /* Trash ?*/ 
 
@@ -43,13 +42,11 @@ is_path {k in V: (k != s) and (k!= t)}:
  * There should be an incoming and outcoming 
  * vertex */
 
-
 outcoming_s: sum {j in V: (s,j) in A} y[s,j] =1;
 /* Certifies  that there is an egde outcoming from s */
 
 incoming_t: sum {j in V: (j,t) in A} y[j,t] =1;
 /* Certifies  that there is an edge incoming in t */
-
 
 sa_weight: sum {(i,j) in A} w[i,j]*y[i,j]<=K;
 /*sum of used edges should be smaller than K*/
@@ -57,3 +54,5 @@ sa_weight: sum {(i,j) in A} w[i,j]*y[i,j]<=K;
 minimize totalcost: sum {(i,j) in A} c[i,j]*y[i,j];
 /*Objective*/
 
+solve;
+printf "%d",sum {(i,j) in A} c[i,j]*y[i,j] > "nd30.out";

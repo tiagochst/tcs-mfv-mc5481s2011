@@ -56,3 +56,7 @@ s.t. all{j in J}:fim>=end[j,m];
 
 minimize  time_accomplished: fim;
 /* Objective: minimize ending of tasks */
+
+
+solve;
+printf "%d",fim > "ss15.out";
