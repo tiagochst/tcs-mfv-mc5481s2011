@@ -7,10 +7,13 @@
 #   Murilo Fossa Vicentini
 #   Tiago Chedraoui Silva
 
+
 set V; 
 /* n vertex */
-
+display V;
 set E within {i in V, j in V: i<j}; 
+/*set E within V cross V;*/
+display E;
 /* edges of undirect graph */
 
 set C:= V;
@@ -33,5 +36,7 @@ s.t. edge{(u,v) in E,k in C}: x[u,k]+x[v,k]<=1;
 
 minimize num_color: sum{k in C } y[k];
 /* number of colors used*/
+
 solve;
 printf "%d",sum{k in C } y[k] > "mn27.out";
+end;
