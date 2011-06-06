@@ -1,3 +1,11 @@
 To see all output:
+P2
 glpsol -m mn27.pli --output mn27.txt --wcpxlp mn27.lp
+
+P1
+glpsol -m nd30.pli --output nd30.txt --wcpxlp nd30.lp -d nd30.dat 
+
+
+P3
+glpsol -m ss2.pli --output ss2.txt --wcpxlp ss2.lp -d ss2.dat
 

@@ -1,0 +1,3267 @@
+Problem:    mn22
+Rows:       1406
+Columns:    472 (472 integer, 472 binary)
+Non-zeros:  4652
+Status:     INTEGER NON-OPTIMAL
+Objective:  cost_transp = 4131 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 nroom[1]                    1             1             = 
+     2 nroom[2]                    1             1             = 
+     3 nroom[3]                    1             1             = 
+     4 nroom[4]                    1             1             = 
+     5 nroom[5]                    1             1             = 
+     6 nroom[6]                    1             1             = 
+     7 nroom[7]                    1             1             = 
+     8 nroom[8]                    1             1             = 
+     9 nroom[9]                    1             1             = 
+    10 nroom[10]                   1             1             = 
+    11 nroom[11]                   1             1             = 
+    12 nroom[12]                   1             1             = 
+    13 nroom[13]                   1             1             = 
+    14 nroom[14]                   1             1             = 
+    15 nroom[15]                   1             1             = 
+    16 nroom[16]                   1             1             = 
+    17 nroom[17]                   1             1             = 
+    18 nroom[18]                   1             1             = 
+    19 nroom[19]                   1             1             = 
+    20 nroom[20]                   1             1             = 
+    21 nproom[1]                   1             1             = 
+    22 nproom[2]                   1             1             = 
+    23 nproom[3]                   1             1             = 
+    24 nproom[4]                   1             1             = 
+    25 nproom[5]                   1             1             = 
+    26 nproom[6]                   1             1             = 
+    27 nproom[7]                   1             1             = 
+    28 nproom[8]                   1             1             = 
+    29 nproom[9]                   1             1             = 
+    30 nproom[10]                  1             1             = 
+    31 nproom[11]                  1             1             = 
+    32 nproom[12]                  1             1             = 
+    33 nproom[13]                  1             1             = 
+    34 nproom[14]                  1             1             = 
+    35 nproom[15]                  1             1             = 
+    36 nproom[16]                  1             1             = 
+    37 nproom[17]                  1             1             = 
+    38 nproom[18]                  1             1             = 
+    39 nproom[19]                  1             1             = 
+    40 nproom[20]                  1             1             = 
+    41 sameroom[3,15,1]
+                                   2            -0               
+    42 sameroom[3,15,2]
+                                   1            -0               
+    43 sameroom[3,15,3]
+                                   0            -0               
+    44 sameroom[3,15,4]
+                                   1            -0               
+    45 sameroom[3,15,5]
+                                   1            -0               
+    46 sameroom[4,16,1]
+                                   0            -0               
+    47 sameroom[4,16,2]
+                                   2            -0               
+    48 sameroom[4,16,3]
+                                   1            -0               
+    49 sameroom[4,16,4]
+                                   1            -0               
+    50 sameroom[4,16,5]
+                                   1            -0               
+    51 sameroom[7,5,1]
+                                   1            -0               
+    52 sameroom[7,5,2]
+                                   1            -0               
+    53 sameroom[7,5,3]
+                                   2            -0               
+    54 sameroom[7,5,4]
+                                   1            -0               
+    55 sameroom[7,5,5]
+                                   0            -0               
+    56 sameroom[13,12,1]
+                                   0            -0               
+    57 sameroom[13,12,2]
+                                   0            -0               
+    58 sameroom[13,12,3]
+                                   0            -0               
+    59 sameroom[13,12,4]
+                                   0            -0               
+    60 sameroom[13,12,5]
+                                   0            -0               
+    61 sameroom[14,11,1]
+                                   0            -0               
+    62 sameroom[14,11,2]
+                                   2            -0               
+    63 sameroom[14,11,3]
+                                   1            -0               
+    64 sameroom[14,11,4]
+                                   1            -0               
+    65 sameroom[14,11,5]
+                                   1            -0               
+    66 sameroom[5,4,1]
+                                   1            -0               
+    67 sameroom[5,4,2]
+                                   1            -0               
+    68 sameroom[5,4,3]
+                                   0            -0               
+    69 sameroom[5,4,4]
+                                   2            -0               
+    70 sameroom[5,4,5]
+                                   1            -0               
+    71 sameroom[6,3,1]
+                                   1            -0               
+    72 sameroom[6,3,2]
+                                   0            -0               
+    73 sameroom[6,3,3]
+                                   1            -0               
+    74 sameroom[6,3,4]
+                                   2            -0               
+    75 sameroom[6,3,5]
+                                   1            -0               
+    76 sameroom[4,15,1]
+                                   0            -0               
+    77 sameroom[4,15,2]
+                                   0            -0               
+    78 sameroom[4,15,3]
+                                   0            -0               
+    79 sameroom[4,15,4]
+                                   0            -0               
+    80 sameroom[4,15,5]
+                                   0            -0               
+    81 sameroom[7,2,1]
+                                   1            -0               
+    82 sameroom[7,2,2]
+                                   2            -0               
+    83 sameroom[7,2,3]
+                                   1            -0               
+    84 sameroom[7,2,4]
+                                   1            -0               
+    85 sameroom[7,2,5]
+                                   0            -0               
+    86 sameroom[5,14,1]
+                                   0            -0               
+    87 sameroom[5,14,2]
+                                   0            -0               
+    88 sameroom[5,14,3]
+                                   0            -0               
+    89 sameroom[5,14,4]
+                                   0            -0               
+    90 sameroom[5,14,5]
+                                   0            -0               
+    91 sameroom[9,19,1]
+                                   0            -0               
+    92 sameroom[9,19,2]
+                                   0            -0               
+    93 sameroom[9,19,3]
+                                   0            -0               
+    94 sameroom[9,19,4]
+                                   0            -0               
+    95 sameroom[9,19,5]
+                                   0            -0               
+    96 sameroom[16,18,1]
+                                   0            -0               
+    97 sameroom[16,18,2]
+                                   0            -0               
+    98 sameroom[16,18,3]
+                                   0            -0               
+    99 sameroom[16,18,4]
+                                   0            -0               
+   100 sameroom[16,18,5]
+                                   0            -0               
+   101 sameroom[10,16,1]
+                                   1            -0               
+   102 sameroom[10,16,2]
+                                   2            -0               
+   103 sameroom[10,16,3]
+                                   0            -0               
+   104 sameroom[10,16,4]
+                                   1            -0               
+   105 sameroom[10,16,5]
+                                   1            -0               
+   106 sameroom[18,16,1]
+                                   1            -0               
+   107 sameroom[18,16,2]
+                                   2            -0               
+   108 sameroom[18,16,3]
+                                   1            -0               
+   109 sameroom[18,16,4]
+                                   1            -0               
+   110 sameroom[18,16,5]
+                                   0            -0               
+   111 sameroom[1,13,1]
+                                   1            -0               
+   112 sameroom[1,13,2]
+                                   1            -0               
+   113 sameroom[1,13,3]
+                                   2            -0               
+   114 sameroom[1,13,4]
+                                   0            -0               
+   115 sameroom[1,13,5]
+                                   1            -0               
+   116 sameroom[2,18,1]
+                                   0            -0               
+   117 sameroom[2,18,2]
+                                   0            -0               
+   118 sameroom[2,18,3]
+                                   0            -0               
+   119 sameroom[2,18,4]
+                                   0            -0               
+   120 sameroom[2,18,5]
+                                   0            -0               
+   121 sameroom[20,1,1]
+                                   2            -0               
+   122 sameroom[20,1,2]
+                                   0            -0               
+   123 sameroom[20,1,3]
+                                   1            -0               
+   124 sameroom[20,1,4]
+                                   1            -0               
+   125 sameroom[20,1,5]
+                                   1            -0               
+   126 sameroom[16,9,1]
+                                   0            -0               
+   127 sameroom[16,9,2]
+                                   1            -0               
+   128 sameroom[16,9,3]
+                                   1            -0               
+   129 sameroom[16,9,4]
+                                   2            -0               
+   130 sameroom[16,9,5]
+                                   1            -0               
+   131 sameroom[6,12,1]
+                                   1            -0               
+   132 sameroom[6,12,2]
+                                   0            -0               
+   133 sameroom[6,12,3]
+                                   1            -0               
+   134 sameroom[6,12,4]
+                                   2            -0               
+   135 sameroom[6,12,5]
+                                   1            -0               
+   136 sameroom[7,17,1]
+                                   1            -0               
+   137 sameroom[7,17,2]
+                                   2            -0               
+   138 sameroom[7,17,3]
+                                   1            -0               
+   139 sameroom[7,17,4]
+                                   1            -0               
+   140 sameroom[7,17,5]
+                                   0            -0               
+   141 sameroom[8,5,1]
+                                   1            -0               
+   142 sameroom[8,5,2]
+                                   1            -0               
+   143 sameroom[8,5,3]
+                                   2            -0               
+   144 sameroom[8,5,4]
+                                   1            -0               
+   145 sameroom[8,5,5]
+                                   0            -0               
+   146 sameroom[11,6,1]
+                                   1            -0               
+   147 sameroom[11,6,2]
+                                   1            -0               
+   148 sameroom[11,6,3]
+                                   2            -0               
+   149 sameroom[11,6,4]
+                                   0            -0               
+   150 sameroom[11,6,5]
+                                   1            -0               
+   151 sameroom[12,9,1]
+                                   1            -0               
+   152 sameroom[12,9,2]
+                                   1            -0               
+   153 sameroom[12,9,3]
+                                   0            -0               
+   154 sameroom[12,9,4]
+                                   2            -0               
+   155 sameroom[12,9,5]
+                                   1            -0               
+   156 sameroom[2,13,1]
+                                   0            -0               
+   157 sameroom[2,13,2]
+                                   1            -0               
+   158 sameroom[2,13,3]
+                                   2            -0               
+   159 sameroom[2,13,4]
+                                   1            -0               
+   160 sameroom[2,13,5]
+                                   1            -0               
+   161 sameroom[20,8,1]
+                                   1            -0               
+   162 sameroom[20,8,2]
+                                   0            -0               
+   163 sameroom[20,8,3]
+                                   2            -0               
+   164 sameroom[20,8,4]
+                                   1            -0               
+   165 sameroom[20,8,5]
+                                   1            -0               
+   166 sameroom[6,7,1]
+                                   0            -0               
+   167 sameroom[6,7,2]
+                                   0            -0               
+   168 sameroom[6,7,3]
+                                   0            -0               
+   169 sameroom[6,7,4]
+                                   0            -0               
+   170 sameroom[6,7,5]
+                                   0            -0               
+   171 sameroom[7,14,1]
+                                   1            -0               
+   172 sameroom[7,14,2]
+                                   1            -0               
+   173 sameroom[7,14,3]
+                                   2            -0               
+   174 sameroom[7,14,4]
+                                   1            -0               
+   175 sameroom[7,14,5]
+                                   0            -0               
+   176 sameroom[11,19,1]
+                                   0            -0               
+   177 sameroom[11,19,2]
+                                   0            -0               
+   178 sameroom[11,19,3]
+                                   0            -0               
+   179 sameroom[11,19,4]
+                                   0            -0               
+   180 sameroom[11,19,5]
+                                   0            -0               
+   181 sameroom[18,2,1]
+                                   1            -0               
+   182 sameroom[18,2,2]
+                                   2            -0               
+   183 sameroom[18,2,3]
+                                   1            -0               
+   184 sameroom[18,2,4]
+                                   1            -0               
+   185 sameroom[18,2,5]
+                                   0            -0               
+   186 sameroom[12,12,1]
+                                   1            -0               
+   187 sameroom[12,12,2]
+                                   1            -0               
+   188 sameroom[12,12,3]
+                                   0            -0               
+   189 sameroom[12,12,4]
+                                   2            -0               
+   190 sameroom[12,12,5]
+                                   1            -0               
+   191 sameroom[14,6,1]
+                                   0            -0               
+   192 sameroom[14,6,2]
+                                   1            -0               
+   193 sameroom[14,6,3]
+                                   2            -0               
+   194 sameroom[14,6,4]
+                                   1            -0               
+   195 sameroom[14,6,5]
+                                   1            -0               
+   196 sameroom[10,6,1]
+                                   0            -0               
+   197 sameroom[10,6,2]
+                                   0            -0               
+   198 sameroom[10,6,3]
+                                   0            -0               
+   199 sameroom[10,6,4]
+                                   0            -0               
+   200 sameroom[10,6,5]
+                                   0            -0               
+   201 sameroom[1,5,1]
+                                   1            -0               
+   202 sameroom[1,5,2]
+                                   1            -0               
+   203 sameroom[1,5,3]
+                                   2            -0               
+   204 sameroom[1,5,4]
+                                   0            -0               
+   205 sameroom[1,5,5]
+                                   1            -0               
+   206 sameroom[13,5,1]
+                                   1            -0               
+   207 sameroom[13,5,2]
+                                   1            -0               
+   208 sameroom[13,5,3]
+                                   2            -0               
+   209 sameroom[13,5,4]
+                                   0            -0               
+   210 sameroom[13,5,5]
+                                   1            -0               
+   211 sameroom[14,18,1]
+                                   0            -0               
+   212 sameroom[14,18,2]
+                                   0            -0               
+   213 sameroom[14,18,3]
+                                   0            -0               
+   214 sameroom[14,18,4]
+                                   0            -0               
+   215 sameroom[14,18,5]
+                                   0            -0               
+   216 sameroom[15,19,1]
+                                   1            -0               
+   217 sameroom[15,19,2]
+                                   0            -0               
+   218 sameroom[15,19,3]
+                                   1            -0               
+   219 sameroom[15,19,4]
+                                   2            -0               
+   220 sameroom[15,19,5]
+                                   1            -0               
+   221 sameroom[4,4,1]
+                                   0            -0               
+   222 sameroom[4,4,2]
+                                   1            -0               
+   223 sameroom[4,4,3]
+                                   1            -0               
+   224 sameroom[4,4,4]
+                                   2            -0               
+   225 sameroom[4,4,5]
+                                   1            -0               
+   226 sameroom[5,9,1]
+                                   1            -0               
+   227 sameroom[5,9,2]
+                                   1            -0               
+   228 sameroom[5,9,3]
+                                   0            -0               
+   229 sameroom[5,9,4]
+                                   2            -0               
+   230 sameroom[5,9,5]
+                                   1            -0               
+   231 sameroom[20,7,1]
+                                   0            -0               
+   232 sameroom[20,7,2]
+                                   0            -0               
+   233 sameroom[20,7,3]
+                                   0            -0               
+   234 sameroom[20,7,4]
+                                   0            -0               
+   235 sameroom[20,7,5]
+                                   0            -0               
+   236 sameroom[4,18,1]
+                                   0            -0               
+   237 sameroom[4,18,2]
+                                   0            -0               
+   238 sameroom[4,18,3]
+                                   0            -0               
+   239 sameroom[4,18,4]
+                                   0            -0               
+   240 sameroom[4,18,5]
+                                   0            -0               
+   241 sameroom[7,7,1]
+                                   1            -0               
+   242 sameroom[7,7,2]
+                                   2            -0               
+   243 sameroom[7,7,3]
+                                   1            -0               
+   244 sameroom[7,7,4]
+                                   1            -0               
+   245 sameroom[7,7,5]
+                                   0            -0               
+   246 sameroom[5,19,1]
+                                   1            -0               
+   247 sameroom[5,19,2]
+                                   1            -0               
+   248 sameroom[5,19,3]
+                                   0            -0               
+   249 sameroom[5,19,4]
+                                   2            -0               
+   250 sameroom[5,19,5]
+                                   1            -0               
+   251 sameroom[16,13,1]
+                                   0            -0               
+   252 sameroom[16,13,2]
+                                   1            -0               
+   253 sameroom[16,13,3]
+                                   2            -0               
+   254 sameroom[16,13,4]
+                                   1            -0               
+   255 sameroom[16,13,5]
+                                   1            -0               
+   256 sameroom[15,4,1]
+                                   1            -0               
+   257 sameroom[15,4,2]
+                                   0            -0               
+   258 sameroom[15,4,3]
+                                   1            -0               
+   259 sameroom[15,4,4]
+                                   2            -0               
+   260 sameroom[15,4,5]
+                                   1            -0               
+   261 sameroom[2,5,1]
+                                   0            -0               
+   262 sameroom[2,5,2]
+                                   1            -0               
+   263 sameroom[2,5,3]
+                                   2            -0               
+   264 sameroom[2,5,4]
+                                   1            -0               
+   265 sameroom[2,5,5]
+                                   1            -0               
+   266 sameroom[6,1,1]
+                                   2            -0               
+   267 sameroom[6,1,2]
+                                   0            -0               
+   268 sameroom[6,1,3]
+                                   1            -0               
+   269 sameroom[6,1,4]
+                                   1            -0               
+   270 sameroom[6,1,5]
+                                   1            -0               
+   271 sameroom[8,20,1]
+                                   1            -0               
+   272 sameroom[8,20,2]
+                                   1            -0               
+   273 sameroom[8,20,3]
+                                   1            -0               
+   274 sameroom[8,20,4]
+                                   2            -0               
+   275 sameroom[8,20,5]
+                                   0            -0               
+   276 sameroom[5,12,1]
+                                   1            -0               
+   277 sameroom[5,12,2]
+                                   1            -0               
+   278 sameroom[5,12,3]
+                                   0            -0               
+   279 sameroom[5,12,4]
+                                   2            -0               
+   280 sameroom[5,12,5]
+                                   1            -0               
+   281 sameroom[9,17,1]
+                                   1            -0               
+   282 sameroom[9,17,2]
+                                   2            -0               
+   283 sameroom[9,17,3]
+                                   1            -0               
+   284 sameroom[9,17,4]
+                                   0            -0               
+   285 sameroom[9,17,5]
+                                   1            -0               
+   286 sameroom[16,4,1]
+                                   0            -0               
+   287 sameroom[16,4,2]
+                                   1            -0               
+   288 sameroom[16,4,3]
+                                   1            -0               
+   289 sameroom[16,4,4]
+                                   2            -0               
+   290 sameroom[16,4,5]
+                                   1            -0               
+   291 sameroom[10,14,1]
+                                   0            -0               
+   292 sameroom[10,14,2]
+                                   0            -0               
+   293 sameroom[10,14,3]
+                                   0            -0               
+   294 sameroom[10,14,4]
+                                   0            -0               
+   295 sameroom[10,14,5]
+                                   0            -0               
+   296 sameroom[17,17,1]
+                                   1            -0               
+   297 sameroom[17,17,2]
+                                   2            -0               
+   298 sameroom[17,17,3]
+                                   1            -0               
+   299 sameroom[17,17,4]
+                                   1            -0               
+   300 sameroom[17,17,5]
+                                   0            -0               
+   301 sameroom[10,2,1]
+                                   1            -0               
+   302 sameroom[10,2,2]
+                                   2            -0               
+   303 sameroom[10,2,3]
+                                   0            -0               
+   304 sameroom[10,2,4]
+                                   1            -0               
+   305 sameroom[10,2,5]
+                                   1            -0               
+   306 sameroom[1,19,1]
+                                   0            -0               
+   307 sameroom[1,19,2]
+                                   0            -0               
+   308 sameroom[1,19,3]
+                                   0            -0               
+   309 sameroom[1,19,4]
+                                   0            -0               
+   310 sameroom[1,19,5]
+                                   0            -0               
+   311 sameroom[20,12,1]
+                                   1            -0               
+   312 sameroom[20,12,2]
+                                   0            -0               
+   313 sameroom[20,12,3]
+                                   1            -0               
+   314 sameroom[20,12,4]
+                                   2            -0               
+   315 sameroom[20,12,5]
+                                   1            -0               
+   316 sameroom[2,16,1]
+                                   0            -0               
+   317 sameroom[2,16,2]
+                                   2            -0               
+   318 sameroom[2,16,3]
+                                   1            -0               
+   319 sameroom[2,16,4]
+                                   1            -0               
+   320 sameroom[2,16,5]
+                                   1            -0               
+   321 sameroom[20,3,1]
+                                   1            -0               
+   322 sameroom[20,3,2]
+                                   0            -0               
+   323 sameroom[20,3,3]
+                                   1            -0               
+   324 sameroom[20,3,4]
+                                   2            -0               
+   325 sameroom[20,3,5]
+                                   1            -0               
+   326 sameroom[7,19,1]
+                                   1            -0               
+   327 sameroom[7,19,2]
+                                   1            -0               
+   328 sameroom[7,19,3]
+                                   1            -0               
+   329 sameroom[7,19,4]
+                                   2            -0               
+   330 sameroom[7,19,5]
+                                   0            -0               
+   331 sameroom[11,12,1]
+                                   0            -0               
+   332 sameroom[11,12,2]
+                                   0            -0               
+   333 sameroom[11,12,3]
+                                   0            -0               
+   334 sameroom[11,12,4]
+                                   0            -0               
+   335 sameroom[11,12,5]
+                                   0            -0               
+   336 sameroom[18,9,1]
+                                   1            -0               
+   337 sameroom[18,9,2]
+                                   1            -0               
+   338 sameroom[18,9,3]
+                                   1            -0               
+   339 sameroom[18,9,4]
+                                   2            -0               
+   340 sameroom[18,9,5]
+                                   0            -0               
+   341 sameroom[8,7,1]
+                                   1            -0               
+   342 sameroom[8,7,2]
+                                   2            -0               
+   343 sameroom[8,7,3]
+                                   1            -0               
+   344 sameroom[8,7,4]
+                                   1            -0               
+   345 sameroom[8,7,5]
+                                   0            -0               
+   346 sameroom[9,6,1]
+                                   1            -0               
+   347 sameroom[9,6,2]
+                                   1            -0               
+   348 sameroom[9,6,3]
+                                   2            -0               
+   349 sameroom[9,6,4]
+                                   0            -0               
+   350 sameroom[9,6,5]
+                                   1            -0               
+   351 sameroom[12,11,1]
+                                   1            -0               
+   352 sameroom[12,11,2]
+                                   2            -0               
+   353 sameroom[12,11,3]
+                                   0            -0               
+   354 sameroom[12,11,4]
+                                   1            -0               
+   355 sameroom[12,11,5]
+                                   1            -0               
+   356 sameroom[13,10,1]
+                                   1            -0               
+   357 sameroom[13,10,2]
+                                   1            -0               
+   358 sameroom[13,10,3]
+                                   1            -0               
+   359 sameroom[13,10,4]
+                                   1            -0               
+   360 sameroom[13,10,5]
+                                   1            -0               
+   361 sameroom[3,4,1]
+                                   1            -0               
+   362 sameroom[3,4,2]
+                                   1            -0               
+   363 sameroom[3,4,3]
+                                   0            -0               
+   364 sameroom[3,4,4]
+                                   2            -0               
+   365 sameroom[3,4,5]
+                                   1            -0               
+   366 sameroom[20,10,1]
+                                   1            -0               
+   367 sameroom[20,10,2]
+                                   0            -0               
+   368 sameroom[20,10,3]
+                                   1            -0               
+   369 sameroom[20,10,4]
+                                   2            -0               
+   370 sameroom[20,10,5]
+                                   1            -0               
+   371 sameroom[16,2,1]
+                                   0            -0               
+   372 sameroom[16,2,2]
+                                   2            -0               
+   373 sameroom[16,2,3]
+                                   1            -0               
+   374 sameroom[16,2,4]
+                                   1            -0               
+   375 sameroom[16,2,5]
+                                   1            -0               
+   376 sameroom[6,5,1]
+                                   1            -0               
+   377 sameroom[6,5,2]
+                                   0            -0               
+   378 sameroom[6,5,3]
+                                   2            -0               
+   379 sameroom[6,5,4]
+                                   1            -0               
+   380 sameroom[6,5,5]
+                                   1            -0               
+   381 sameroom[7,8,1]
+                                   1            -0               
+   382 sameroom[7,8,2]
+                                   1            -0               
+   383 sameroom[7,8,3]
+                                   2            -0               
+   384 sameroom[7,8,4]
+                                   1            -0               
+   385 sameroom[7,8,5]
+                                   0            -0               
+   386 sameroom[12,14,1]
+                                   0            -0               
+   387 sameroom[12,14,2]
+                                   0            -0               
+   388 sameroom[12,14,3]
+                                   0            -0               
+   389 sameroom[12,14,4]
+                                   0            -0               
+   390 sameroom[12,14,5]
+                                   0            -0               
+   391 sameroom[13,15,1]
+                                   2            -0               
+   392 sameroom[13,15,2]
+                                   1            -0               
+   393 sameroom[13,15,3]
+                                   1            -0               
+   394 sameroom[13,15,4]
+                                   0            -0               
+   395 sameroom[13,15,5]
+                                   1            -0               
+   396 sameroom[14,4,1]
+                                   0            -0               
+   397 sameroom[14,4,2]
+                                   1            -0               
+   398 sameroom[14,4,3]
+                                   1            -0               
+   399 sameroom[14,4,4]
+                                   2            -0               
+   400 sameroom[14,4,5]
+                                   1            -0               
+   401 sameroom[19,17,1]
+                                   0            -0               
+   402 sameroom[19,17,2]
+                                   0            -0               
+   403 sameroom[19,17,3]
+                                   0            -0               
+   404 sameroom[19,17,4]
+                                   0            -0               
+   405 sameroom[19,17,5]
+                                   0            -0               
+   406 sameroom[12,2,1]
+                                   1            -0               
+   407 sameroom[12,2,2]
+                                   2            -0               
+   408 sameroom[12,2,3]
+                                   0            -0               
+   409 sameroom[12,2,4]
+                                   1            -0               
+   410 sameroom[12,2,5]
+                                   1            -0               
+   411 sameroom[1,11,1]
+                                   1            -0               
+   412 sameroom[1,11,2]
+                                   2            -0               
+   413 sameroom[1,11,3]
+                                   1            -0               
+   414 sameroom[1,11,4]
+                                   0            -0               
+   415 sameroom[1,11,5]
+                                   1            -0               
+   416 sameroom[13,3,1]
+                                   0            -0               
+   417 sameroom[13,3,2]
+                                   0            -0               
+   418 sameroom[13,3,3]
+                                   0            -0               
+   419 sameroom[13,3,4]
+                                   0            -0               
+   420 sameroom[13,3,5]
+                                   0            -0               
+   421 sameroom[15,13,1]
+                                   1            -0               
+   422 sameroom[15,13,2]
+                                   0            -0               
+   423 sameroom[15,13,3]
+                                   2            -0               
+   424 sameroom[15,13,4]
+                                   1            -0               
+   425 sameroom[15,13,5]
+                                   1            -0               
+   426 sameroom[3,19,1]
+                                   1            -0               
+   427 sameroom[3,19,2]
+                                   1            -0               
+   428 sameroom[3,19,3]
+                                   0            -0               
+   429 sameroom[3,19,4]
+                                   2            -0               
+   430 sameroom[3,19,5]
+                                   1            -0               
+   431 sameroom[4,12,1]
+                                   0            -0               
+   432 sameroom[4,12,2]
+                                   1            -0               
+   433 sameroom[4,12,3]
+                                   1            -0               
+   434 sameroom[4,12,4]
+                                   2            -0               
+   435 sameroom[4,12,5]
+                                   1            -0               
+   436 sameroom[7,1,1]
+                                   2            -0               
+   437 sameroom[7,1,2]
+                                   1            -0               
+   438 sameroom[7,1,3]
+                                   1            -0               
+   439 sameroom[7,1,4]
+                                   1            -0               
+   440 sameroom[7,1,5]
+                                   0            -0               
+   441 sameroom[9,14,1]
+                                   1            -0               
+   442 sameroom[9,14,2]
+                                   1            -0               
+   443 sameroom[9,14,3]
+                                   2            -0               
+   444 sameroom[9,14,4]
+                                   0            -0               
+   445 sameroom[9,14,5]
+                                   1            -0               
+   446 sameroom[16,15,1]
+                                   0            -0               
+   447 sameroom[16,15,2]
+                                   0            -0               
+   448 sameroom[16,15,3]
+                                   0            -0               
+   449 sameroom[16,15,4]
+                                   0            -0               
+   450 sameroom[16,15,5]
+                                   0            -0               
+   451 sameroom[17,14,1]
+                                   1            -0               
+   452 sameroom[17,14,2]
+                                   1            -0               
+   453 sameroom[17,14,3]
+                                   2            -0               
+   454 sameroom[17,14,4]
+                                   1            -0               
+   455 sameroom[17,14,5]
+                                   0            -0               
+   456 sameroom[16,6,1]
+                                   0            -0               
+   457 sameroom[16,6,2]
+                                   1            -0               
+   458 sameroom[16,6,3]
+                                   2            -0               
+   459 sameroom[16,6,4]
+                                   1            -0               
+   460 sameroom[16,6,5]
+                                   1            -0               
+   461 sameroom[10,12,1]
+                                   1            -0               
+   462 sameroom[10,12,2]
+                                   1            -0               
+   463 sameroom[10,12,3]
+                                   0            -0               
+   464 sameroom[10,12,4]
+                                   2            -0               
+   465 sameroom[10,12,5]
+                                   1            -0               
+   466 sameroom[17,7,1]
+                                   1            -0               
+   467 sameroom[17,7,2]
+                                   2            -0               
+   468 sameroom[17,7,3]
+                                   1            -0               
+   469 sameroom[17,7,4]
+                                   1            -0               
+   470 sameroom[17,7,5]
+                                   0            -0               
+   471 sameroom[18,12,1]
+                                   1            -0               
+   472 sameroom[18,12,2]
+                                   1            -0               
+   473 sameroom[18,12,3]
+                                   1            -0               
+   474 sameroom[18,12,4]
+                                   2            -0               
+   475 sameroom[18,12,5]
+                                   0            -0               
+   476 sameroom[8,2,1]
+                                   1            -0               
+   477 sameroom[8,2,2]
+                                   2            -0               
+   478 sameroom[8,2,3]
+                                   1            -0               
+   479 sameroom[8,2,4]
+                                   1            -0               
+   480 sameroom[8,2,5]
+                                   0            -0               
+   481 sameroom[9,3,1]
+                                   0            -0               
+   482 sameroom[9,3,2]
+                                   0            -0               
+   483 sameroom[9,3,3]
+                                   0            -0               
+   484 sameroom[9,3,4]
+                                   0            -0               
+   485 sameroom[9,3,5]
+                                   0            -0               
+   486 sameroom[11,5,1]
+                                   1            -0               
+   487 sameroom[11,5,2]
+                                   1            -0               
+   488 sameroom[11,5,3]
+                                   2            -0               
+   489 sameroom[11,5,4]
+                                   0            -0               
+   490 sameroom[11,5,5]
+                                   1            -0               
+   491 sameroom[1,17,1]
+                                   1            -0               
+   492 sameroom[1,17,2]
+                                   2            -0               
+   493 sameroom[1,17,3]
+                                   1            -0               
+   494 sameroom[1,17,4]
+                                   0            -0               
+   495 sameroom[1,17,5]
+                                   1            -0               
+   496 sameroom[19,2,1]
+                                   0            -0               
+   497 sameroom[19,2,2]
+                                   0            -0               
+   498 sameroom[19,2,3]
+                                   0            -0               
+   499 sameroom[19,2,4]
+                                   0            -0               
+   500 sameroom[19,2,5]
+                                   0            -0               
+   501 sameroom[2,14,1]
+                                   0            -0               
+   502 sameroom[2,14,2]
+                                   1            -0               
+   503 sameroom[2,14,3]
+                                   2            -0               
+   504 sameroom[2,14,4]
+                                   1            -0               
+   505 sameroom[2,14,5]
+                                   1            -0               
+   506 sameroom[5,3,1]
+                                   1            -0               
+   507 sameroom[5,3,2]
+                                   1            -0               
+   508 sameroom[5,3,3]
+                                   0            -0               
+   509 sameroom[5,3,4]
+                                   2            -0               
+   510 sameroom[5,3,5]
+                                   1            -0               
+   511 sameroom[6,16,1]
+                                   0            -0               
+   512 sameroom[6,16,2]
+                                   0            -0               
+   513 sameroom[6,16,3]
+                                   0            -0               
+   514 sameroom[6,16,4]
+                                   0            -0               
+   515 sameroom[6,16,5]
+                                   0            -0               
+   516 sameroom[20,16,1]
+                                   0            -0               
+   517 sameroom[20,16,2]
+                                   0            -0               
+   518 sameroom[20,16,3]
+                                   0            -0               
+   519 sameroom[20,16,4]
+                                   0            -0               
+   520 sameroom[20,16,5]
+                                   0            -0               
+   521 sameroom[17,8,1]
+                                   1            -0               
+   522 sameroom[17,8,2]
+                                   1            -0               
+   523 sameroom[17,8,3]
+                                   2            -0               
+   524 sameroom[17,8,4]
+                                   1            -0               
+   525 sameroom[17,8,5]
+                                   0            -0               
+   526 sameroom[11,14,1]
+                                   1            -0               
+   527 sameroom[11,14,2]
+                                   1            -0               
+   528 sameroom[11,14,3]
+                                   2            -0               
+   529 sameroom[11,14,4]
+                                   0            -0               
+   530 sameroom[11,14,5]
+                                   1            -0               
+   531 sameroom[18,7,1]
+                                   1            -0               
+   532 sameroom[18,7,2]
+                                   2            -0               
+   533 sameroom[18,7,3]
+                                   1            -0               
+   534 sameroom[18,7,4]
+                                   1            -0               
+   535 sameroom[18,7,5]
+                                   0            -0               
+   536 sameroom[12,17,1]
+                                   1            -0               
+   537 sameroom[12,17,2]
+                                   2            -0               
+   538 sameroom[12,17,3]
+                                   0            -0               
+   539 sameroom[12,17,4]
+                                   1            -0               
+   540 sameroom[12,17,5]
+                                   1            -0               
+   541 sameroom[8,9,1]
+                                   1            -0               
+   542 sameroom[8,9,2]
+                                   1            -0               
+   543 sameroom[8,9,3]
+                                   1            -0               
+   544 sameroom[8,9,4]
+                                   2            -0               
+   545 sameroom[8,9,5]
+                                   0            -0               
+   546 sameroom[13,20,1]
+                                   0            -0               
+   547 sameroom[13,20,2]
+                                   0            -0               
+   548 sameroom[13,20,3]
+                                   0            -0               
+   549 sameroom[13,20,4]
+                                   0            -0               
+   550 sameroom[13,20,5]
+                                   0            -0               
+   551 sameroom[9,4,1]
+                                   0            -0               
+   552 sameroom[9,4,2]
+                                   0            -0               
+   553 sameroom[9,4,3]
+                                   0            -0               
+   554 sameroom[9,4,4]
+                                   0            -0               
+   555 sameroom[9,4,5]
+                                   0            -0               
+   556 sameroom[10,11,1]
+                                   1            -0               
+   557 sameroom[10,11,2]
+                                   2            -0               
+   558 sameroom[10,11,3]
+                                   0            -0               
+   559 sameroom[10,11,4]
+                                   1            -0               
+   560 sameroom[10,11,5]
+                                   1            -0               
+   561 sameroom[11,10,1]
+                                   0            -0               
+   562 sameroom[11,10,2]
+                                   0            -0               
+   563 sameroom[11,10,3]
+                                   0            -0               
+   564 sameroom[11,10,4]
+                                   0            -0               
+   565 sameroom[11,10,5]
+                                   0            -0               
+   566 sameroom[12,5,1]
+                                   0            -0               
+   567 sameroom[12,5,2]
+                                   0            -0               
+   568 sameroom[12,5,3]
+                                   0            -0               
+   569 sameroom[12,5,4]
+                                   0            -0               
+   570 sameroom[12,5,5]
+                                   0            -0               
+   571 sameroom[13,8,1]
+                                   1            -0               
+   572 sameroom[13,8,2]
+                                   1            -0               
+   573 sameroom[13,8,3]
+                                   2            -0               
+   574 sameroom[13,8,4]
+                                   0            -0               
+   575 sameroom[13,8,5]
+                                   1            -0               
+   576 sameroom[14,15,1]
+                                   0            -0               
+   577 sameroom[14,15,2]
+                                   0            -0               
+   578 sameroom[14,15,3]
+                                   0            -0               
+   579 sameroom[14,15,4]
+                                   0            -0               
+   580 sameroom[14,15,5]
+                                   0            -0               
+   581 sameroom[3,6,1]
+                                   0            -0               
+   582 sameroom[3,6,2]
+                                   0            -0               
+   583 sameroom[3,6,3]
+                                   0            -0               
+   584 sameroom[3,6,4]
+                                   0            -0               
+   585 sameroom[3,6,5]
+                                   0            -0               
+   586 sameroom[4,9,1]
+                                   0            -0               
+   587 sameroom[4,9,2]
+                                   1            -0               
+   588 sameroom[4,9,3]
+                                   1            -0               
+   589 sameroom[4,9,4]
+                                   2            -0               
+   590 sameroom[4,9,5]
+                                   1            -0               
+   591 sameroom[19,11,1]
+                                   0            -0               
+   592 sameroom[19,11,2]
+                                   0            -0               
+   593 sameroom[19,11,3]
+                                   0            -0               
+   594 sameroom[19,11,4]
+                                   0            -0               
+   595 sameroom[19,11,5]
+                                   0            -0               
+   596 sameroom[3,12,1]
+                                   1            -0               
+   597 sameroom[3,12,2]
+                                   1            -0               
+   598 sameroom[3,12,3]
+                                   0            -0               
+   599 sameroom[3,12,4]
+                                   2            -0               
+   600 sameroom[3,12,5]
+                                   1            -0               
+   601 sameroom[6,11,1]
+                                   0            -0               
+   602 sameroom[6,11,2]
+                                   0            -0               
+   603 sameroom[6,11,3]
+                                   0            -0               
+   604 sameroom[6,11,4]
+                                   0            -0               
+   605 sameroom[6,11,5]
+                                   0            -0               
+   606 sameroom[7,10,1]
+                                   1            -0               
+   607 sameroom[7,10,2]
+                                   1            -0               
+   608 sameroom[7,10,3]
+                                   1            -0               
+   609 sameroom[7,10,4]
+                                   2            -0               
+   610 sameroom[7,10,5]
+                                   0            -0               
+   611 sameroom[14,10,1]
+                                   0            -0               
+   612 sameroom[14,10,2]
+                                   1            -0               
+   613 sameroom[14,10,3]
+                                   1            -0               
+   614 sameroom[14,10,4]
+                                   2            -0               
+   615 sameroom[14,10,5]
+                                   1            -0               
+   616 sameroom[15,11,1]
+                                   0            -0               
+   617 sameroom[15,11,2]
+                                   0            -0               
+   618 sameroom[15,11,3]
+                                   0            -0               
+   619 sameroom[15,11,4]
+                                   0            -0               
+   620 sameroom[15,11,5]
+                                   0            -0               
+   621 sameroom[11,3,1]
+                                   0            -0               
+   622 sameroom[11,3,2]
+                                   0            -0               
+   623 sameroom[11,3,3]
+                                   0            -0               
+   624 sameroom[11,3,4]
+                                   0            -0               
+   625 sameroom[11,3,5]
+                                   0            -0               
+   626 sameroom[15,15,1]
+                                   2            -0               
+   627 sameroom[15,15,2]
+                                   0            -0               
+   628 sameroom[15,15,3]
+                                   1            -0               
+   629 sameroom[15,15,4]
+                                   1            -0               
+   630 sameroom[15,15,5]
+                                   1            -0               
+   631 sameroom[5,5,1]
+                                   0            -0               
+   632 sameroom[5,5,2]
+                                   0            -0               
+   633 sameroom[5,5,3]
+                                   0            -0               
+   634 sameroom[5,5,4]
+                                   0            -0               
+   635 sameroom[5,5,5]
+                                   0            -0               
+   636 sameroom[6,2,1]
+                                   0            -0               
+   637 sameroom[6,2,2]
+                                   0            -0               
+   638 sameroom[6,2,3]
+                                   0            -0               
+   639 sameroom[6,2,4]
+                                   0            -0               
+   640 sameroom[6,2,5]
+                                   0            -0               
+   641 sameroom[4,14,1]
+                                   0            -0               
+   642 sameroom[4,14,2]
+                                   1            -0               
+   643 sameroom[4,14,3]
+                                   2            -0               
+   644 sameroom[4,14,4]
+                                   1            -0               
+   645 sameroom[4,14,5]
+                                   1            -0               
+   646 sameroom[8,17,1]
+                                   1            -0               
+   647 sameroom[8,17,2]
+                                   2            -0               
+   648 sameroom[8,17,3]
+                                   1            -0               
+   649 sameroom[8,17,4]
+                                   1            -0               
+   650 sameroom[8,17,5]
+                                   0            -0               
+   651 sameroom[7,3,1]
+                                   1            -0               
+   652 sameroom[7,3,2]
+                                   1            -0               
+   653 sameroom[7,3,3]
+                                   1            -0               
+   654 sameroom[7,3,4]
+                                   2            -0               
+   655 sameroom[7,3,5]
+                                   0            -0               
+   656 sameroom[9,12,1]
+                                   0            -0               
+   657 sameroom[9,12,2]
+                                   0            -0               
+   658 sameroom[9,12,3]
+                                   0            -0               
+   659 sameroom[9,12,4]
+                                   0            -0               
+   660 sameroom[9,12,5]
+                                   0            -0               
+   661 sameroom[6,20,1]
+                                   1            -0               
+   662 sameroom[6,20,2]
+                                   0            -0               
+   663 sameroom[6,20,3]
+                                   1            -0               
+   664 sameroom[6,20,4]
+                                   2            -0               
+   665 sameroom[6,20,5]
+                                   1            -0               
+   666 sameroom[10,19,1]
+                                   1            -0               
+   667 sameroom[10,19,2]
+                                   1            -0               
+   668 sameroom[10,19,3]
+                                   0            -0               
+   669 sameroom[10,19,4]
+                                   2            -0               
+   670 sameroom[10,19,5]
+                                   1            -0               
+   671 sameroom[17,12,1]
+                                   1            -0               
+   672 sameroom[17,12,2]
+                                   1            -0               
+   673 sameroom[17,12,3]
+                                   1            -0               
+   674 sameroom[17,12,4]
+                                   2            -0               
+   675 sameroom[17,12,5]
+                                   0            -0               
+   676 sameroom[1,2,1]
+                                   1            -0               
+   677 sameroom[1,2,2]
+                                   2            -0               
+   678 sameroom[1,2,3]
+                                   1            -0               
+   679 sameroom[1,2,4]
+                                   0            -0               
+   680 sameroom[1,2,5]
+                                   1            -0               
+   681 sameroom[1,14,1]
+                                   1            -0               
+   682 sameroom[1,14,2]
+                                   1            -0               
+   683 sameroom[1,14,3]
+                                   2            -0               
+   684 sameroom[1,14,4]
+                                   0            -0               
+   685 sameroom[1,14,5]
+                                   1            -0               
+   686 sameroom[6,15,1]
+                                   2            -0               
+   687 sameroom[6,15,2]
+                                   0            -0               
+   688 sameroom[6,15,3]
+                                   1            -0               
+   689 sameroom[6,15,4]
+                                   1            -0               
+   690 sameroom[6,15,5]
+                                   1            -0               
+   691 sameroom[17,5,1]
+                                   1            -0               
+   692 sameroom[17,5,2]
+                                   1            -0               
+   693 sameroom[17,5,3]
+                                   2            -0               
+   694 sameroom[17,5,4]
+                                   1            -0               
+   695 sameroom[17,5,5]
+                                   0            -0               
+   696 sameroom[18,10,1]
+                                   1            -0               
+   697 sameroom[18,10,2]
+                                   1            -0               
+   698 sameroom[18,10,3]
+                                   1            -0               
+   699 sameroom[18,10,4]
+                                   2            -0               
+   700 sameroom[18,10,5]
+                                   0            -0               
+   701 sameroom[12,20,1]
+                                   1            -0               
+   702 sameroom[12,20,2]
+                                   1            -0               
+   703 sameroom[12,20,3]
+                                   0            -0               
+   704 sameroom[12,20,4]
+                                   2            -0               
+   705 sameroom[12,20,5]
+                                   1            -0               
+   706 sameroom[9,1,1]
+                                   2            -0               
+   707 sameroom[9,1,2]
+                                   1            -0               
+   708 sameroom[9,1,3]
+                                   1            -0               
+   709 sameroom[9,1,4]
+                                   0            -0               
+   710 sameroom[9,1,5]
+                                   1            -0               
+   711 sameroom[2,12,1]
+                                   0            -0               
+   712 sameroom[2,12,2]
+                                   1            -0               
+   713 sameroom[2,12,3]
+                                   1            -0               
+   714 sameroom[2,12,4]
+                                   2            -0               
+   715 sameroom[2,12,5]
+                                   1            -0               
+   716 sameroom[5,1,1]
+                                   2            -0               
+   717 sameroom[5,1,2]
+                                   1            -0               
+   718 sameroom[5,1,3]
+                                   0            -0               
+   719 sameroom[5,1,4]
+                                   1            -0               
+   720 sameroom[5,1,5]
+                                   1            -0               
+   721 sameroom[6,6,1]
+                                   1            -0               
+   722 sameroom[6,6,2]
+                                   0            -0               
+   723 sameroom[6,6,3]
+                                   2            -0               
+   724 sameroom[6,6,4]
+                                   1            -0               
+   725 sameroom[6,6,5]
+                                   1            -0               
+   726 sameroom[8,11,1]
+                                   1            -0               
+   727 sameroom[8,11,2]
+                                   2            -0               
+   728 sameroom[8,11,3]
+                                   1            -0               
+   729 sameroom[8,11,4]
+                                   1            -0               
+   730 sameroom[8,11,5]
+                                   0            -0               
+   731 sameroom[13,18,1]
+                                   2            -0               
+   732 sameroom[13,18,2]
+                                   1            -0               
+   733 sameroom[13,18,3]
+                                   1            -0               
+   734 sameroom[13,18,4]
+                                   0            -0               
+   735 sameroom[13,18,5]
+                                   1            -0               
+   736 sameroom[9,10,1]
+                                   0            -0               
+   737 sameroom[9,10,2]
+                                   0            -0               
+   738 sameroom[9,10,3]
+                                   0            -0               
+   739 sameroom[9,10,4]
+                                   0            -0               
+   740 sameroom[9,10,5]
+                                   0            -0               
+   741 sameroom[14,1,1]
+                                   0            -0               
+   742 sameroom[14,1,2]
+                                   0            -0               
+   743 sameroom[14,1,3]
+                                   0            -0               
+   744 sameroom[14,1,4]
+                                   0            -0               
+   745 sameroom[14,1,5]
+                                   0            -0               
+   746 sameroom[10,9,1]
+                                   1            -0               
+   747 sameroom[10,9,2]
+                                   1            -0               
+   748 sameroom[10,9,3]
+                                   0            -0               
+   749 sameroom[10,9,4]
+                                   2            -0               
+   750 sameroom[10,9,5]
+                                   1            -0               
+   751 sameroom[12,7,1]
+                                   1            -0               
+   752 sameroom[12,7,2]
+                                   2            -0               
+   753 sameroom[12,7,3]
+                                   0            -0               
+   754 sameroom[12,7,4]
+                                   1            -0               
+   755 sameroom[12,7,5]
+                                   1            -0               
+   756 sameroom[1,6,1]
+                                   1            -0               
+   757 sameroom[1,6,2]
+                                   1            -0               
+   758 sameroom[1,6,3]
+                                   2            -0               
+   759 sameroom[1,6,4]
+                                   0            -0               
+   760 sameroom[1,6,5]
+                                   1            -0               
+   761 sameroom[3,8,1]
+                                   0            -0               
+   762 sameroom[3,8,2]
+                                   0            -0               
+   763 sameroom[3,8,3]
+                                   0            -0               
+   764 sameroom[3,8,4]
+                                   0            -0               
+   765 sameroom[3,8,5]
+                                   0            -0               
+   766 sameroom[15,16,1]
+                                   0            -0               
+   767 sameroom[15,16,2]
+                                   0            -0               
+   768 sameroom[15,16,3]
+                                   0            -0               
+   769 sameroom[15,16,4]
+                                   0            -0               
+   770 sameroom[15,16,5]
+                                   0            -0               
+   771 sameroom[4,11,1]
+                                   0            -0               
+   772 sameroom[4,11,2]
+                                   2            -0               
+   773 sameroom[4,11,3]
+                                   1            -0               
+   774 sameroom[4,11,4]
+                                   1            -0               
+   775 sameroom[4,11,5]
+                                   1            -0               
+   776 sameroom[20,6,1]
+                                   1            -0               
+   777 sameroom[20,6,2]
+                                   0            -0               
+   778 sameroom[20,6,3]
+                                   2            -0               
+   779 sameroom[20,6,4]
+                                   1            -0               
+   780 sameroom[20,6,5]
+                                   1            -0               
+   781 sameroom[3,14,1]
+                                   0            -0               
+   782 sameroom[3,14,2]
+                                   0            -0               
+   783 sameroom[3,14,3]
+                                   0            -0               
+   784 sameroom[3,14,4]
+                                   0            -0               
+   785 sameroom[3,14,5]
+                                   0            -0               
+   786 sameroom[6,9,1]
+                                   1            -0               
+   787 sameroom[6,9,2]
+                                   0            -0               
+   788 sameroom[6,9,3]
+                                   1            -0               
+   789 sameroom[6,9,4]
+                                   2            -0               
+   790 sameroom[6,9,5]
+                                   1            -0               
+   791 sameroom[7,4,1]
+                                   1            -0               
+   792 sameroom[7,4,2]
+                                   1            -0               
+   793 sameroom[7,4,3]
+                                   1            -0               
+   794 sameroom[7,4,4]
+                                   2            -0               
+   795 sameroom[7,4,5]
+                                   0            -0               
+   796 sameroom[16,12,1]
+                                   0            -0               
+   797 sameroom[16,12,2]
+                                   1            -0               
+   798 sameroom[16,12,3]
+                                   1            -0               
+   799 sameroom[16,12,4]
+                                   2            -0               
+   800 sameroom[16,12,5]
+                                   1            -0               
+   801 sameroom[19,20,1]
+                                   1            -0               
+   802 sameroom[19,20,2]
+                                   0            -0               
+   803 sameroom[19,20,3]
+                                   1            -0               
+   804 sameroom[19,20,4]
+                                   2            -0               
+   805 sameroom[19,20,5]
+                                   1            -0               
+   806 sameroom[14,8,1]
+                                   0            -0               
+   807 sameroom[14,8,2]
+                                   1            -0               
+   808 sameroom[14,8,3]
+                                   2            -0               
+   809 sameroom[14,8,4]
+                                   1            -0               
+   810 sameroom[14,8,5]
+                                   1            -0               
+   811 sameroom[14,20,1]
+                                   0            -0               
+   812 sameroom[14,20,2]
+                                   1            -0               
+   813 sameroom[14,20,3]
+                                   1            -0               
+   814 sameroom[14,20,4]
+                                   2            -0               
+   815 sameroom[14,20,5]
+                                   1            -0               
+   816 sameroom[8,19,1]
+                                   1            -0               
+   817 sameroom[8,19,2]
+                                   1            -0               
+   818 sameroom[8,19,3]
+                                   1            -0               
+   819 sameroom[8,19,4]
+                                   2            -0               
+   820 sameroom[8,19,5]
+                                   0            -0               
+   821 sameroom[5,13,1]
+                                   0            -0               
+   822 sameroom[5,13,2]
+                                   0            -0               
+   823 sameroom[5,13,3]
+                                   0            -0               
+   824 sameroom[5,13,4]
+                                   0            -0               
+   825 sameroom[5,13,5]
+                                   0            -0               
+   826 sameroom[9,18,1]
+                                   2            -0               
+   827 sameroom[9,18,2]
+                                   1            -0               
+   828 sameroom[9,18,3]
+                                   1            -0               
+   829 sameroom[9,18,4]
+                                   0            -0               
+   830 sameroom[9,18,5]
+                                   1            -0               
+   831 sameroom[16,19,1]
+                                   0            -0               
+   832 sameroom[16,19,2]
+                                   1            -0               
+   833 sameroom[16,19,3]
+                                   1            -0               
+   834 sameroom[16,19,4]
+                                   2            -0               
+   835 sameroom[16,19,5]
+                                   1            -0               
+   836 sameroom[10,17,1]
+                                   1            -0               
+   837 sameroom[10,17,2]
+                                   2            -0               
+   838 sameroom[10,17,3]
+                                   0            -0               
+   839 sameroom[10,17,4]
+                                   1            -0               
+   840 sameroom[10,17,5]
+                                   1            -0               
+   841 sameroom[17,18,1]
+                                   2            -0               
+   842 sameroom[17,18,2]
+                                   1            -0               
+   843 sameroom[17,18,3]
+                                   1            -0               
+   844 sameroom[17,18,4]
+                                   1            -0               
+   845 sameroom[17,18,5]
+                                   0            -0               
+   846 sameroom[18,17,1]
+                                   1            -0               
+   847 sameroom[18,17,2]
+                                   2            -0               
+   848 sameroom[18,17,3]
+                                   1            -0               
+   849 sameroom[18,17,4]
+                                   1            -0               
+   850 sameroom[18,17,5]
+                                   0            -0               
+   851 sameroom[1,12,1]
+                                   0            -0               
+   852 sameroom[1,12,2]
+                                   0            -0               
+   853 sameroom[1,12,3]
+                                   0            -0               
+   854 sameroom[1,12,4]
+                                   0            -0               
+   855 sameroom[1,12,5]
+                                   0            -0               
+   856 sameroom[19,1,1]
+                                   2            -0               
+   857 sameroom[19,1,2]
+                                   0            -0               
+   858 sameroom[19,1,3]
+                                   1            -0               
+   859 sameroom[19,1,4]
+                                   1            -0               
+   860 sameroom[19,1,5]
+                                   1            -0               
+   861 sameroom[2,19,1]
+                                   0            -0               
+   862 sameroom[2,19,2]
+                                   1            -0               
+   863 sameroom[2,19,3]
+                                   1            -0               
+   864 sameroom[2,19,4]
+                                   2            -0               
+   865 sameroom[2,19,5]
+                                   1            -0               
+   866 sameroom[20,2,1]
+                                   0            -0               
+   867 sameroom[20,2,2]
+                                   0            -0               
+   868 sameroom[20,2,3]
+                                   0            -0               
+   869 sameroom[20,2,4]
+                                   0            -0               
+   870 sameroom[20,2,5]
+                                   0            -0               
+   871 sameroom[16,10,1]
+                                   0            -0               
+   872 sameroom[16,10,2]
+                                   1            -0               
+   873 sameroom[16,10,3]
+                                   1            -0               
+   874 sameroom[16,10,4]
+                                   2            -0               
+   875 sameroom[16,10,5]
+                                   1            -0               
+   876 sameroom[6,13,1]
+                                   1            -0               
+   877 sameroom[6,13,2]
+                                   0            -0               
+   878 sameroom[6,13,3]
+                                   2            -0               
+   879 sameroom[6,13,4]
+                                   1            -0               
+   880 sameroom[6,13,5]
+                                   1            -0               
+   881 sameroom[20,14,1]
+                                   1            -0               
+   882 sameroom[20,14,2]
+                                   0            -0               
+   883 sameroom[20,14,3]
+                                   2            -0               
+   884 sameroom[20,14,4]
+                                   1            -0               
+   885 sameroom[20,14,5]
+                                   1            -0               
+   886 sameroom[17,11,1]
+                                   1            -0               
+   887 sameroom[17,11,2]
+                                   2            -0               
+   888 sameroom[17,11,3]
+                                   1            -0               
+   889 sameroom[17,11,4]
+                                   1            -0               
+   890 sameroom[17,11,5]
+                                   0            -0               
+   891 sameroom[7,16,1]
+                                   1            -0               
+   892 sameroom[7,16,2]
+                                   2            -0               
+   893 sameroom[7,16,3]
+                                   1            -0               
+   894 sameroom[7,16,4]
+                                   1            -0               
+   895 sameroom[7,16,5]
+                                   0            -0               
+   896 sameroom[11,13,1]
+                                   1            -0               
+   897 sameroom[11,13,2]
+                                   1            -0               
+   898 sameroom[11,13,3]
+                                   2            -0               
+   899 sameroom[11,13,4]
+                                   0            -0               
+   900 sameroom[11,13,5]
+                                   1            -0               
+   901 sameroom[8,6,1]
+                                   1            -0               
+   902 sameroom[8,6,2]
+                                   1            -0               
+   903 sameroom[8,6,3]
+                                   2            -0               
+   904 sameroom[8,6,4]
+                                   1            -0               
+   905 sameroom[8,6,5]
+                                   0            -0               
+   906 sameroom[19,18,1]
+                                   2            -0               
+   907 sameroom[19,18,2]
+                                   0            -0               
+   908 sameroom[19,18,3]
+                                   1            -0               
+   909 sameroom[19,18,4]
+                                   1            -0               
+   910 sameroom[19,18,5]
+                                   1            -0               
+   911 sameroom[11,9,1]
+                                   0            -0               
+   912 sameroom[11,9,2]
+                                   0            -0               
+   913 sameroom[11,9,3]
+                                   0            -0               
+   914 sameroom[11,9,4]
+                                   0            -0               
+   915 sameroom[11,9,5]
+                                   0            -0               
+   916 sameroom[12,10,1]
+                                   1            -0               
+   917 sameroom[12,10,2]
+                                   1            -0               
+   918 sameroom[12,10,3]
+                                   0            -0               
+   919 sameroom[12,10,4]
+                                   2            -0               
+   920 sameroom[12,10,5]
+                                   1            -0               
+   921 sameroom[13,11,1]
+                                   1            -0               
+   922 sameroom[13,11,2]
+                                   2            -0               
+   923 sameroom[13,11,3]
+                                   1            -0               
+   924 sameroom[13,11,4]
+                                   0            -0               
+   925 sameroom[13,11,5]
+                                   1            -0               
+   926 sameroom[3,5,1]
+                                   0            -0               
+   927 sameroom[3,5,2]
+                                   0            -0               
+   928 sameroom[3,5,3]
+                                   0            -0               
+   929 sameroom[3,5,4]
+                                   0            -0               
+   930 sameroom[3,5,5]
+                                   0            -0               
+   931 sameroom[19,6,1]
+                                   1            -0               
+   932 sameroom[19,6,2]
+                                   0            -0               
+   933 sameroom[19,6,3]
+                                   2            -0               
+   934 sameroom[19,6,4]
+                                   1            -0               
+   935 sameroom[19,6,5]
+                                   1            -0               
+   936 sameroom[20,9,1]
+                                   1            -0               
+   937 sameroom[20,9,2]
+                                   0            -0               
+   938 sameroom[20,9,3]
+                                   1            -0               
+   939 sameroom[20,9,4]
+                                   2            -0               
+   940 sameroom[20,9,5]
+                                   1            -0               
+   941 sameroom[16,1,1]
+                                   0            -0               
+   942 sameroom[16,1,2]
+                                   0            -0               
+   943 sameroom[16,1,3]
+                                   0            -0               
+   944 sameroom[16,1,4]
+                                   0            -0               
+   945 sameroom[16,1,5]
+                                   0            -0               
+   946 sameroom[6,4,1]
+                                   1            -0               
+   947 sameroom[6,4,2]
+                                   0            -0               
+   948 sameroom[6,4,3]
+                                   1            -0               
+   949 sameroom[6,4,4]
+                                   2            -0               
+   950 sameroom[6,4,5]
+                                   1            -0               
+   951 sameroom[7,9,1]
+                                   1            -0               
+   952 sameroom[7,9,2]
+                                   1            -0               
+   953 sameroom[7,9,3]
+                                   1            -0               
+   954 sameroom[7,9,4]
+                                   2            -0               
+   955 sameroom[7,9,5]
+                                   0            -0               
+   956 sameroom[11,18,1]
+                                   2            -0               
+   957 sameroom[11,18,2]
+                                   1            -0               
+   958 sameroom[11,18,3]
+                                   1            -0               
+   959 sameroom[11,18,4]
+                                   0            -0               
+   960 sameroom[11,18,5]
+                                   1            -0               
+   961 sameroom[12,13,1]
+                                   0            -0               
+   962 sameroom[12,13,2]
+                                   0            -0               
+   963 sameroom[12,13,3]
+                                   0            -0               
+   964 sameroom[12,13,4]
+                                   0            -0               
+   965 sameroom[12,13,5]
+                                   0            -0               
+   966 sameroom[13,16,1]
+                                   1            -0               
+   967 sameroom[13,16,2]
+                                   2            -0               
+   968 sameroom[13,16,3]
+                                   1            -0               
+   969 sameroom[13,16,4]
+                                   0            -0               
+   970 sameroom[13,16,5]
+                                   1            -0               
+   971 sameroom[14,7,1]
+                                   0            -0               
+   972 sameroom[14,7,2]
+                                   2            -0               
+   973 sameroom[14,7,3]
+                                   1            -0               
+   974 sameroom[14,7,4]
+                                   1            -0               
+   975 sameroom[14,7,5]
+                                   1            -0               
+   976 sameroom[10,7,1]
+                                   1            -0               
+   977 sameroom[10,7,2]
+                                   2            -0               
+   978 sameroom[10,7,3]
+                                   0            -0               
+   979 sameroom[10,7,4]
+                                   1            -0               
+   980 sameroom[10,7,5]
+                                   1            -0               
+   981 sameroom[12,1,1]
+                                   2            -0               
+   982 sameroom[12,1,2]
+                                   1            -0               
+   983 sameroom[12,1,3]
+                                   0            -0               
+   984 sameroom[12,1,4]
+                                   1            -0               
+   985 sameroom[12,1,5]
+                                   1            -0               
+   986 sameroom[1,4,1]
+                                   0            -0               
+   987 sameroom[1,4,2]
+                                   0            -0               
+   988 sameroom[1,4,3]
+                                   0            -0               
+   989 sameroom[1,4,4]
+                                   0            -0               
+   990 sameroom[1,4,5]
+                                   0            -0               
+   991 sameroom[13,4,1]
+                                   0            -0               
+   992 sameroom[13,4,2]
+                                   0            -0               
+   993 sameroom[13,4,3]
+                                   0            -0               
+   994 sameroom[13,4,4]
+                                   0            -0               
+   995 sameroom[13,4,5]
+                                   0            -0               
+   996 sameroom[2,11,1]
+                                   0            -0               
+   997 sameroom[2,11,2]
+                                   2            -0               
+   998 sameroom[2,11,3]
+                                   1            -0               
+   999 sameroom[2,11,4]
+                                   1            -0               
+  1000 sameroom[2,11,5]
+                                   1            -0               
+  1001 sameroom[14,19,1]
+                                   0            -0               
+  1002 sameroom[14,19,2]
+                                   1            -0               
+  1003 sameroom[14,19,3]
+                                   1            -0               
+  1004 sameroom[14,19,4]
+                                   2            -0               
+  1005 sameroom[14,19,5]
+                                   1            -0               
+  1006 sameroom[3,10,1]
+                                   1            -0               
+  1007 sameroom[3,10,2]
+                                   1            -0               
+  1008 sameroom[3,10,3]
+                                   0            -0               
+  1009 sameroom[3,10,4]
+                                   2            -0               
+  1010 sameroom[3,10,5]
+                                   1            -0               
+  1011 sameroom[4,5,1]
+                                   0            -0               
+  1012 sameroom[4,5,2]
+                                   1            -0               
+  1013 sameroom[4,5,3]
+                                   2            -0               
+  1014 sameroom[4,5,4]
+                                   1            -0               
+  1015 sameroom[4,5,5]
+                                   1            -0               
+  1016 sameroom[5,8,1]
+                                   0            -0               
+  1017 sameroom[5,8,2]
+                                   0            -0               
+  1018 sameroom[5,8,3]
+                                   0            -0               
+  1019 sameroom[5,8,4]
+                                   0            -0               
+  1020 sameroom[5,8,5]
+                                   0            -0               
+  1021 sameroom[8,14,1]
+                                   1            -0               
+  1022 sameroom[8,14,2]
+                                   1            -0               
+  1023 sameroom[8,14,3]
+                                   2            -0               
+  1024 sameroom[8,14,4]
+                                   1            -0               
+  1025 sameroom[8,14,5]
+                                   0            -0               
+  1026 sameroom[5,18,1]
+                                   2            -0               
+  1027 sameroom[5,18,2]
+                                   1            -0               
+  1028 sameroom[5,18,3]
+                                   0            -0               
+  1029 sameroom[5,18,4]
+                                   1            -0               
+  1030 sameroom[5,18,5]
+                                   1            -0               
+  1031 sameroom[9,15,1]
+                                   2            -0               
+  1032 sameroom[9,15,2]
+                                   1            -0               
+  1033 sameroom[9,15,3]
+                                   1            -0               
+  1034 sameroom[9,15,4]
+                                   0            -0               
+  1035 sameroom[9,15,5]
+                                   1            -0               
+  1036 sameroom[17,15,1]
+                                   2            -0               
+  1037 sameroom[17,15,2]
+                                   1            -0               
+  1038 sameroom[17,15,3]
+                                   1            -0               
+  1039 sameroom[17,15,4]
+                                   1            -0               
+  1040 sameroom[17,15,5]
+                                   0            -0               
+  1041 sameroom[15,7,1]
+                                   0            -0               
+  1042 sameroom[15,7,2]
+                                   0            -0               
+  1043 sameroom[15,7,3]
+                                   0            -0               
+  1044 sameroom[15,7,4]
+                                   0            -0               
+  1045 sameroom[15,7,5]
+                                   0            -0               
+  1046 sameroom[19,16,1]
+                                   0            -0               
+  1047 sameroom[19,16,2]
+                                   0            -0               
+  1048 sameroom[19,16,3]
+                                   0            -0               
+  1049 sameroom[19,16,4]
+                                   0            -0               
+  1050 sameroom[19,16,5]
+                                   0            -0               
+  1051 sameroom[20,19,1]
+                                   1            -0               
+  1052 sameroom[20,19,2]
+                                   0            -0               
+  1053 sameroom[20,19,3]
+                                   1            -0               
+  1054 sameroom[20,19,4]
+                                   2            -0               
+  1055 sameroom[20,19,5]
+                                   1            -0               
+  1056 sameroom[9,16,1]
+                                   1            -0               
+  1057 sameroom[9,16,2]
+                                   2            -0               
+  1058 sameroom[9,16,3]
+                                   1            -0               
+  1059 sameroom[9,16,4]
+                                   0            -0               
+  1060 sameroom[9,16,5]
+                                   1            -0               
+  1061 sameroom[10,15,1]
+                                   2            -0               
+  1062 sameroom[10,15,2]
+                                   1            -0               
+  1063 sameroom[10,15,3]
+                                   0            -0               
+  1064 sameroom[10,15,4]
+                                   1            -0               
+  1065 sameroom[10,15,5]
+                                   1            -0               
+  1066 sameroom[17,16,1]
+                                   1            -0               
+  1067 sameroom[17,16,2]
+                                   2            -0               
+  1068 sameroom[17,16,3]
+                                   1            -0               
+  1069 sameroom[17,16,4]
+                                   1            -0               
+  1070 sameroom[17,16,5]
+                                   0            -0               
+  1071 sameroom[1,18,1]
+                                   2            -0               
+  1072 sameroom[1,18,2]
+                                   1            -0               
+  1073 sameroom[1,18,3]
+                                   1            -0               
+  1074 sameroom[1,18,4]
+                                   0            -0               
+  1075 sameroom[1,18,5]
+                                   1            -0               
+  1076 sameroom[4,1,1]
+                                   0            -0               
+  1077 sameroom[4,1,2]
+                                   0            -0               
+  1078 sameroom[4,1,3]
+                                   0            -0               
+  1079 sameroom[4,1,4]
+                                   0            -0               
+  1080 sameroom[4,1,5]
+                                   0            -0               
+  1081 sameroom[19,3,1]
+                                   1            -0               
+  1082 sameroom[19,3,2]
+                                   0            -0               
+  1083 sameroom[19,3,3]
+                                   1            -0               
+  1084 sameroom[19,3,4]
+                                   2            -0               
+  1085 sameroom[19,3,5]
+                                   1            -0               
+  1086 sameroom[2,17,1]
+                                   0            -0               
+  1087 sameroom[2,17,2]
+                                   2            -0               
+  1088 sameroom[2,17,3]
+                                   1            -0               
+  1089 sameroom[2,17,4]
+                                   1            -0               
+  1090 sameroom[2,17,5]
+                                   1            -0               
+  1091 sameroom[5,20,1]
+                                   1            -0               
+  1092 sameroom[5,20,2]
+                                   1            -0               
+  1093 sameroom[5,20,3]
+                                   0            -0               
+  1094 sameroom[5,20,4]
+                                   2            -0               
+  1095 sameroom[5,20,5]
+                                   1            -0               
+  1096 sameroom[6,19,1]
+                                   1            -0               
+  1097 sameroom[6,19,2]
+                                   0            -0               
+  1098 sameroom[6,19,3]
+                                   1            -0               
+  1099 sameroom[6,19,4]
+                                   2            -0               
+  1100 sameroom[6,19,5]
+                                   1            -0               
+  1101 sameroom[11,15,1]
+                                   2            -0               
+  1102 sameroom[11,15,2]
+                                   1            -0               
+  1103 sameroom[11,15,3]
+                                   1            -0               
+  1104 sameroom[11,15,4]
+                                   0            -0               
+  1105 sameroom[11,15,5]
+                                   1            -0               
+  1106 sameroom[18,6,1]
+                                   1            -0               
+  1107 sameroom[18,6,2]
+                                   1            -0               
+  1108 sameroom[18,6,3]
+                                   2            -0               
+  1109 sameroom[18,6,4]
+                                   1            -0               
+  1110 sameroom[18,6,5]
+                                   0            -0               
+  1111 sameroom[12,16,1]
+                                   1            -0               
+  1112 sameroom[12,16,2]
+                                   2            -0               
+  1113 sameroom[12,16,3]
+                                   0            -0               
+  1114 sameroom[12,16,4]
+                                   1            -0               
+  1115 sameroom[12,16,5]
+                                   1            -0               
+  1116 sameroom[8,8,1]
+                                   1            -0               
+  1117 sameroom[8,8,2]
+                                   1            -0               
+  1118 sameroom[8,8,3]
+                                   2            -0               
+  1119 sameroom[8,8,4]
+                                   1            -0               
+  1120 sameroom[8,8,5]
+                                   0            -0               
+  1121 sameroom[9,5,1]
+                                   1            -0               
+  1122 sameroom[9,5,2]
+                                   1            -0               
+  1123 sameroom[9,5,3]
+                                   2            -0               
+  1124 sameroom[9,5,4]
+                                   0            -0               
+  1125 sameroom[9,5,5]
+                                   1            -0               
+  1126 sameroom[11,11,1]
+                                   1            -0               
+  1127 sameroom[11,11,2]
+                                   2            -0               
+  1128 sameroom[11,11,3]
+                                   1            -0               
+  1129 sameroom[11,11,4]
+                                   0            -0               
+  1130 sameroom[11,11,5]
+                                   1            -0               
+  1131 sameroom[19,14,1]
+                                   1            -0               
+  1132 sameroom[19,14,2]
+                                   0            -0               
+  1133 sameroom[19,14,3]
+                                   2            -0               
+  1134 sameroom[19,14,4]
+                                   1            -0               
+  1135 sameroom[19,14,5]
+                                   1            -0               
+  1136 sameroom[13,9,1]
+                                   0            -0               
+  1137 sameroom[13,9,2]
+                                   0            -0               
+  1138 sameroom[13,9,3]
+                                   0            -0               
+  1139 sameroom[13,9,4]
+                                   0            -0               
+  1140 sameroom[13,9,5]
+                                   0            -0               
+  1141 sameroom[14,14,1]
+                                   0            -0               
+  1142 sameroom[14,14,2]
+                                   1            -0               
+  1143 sameroom[14,14,3]
+                                   2            -0               
+  1144 sameroom[14,14,4]
+                                   1            -0               
+  1145 sameroom[14,14,5]
+                                   1            -0               
+  1146 sameroom[3,7,1]
+                                   1            -0               
+  1147 sameroom[3,7,2]
+                                   2            -0               
+  1148 sameroom[3,7,3]
+                                   0            -0               
+  1149 sameroom[3,7,4]
+                                   1            -0               
+  1150 sameroom[3,7,5]
+                                   1            -0               
+  1151 sameroom[20,11,1]
+                                   0            -0               
+  1152 sameroom[20,11,2]
+                                   0            -0               
+  1153 sameroom[20,11,3]
+                                   0            -0               
+  1154 sameroom[20,11,4]
+                                   0            -0               
+  1155 sameroom[20,11,5]
+                                   0            -0               
+  1156 sameroom[3,13,1]
+                                   0            -0               
+  1157 sameroom[3,13,2]
+                                   0            -0               
+  1158 sameroom[3,13,3]
+                                   0            -0               
+  1159 sameroom[3,13,4]
+                                   0            -0               
+  1160 sameroom[3,13,5]
+                                   0            -0               
+  1161 sameroom[6,10,1]
+                                   1            -0               
+  1162 sameroom[6,10,2]
+                                   0            -0               
+  1163 sameroom[6,10,3]
+                                   1            -0               
+  1164 sameroom[6,10,4]
+                                   2            -0               
+  1165 sameroom[6,10,5]
+                                   1            -0               
+  1166 sameroom[20,17,1]
+                                   0            -0               
+  1167 sameroom[20,17,2]
+                                   0            -0               
+  1168 sameroom[20,17,3]
+                                   0            -0               
+  1169 sameroom[20,17,4]
+                                   0            -0               
+  1170 sameroom[20,17,5]
+                                   0            -0               
+  1171 sameroom[17,2,1]
+                                   1            -0               
+  1172 sameroom[17,2,2]
+                                   2            -0               
+  1173 sameroom[17,2,3]
+                                   1            -0               
+  1174 sameroom[17,2,4]
+                                   1            -0               
+  1175 sameroom[17,2,5]
+                                   0            -0               
+  1176 sameroom[7,11,1]
+                                   1            -0               
+  1177 sameroom[7,11,2]
+                                   2            -0               
+  1178 sameroom[7,11,3]
+                                   1            -0               
+  1179 sameroom[7,11,4]
+                                   1            -0               
+  1180 sameroom[7,11,5]
+                                   0            -0               
+  1181 sameroom[18,1,1]
+                                   2            -0               
+  1182 sameroom[18,1,2]
+                                   1            -0               
+  1183 sameroom[18,1,3]
+                                   1            -0               
+  1184 sameroom[18,1,4]
+                                   1            -0               
+  1185 sameroom[18,1,5]
+                                   0            -0               
+  1186 sameroom[12,15,1]
+                                   2            -0               
+  1187 sameroom[12,15,2]
+                                   1            -0               
+  1188 sameroom[12,15,3]
+                                   0            -0               
+  1189 sameroom[12,15,4]
+                                   1            -0               
+  1190 sameroom[12,15,5]
+                                   1            -0               
+  1191 sameroom[17,20,1]
+                                   1            -0               
+  1192 sameroom[17,20,2]
+                                   1            -0               
+  1193 sameroom[17,20,3]
+                                   1            -0               
+  1194 sameroom[17,20,4]
+                                   2            -0               
+  1195 sameroom[17,20,5]
+                                   0            -0               
+  1196 sameroom[13,14,1]
+                                   1            -0               
+  1197 sameroom[13,14,2]
+                                   1            -0               
+  1198 sameroom[13,14,3]
+                                   2            -0               
+  1199 sameroom[13,14,4]
+                                   0            -0               
+  1200 sameroom[13,14,5]
+                                   1            -0               
+  1201 sameroom[14,5,1]
+                                   0            -0               
+  1202 sameroom[14,5,2]
+                                   1            -0               
+  1203 sameroom[14,5,3]
+                                   2            -0               
+  1204 sameroom[14,5,4]
+                                   1            -0               
+  1205 sameroom[14,5,5]
+                                   1            -0               
+  1206 sameroom[10,5,1]
+                                   0            -0               
+  1207 sameroom[10,5,2]
+                                   0            -0               
+  1208 sameroom[10,5,3]
+                                   0            -0               
+  1209 sameroom[10,5,4]
+                                   0            -0               
+  1210 sameroom[10,5,5]
+                                   0            -0               
+  1211 sameroom[15,8,1]
+                                   1            -0               
+  1212 sameroom[15,8,2]
+                                   0            -0               
+  1213 sameroom[15,8,3]
+                                   2            -0               
+  1214 sameroom[15,8,4]
+                                   1            -0               
+  1215 sameroom[15,8,5]
+                                   1            -0               
+  1216 sameroom[12,3,1]
+                                   1            -0               
+  1217 sameroom[12,3,2]
+                                   1            -0               
+  1218 sameroom[12,3,3]
+                                   0            -0               
+  1219 sameroom[12,3,4]
+                                   2            -0               
+  1220 sameroom[12,3,5]
+                                   1            -0               
+  1221 sameroom[1,10,1]
+                                   0            -0               
+  1222 sameroom[1,10,2]
+                                   0            -0               
+  1223 sameroom[1,10,3]
+                                   0            -0               
+  1224 sameroom[1,10,4]
+                                   0            -0               
+  1225 sameroom[1,10,5]
+                                   0            -0               
+  1226 sameroom[2,9,1]
+                                   0            -0               
+  1227 sameroom[2,9,2]
+                                   1            -0               
+  1228 sameroom[2,9,3]
+                                   1            -0               
+  1229 sameroom[2,9,4]
+                                   2            -0               
+  1230 sameroom[2,9,5]
+                                   1            -0               
+  1231 sameroom[14,17,1]
+                                   0            -0               
+  1232 sameroom[14,17,2]
+                                   2            -0               
+  1233 sameroom[14,17,3]
+                                   1            -0               
+  1234 sameroom[14,17,4]
+                                   1            -0               
+  1235 sameroom[14,17,5]
+                                   1            -0               
+  1236 sameroom[15,12,1]
+                                   1            -0               
+  1237 sameroom[15,12,2]
+                                   0            -0               
+  1238 sameroom[15,12,3]
+                                   1            -0               
+  1239 sameroom[15,12,4]
+                                   2            -0               
+  1240 sameroom[15,12,5]
+                                   1            -0               
+  1241 sameroom[4,7,1]
+                                   0            -0               
+  1242 sameroom[4,7,2]
+                                   2            -0               
+  1243 sameroom[4,7,3]
+                                   1            -0               
+  1244 sameroom[4,7,4]
+                                   1            -0               
+  1245 sameroom[4,7,5]
+                                   1            -0               
+  1246 sameroom[5,6,1]
+                                   0            -0               
+  1247 sameroom[5,6,2]
+                                   0            -0               
+  1248 sameroom[5,6,3]
+                                   0            -0               
+  1249 sameroom[5,6,4]
+                                   0            -0               
+  1250 sameroom[5,6,5]
+                                   0            -0               
+  1251 sameroom[3,18,1]
+                                   2            -0               
+  1252 sameroom[3,18,2]
+                                   1            -0               
+  1253 sameroom[3,18,3]
+                                   0            -0               
+  1254 sameroom[3,18,4]
+                                   1            -0               
+  1255 sameroom[3,18,5]
+                                   1            -0               
+  1256 sameroom[8,16,1]
+                                   1            -0               
+  1257 sameroom[8,16,2]
+                                   2            -0               
+  1258 sameroom[8,16,3]
+                                   1            -0               
+  1259 sameroom[8,16,4]
+                                   1            -0               
+  1260 sameroom[8,16,5]
+                                   0            -0               
+  1261 sameroom[5,16,1]
+                                   1            -0               
+  1262 sameroom[5,16,2]
+                                   2            -0               
+  1263 sameroom[5,16,3]
+                                   0            -0               
+  1264 sameroom[5,16,4]
+                                   1            -0               
+  1265 sameroom[5,16,5]
+                                   1            -0               
+  1266 sameroom[9,13,1]
+                                   1            -0               
+  1267 sameroom[9,13,2]
+                                   1            -0               
+  1268 sameroom[9,13,3]
+                                   2            -0               
+  1269 sameroom[9,13,4]
+                                   0            -0               
+  1270 sameroom[9,13,5]
+                                   1            -0               
+  1271 sameroom[16,16,1]
+                                   0            -0               
+  1272 sameroom[16,16,2]
+                                   2            -0               
+  1273 sameroom[16,16,3]
+                                   1            -0               
+  1274 sameroom[16,16,4]
+                                   1            -0               
+  1275 sameroom[16,16,5]
+                                   1            -0               
+  1276 sameroom[10,18,1]
+                                   2            -0               
+  1277 sameroom[10,18,2]
+                                   1            -0               
+  1278 sameroom[10,18,3]
+                                   0            -0               
+  1279 sameroom[10,18,4]
+                                   1            -0               
+  1280 sameroom[10,18,5]
+                                   1            -0               
+  1281 sameroom[18,18,1]
+                                   2            -0               
+  1282 sameroom[18,18,2]
+                                   1            -0               
+  1283 sameroom[18,18,3]
+                                   1            -0               
+  1284 sameroom[18,18,4]
+                                   1            -0               
+  1285 sameroom[18,18,5]
+                                   0            -0               
+  1286 sameroom[1,3,1]
+                                   0            -0               
+  1287 sameroom[1,3,2]
+                                   0            -0               
+  1288 sameroom[1,3,3]
+                                   0            -0               
+  1289 sameroom[1,3,4]
+                                   0            -0               
+  1290 sameroom[1,3,5]
+                                   0            -0               
+  1291 sameroom[1,15,1]
+                                   2            -0               
+  1292 sameroom[1,15,2]
+                                   1            -0               
+  1293 sameroom[1,15,3]
+                                   1            -0               
+  1294 sameroom[1,15,4]
+                                   0            -0               
+  1295 sameroom[1,15,5]
+                                   1            -0               
+  1296 sameroom[4,20,1]
+                                   0            -0               
+  1297 sameroom[4,20,2]
+                                   1            -0               
+  1298 sameroom[4,20,3]
+                                   1            -0               
+  1299 sameroom[4,20,4]
+                                   2            -0               
+  1300 sameroom[4,20,5]
+                                   1            -0               
+  1301 sameroom[6,14,1]
+                                   1            -0               
+  1302 sameroom[6,14,2]
+                                   0            -0               
+  1303 sameroom[6,14,3]
+                                   2            -0               
+  1304 sameroom[6,14,4]
+                                   1            -0               
+  1305 sameroom[6,14,5]
+                                   1            -0               
+  1306 sameroom[10,13,1]
+                                   0            -0               
+  1307 sameroom[10,13,2]
+                                   0            -0               
+  1308 sameroom[10,13,3]
+                                   0            -0               
+  1309 sameroom[10,13,4]
+                                   0            -0               
+  1310 sameroom[10,13,5]
+                                   0            -0               
+  1311 sameroom[17,6,1]
+                                   1            -0               
+  1312 sameroom[17,6,2]
+                                   1            -0               
+  1313 sameroom[17,6,3]
+                                   2            -0               
+  1314 sameroom[17,6,4]
+                                   1            -0               
+  1315 sameroom[17,6,5]
+                                   0            -0               
+  1316 sameroom[18,13,1]
+                                   1            -0               
+  1317 sameroom[18,13,2]
+                                   1            -0               
+  1318 sameroom[18,13,3]
+                                   2            -0               
+  1319 sameroom[18,13,4]
+                                   1            -0               
+  1320 sameroom[18,13,5]
+                                   0            -0               
+  1321 sameroom[8,3,1]
+                                   1            -0               
+  1322 sameroom[8,3,2]
+                                   1            -0               
+  1323 sameroom[8,3,3]
+                                   1            -0               
+  1324 sameroom[8,3,4]
+                                   2            -0               
+  1325 sameroom[8,3,5]
+                                   0            -0               
+  1326 sameroom[9,2,1]
+                                   1            -0               
+  1327 sameroom[9,2,2]
+                                   2            -0               
+  1328 sameroom[9,2,3]
+                                   1            -0               
+  1329 sameroom[9,2,4]
+                                   0            -0               
+  1330 sameroom[9,2,5]
+                                   1            -0               
+  1331 sameroom[10,1,1]
+                                   2            -0               
+  1332 sameroom[10,1,2]
+                                   1            -0               
+  1333 sameroom[10,1,3]
+                                   0            -0               
+  1334 sameroom[10,1,4]
+                                   1            -0               
+  1335 sameroom[10,1,5]
+                                   1            -0               
+  1336 sameroom[11,4,1]
+                                   0            -0               
+  1337 sameroom[11,4,2]
+                                   0            -0               
+  1338 sameroom[11,4,3]
+                                   0            -0               
+  1339 sameroom[11,4,4]
+                                   0            -0               
+  1340 sameroom[11,4,5]
+                                   0            -0               
+  1341 sameroom[2,15,1]
+                                   0            -0               
+  1342 sameroom[2,15,2]
+                                   0            -0               
+  1343 sameroom[2,15,3]
+                                   0            -0               
+  1344 sameroom[2,15,4]
+                                   0            -0               
+  1345 sameroom[2,15,5]
+                                   0            -0               
+  1346 sameroom[6,17,1]
+                                   0            -0               
+  1347 sameroom[6,17,2]
+                                   0            -0               
+  1348 sameroom[6,17,3]
+                                   0            -0               
+  1349 sameroom[6,17,4]
+                                   0            -0               
+  1350 sameroom[6,17,5]
+                                   0            -0               
+  1351 sameroom[10,20,1]
+                                   1            -0               
+  1352 sameroom[10,20,2]
+                                   1            -0               
+  1353 sameroom[10,20,3]
+                                   0            -0               
+  1354 sameroom[10,20,4]
+                                   2            -0               
+  1355 sameroom[10,20,5]
+                                   1            -0               
+  1356 sameroom[7,12,1]
+                                   1            -0               
+  1357 sameroom[7,12,2]
+                                   1            -0               
+  1358 sameroom[7,12,3]
+                                   1            -0               
+  1359 sameroom[7,12,4]
+                                   2            -0               
+  1360 sameroom[7,12,5]
+                                   0            -0               
+  1361 sameroom[18,4,1]
+                                   1            -0               
+  1362 sameroom[18,4,2]
+                                   1            -0               
+  1363 sameroom[18,4,3]
+                                   1            -0               
+  1364 sameroom[18,4,4]
+                                   2            -0               
+  1365 sameroom[18,4,5]
+                                   0            -0               
+  1366 sameroom[16,20,1]
+                                   0            -0               
+  1367 sameroom[16,20,2]
+                                   1            -0               
+  1368 sameroom[16,20,3]
+                                   1            -0               
+  1369 sameroom[16,20,4]
+                                   2            -0               
+  1370 sameroom[16,20,5]
+                                   1            -0               
+  1371 sameroom[13,19,1]
+                                   0            -0               
+  1372 sameroom[13,19,2]
+                                   0            -0               
+  1373 sameroom[13,19,3]
+                                   0            -0               
+  1374 sameroom[13,19,4]
+                                   0            -0               
+  1375 sameroom[13,19,5]
+                                   0            -0               
+  1376 sameroom[9,11,1]
+                                   1            -0               
+  1377 sameroom[9,11,2]
+                                   2            -0               
+  1378 sameroom[9,11,3]
+                                   1            -0               
+  1379 sameroom[9,11,4]
+                                   0            -0               
+  1380 sameroom[9,11,5]
+                                   1            -0               
+  1381 sameroom[10,8,1]
+                                   0            -0               
+  1382 sameroom[10,8,2]
+                                   0            -0               
+  1383 sameroom[10,8,3]
+                                   0            -0               
+  1384 sameroom[10,8,4]
+                                   0            -0               
+  1385 sameroom[10,8,5]
+                                   0            -0               
+  1386 sameroom[12,6,1]
+                                   0            -0               
+  1387 sameroom[12,6,2]
+                                   0            -0               
+  1388 sameroom[12,6,3]
+                                   0            -0               
+  1389 sameroom[12,6,4]
+                                   0            -0               
+  1390 sameroom[12,6,5]
+                                   0            -0               
+  1391 sameroom[14,12,1]
+                                   0            -0               
+  1392 sameroom[14,12,2]
+                                   1            -0               
+  1393 sameroom[14,12,3]
+                                   1            -0               
+  1394 sameroom[14,12,4]
+                                   2            -0               
+  1395 sameroom[14,12,5]
+                                   1            -0               
+  1396 sameroom[19,10,1]
+                                   1            -0               
+  1397 sameroom[19,10,2]
+                                   0            -0               
+  1398 sameroom[19,10,3]
+                                   1            -0               
+  1399 sameroom[19,10,4]
+                                   2            -0               
+  1400 sameroom[19,10,5]
+                                   1            -0               
+  1401 room_limit[1]
+                                   4                           4 
+  1402 room_limit[2]
+                                   4                           4 
+  1403 room_limit[3]
+                                   4                           4 
+  1404 room_limit[4]
+                                   4                           4 
+  1405 room_limit[5]
+                                   4                           4 
+  1406 cost_transp              4131                             
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 x[1,1]       *              0             0             1 
+     2 x[1,2]       *              0             0             1 
+     3 x[1,3]       *              0             0             1 
+     4 x[1,4]       *              1             0             1 
+     5 x[1,5]       *              0             0             1 
+     6 x[2,1]       *              1             0             1 
+     7 x[2,2]       *              0             0             1 
+     8 x[2,3]       *              0             0             1 
+     9 x[2,4]       *              0             0             1 
+    10 x[2,5]       *              0             0             1 
+    11 x[3,1]       *              0             0             1 
+    12 x[3,2]       *              0             0             1 
+    13 x[3,3]       *              1             0             1 
+    14 x[3,4]       *              0             0             1 
+    15 x[3,5]       *              0             0             1 
+    16 x[4,1]       *              1             0             1 
+    17 x[4,2]       *              0             0             1 
+    18 x[4,3]       *              0             0             1 
+    19 x[4,4]       *              0             0             1 
+    20 x[4,5]       *              0             0             1 
+    21 x[5,1]       *              0             0             1 
+    22 x[5,2]       *              0             0             1 
+    23 x[5,3]       *              1             0             1 
+    24 x[5,4]       *              0             0             1 
+    25 x[5,5]       *              0             0             1 
+    26 x[6,1]       *              0             0             1 
+    27 x[6,2]       *              1             0             1 
+    28 x[6,3]       *              0             0             1 
+    29 x[6,4]       *              0             0             1 
+    30 x[6,5]       *              0             0             1 
+    31 x[7,1]       *              0             0             1 
+    32 x[7,2]       *              0             0             1 
+    33 x[7,3]       *              0             0             1 
+    34 x[7,4]       *              0             0             1 
+    35 x[7,5]       *              1             0             1 
+    36 x[8,1]       *              0             0             1 
+    37 x[8,2]       *              0             0             1 
+    38 x[8,3]       *              0             0             1 
+    39 x[8,4]       *              0             0             1 
+    40 x[8,5]       *              1             0             1 
+    41 x[9,1]       *              0             0             1 
+    42 x[9,2]       *              0             0             1 
+    43 x[9,3]       *              0             0             1 
+    44 x[9,4]       *              1             0             1 
+    45 x[9,5]       *              0             0             1 
+    46 x[10,1]      *              0             0             1 
+    47 x[10,2]      *              0             0             1 
+    48 x[10,3]      *              1             0             1 
+    49 x[10,4]      *              0             0             1 
+    50 x[10,5]      *              0             0             1 
+    51 x[11,1]      *              0             0             1 
+    52 x[11,2]      *              0             0             1 
+    53 x[11,3]      *              0             0             1 
+    54 x[11,4]      *              1             0             1 
+    55 x[11,5]      *              0             0             1 
+    56 x[12,1]      *              0             0             1 
+    57 x[12,2]      *              0             0             1 
+    58 x[12,3]      *              1             0             1 
+    59 x[12,4]      *              0             0             1 
+    60 x[12,5]      *              0             0             1 
+    61 x[13,1]      *              0             0             1 
+    62 x[13,2]      *              0             0             1 
+    63 x[13,3]      *              0             0             1 
+    64 x[13,4]      *              1             0             1 
+    65 x[13,5]      *              0             0             1 
+    66 x[14,1]      *              1             0             1 
+    67 x[14,2]      *              0             0             1 
+    68 x[14,3]      *              0             0             1 
+    69 x[14,4]      *              0             0             1 
+    70 x[14,5]      *              0             0             1 
+    71 x[15,1]      *              0             0             1 
+    72 x[15,2]      *              1             0             1 
+    73 x[15,3]      *              0             0             1 
+    74 x[15,4]      *              0             0             1 
+    75 x[15,5]      *              0             0             1 
+    76 x[16,1]      *              1             0             1 
+    77 x[16,2]      *              0             0             1 
+    78 x[16,3]      *              0             0             1 
+    79 x[16,4]      *              0             0             1 
+    80 x[16,5]      *              0             0             1 
+    81 x[17,1]      *              0             0             1 
+    82 x[17,2]      *              0             0             1 
+    83 x[17,3]      *              0             0             1 
+    84 x[17,4]      *              0             0             1 
+    85 x[17,5]      *              1             0             1 
+    86 x[18,1]      *              0             0             1 
+    87 x[18,2]      *              0             0             1 
+    88 x[18,3]      *              0             0             1 
+    89 x[18,4]      *              0             0             1 
+    90 x[18,5]      *              1             0             1 
+    91 x[19,1]      *              0             0             1 
+    92 x[19,2]      *              1             0             1 
+    93 x[19,3]      *              0             0             1 
+    94 x[19,4]      *              0             0             1 
+    95 x[19,5]      *              0             0             1 
+    96 x[20,1]      *              0             0             1 
+    97 x[20,2]      *              1             0             1 
+    98 x[20,3]      *              0             0             1 
+    99 x[20,4]      *              0             0             1 
+   100 x[20,5]      *              0             0             1 
+   101 y[1,1]       *              1             0             1 
+   102 y[1,2]       *              0             0             1 
+   103 y[1,3]       *              0             0             1 
+   104 y[1,4]       *              0             0             1 
+   105 y[1,5]       *              0             0             1 
+   106 y[2,1]       *              0             0             1 
+   107 y[2,2]       *              1             0             1 
+   108 y[2,3]       *              0             0             1 
+   109 y[2,4]       *              0             0             1 
+   110 y[2,5]       *              0             0             1 
+   111 y[3,1]       *              0             0             1 
+   112 y[3,2]       *              0             0             1 
+   113 y[3,3]       *              0             0             1 
+   114 y[3,4]       *              1             0             1 
+   115 y[3,5]       *              0             0             1 
+   116 y[4,1]       *              0             0             1 
+   117 y[4,2]       *              0             0             1 
+   118 y[4,3]       *              0             0             1 
+   119 y[4,4]       *              1             0             1 
+   120 y[4,5]       *              0             0             1 
+   121 y[5,1]       *              0             0             1 
+   122 y[5,2]       *              0             0             1 
+   123 y[5,3]       *              1             0             1 
+   124 y[5,4]       *              0             0             1 
+   125 y[5,5]       *              0             0             1 
+   126 y[6,1]       *              0             0             1 
+   127 y[6,2]       *              0             0             1 
+   128 y[6,3]       *              1             0             1 
+   129 y[6,4]       *              0             0             1 
+   130 y[6,5]       *              0             0             1 
+   131 y[7,1]       *              0             0             1 
+   132 y[7,2]       *              1             0             1 
+   133 y[7,3]       *              0             0             1 
+   134 y[7,4]       *              0             0             1 
+   135 y[7,5]       *              0             0             1 
+   136 y[8,1]       *              0             0             1 
+   137 y[8,2]       *              0             0             1 
+   138 y[8,3]       *              1             0             1 
+   139 y[8,4]       *              0             0             1 
+   140 y[8,5]       *              0             0             1 
+   141 y[9,1]       *              0             0             1 
+   142 y[9,2]       *              0             0             1 
+   143 y[9,3]       *              0             0             1 
+   144 y[9,4]       *              1             0             1 
+   145 y[9,5]       *              0             0             1 
+   146 y[10,1]      *              0             0             1 
+   147 y[10,2]      *              0             0             1 
+   148 y[10,3]      *              0             0             1 
+   149 y[10,4]      *              1             0             1 
+   150 y[10,5]      *              0             0             1 
+   151 y[11,1]      *              0             0             1 
+   152 y[11,2]      *              1             0             1 
+   153 y[11,3]      *              0             0             1 
+   154 y[11,4]      *              0             0             1 
+   155 y[11,5]      *              0             0             1 
+   156 y[12,1]      *              0             0             1 
+   157 y[12,2]      *              0             0             1 
+   158 y[12,3]      *              0             0             1 
+   159 y[12,4]      *              1             0             1 
+   160 y[12,5]      *              0             0             1 
+   161 y[13,1]      *              0             0             1 
+   162 y[13,2]      *              0             0             1 
+   163 y[13,3]      *              1             0             1 
+   164 y[13,4]      *              0             0             1 
+   165 y[13,5]      *              0             0             1 
+   166 y[14,1]      *              0             0             1 
+   167 y[14,2]      *              0             0             1 
+   168 y[14,3]      *              1             0             1 
+   169 y[14,4]      *              0             0             1 
+   170 y[14,5]      *              0             0             1 
+   171 y[15,1]      *              1             0             1 
+   172 y[15,2]      *              0             0             1 
+   173 y[15,3]      *              0             0             1 
+   174 y[15,4]      *              0             0             1 
+   175 y[15,5]      *              0             0             1 
+   176 y[16,1]      *              0             0             1 
+   177 y[16,2]      *              1             0             1 
+   178 y[16,3]      *              0             0             1 
+   179 y[16,4]      *              0             0             1 
+   180 y[16,5]      *              0             0             1 
+   181 y[17,1]      *              0             0             1 
+   182 y[17,2]      *              1             0             1 
+   183 y[17,3]      *              0             0             1 
+   184 y[17,4]      *              0             0             1 
+   185 y[17,5]      *              0             0             1 
+   186 y[18,1]      *              1             0             1 
+   187 y[18,2]      *              0             0             1 
+   188 y[18,3]      *              0             0             1 
+   189 y[18,4]      *              0             0             1 
+   190 y[18,5]      *              0             0             1 
+   191 y[19,1]      *              0             0             1 
+   192 y[19,2]      *              0             0             1 
+   193 y[19,3]      *              0             0             1 
+   194 y[19,4]      *              1             0             1 
+   195 y[19,5]      *              0             0             1 
+   196 y[20,1]      *              0             0             1 
+   197 y[20,2]      *              0             0             1 
+   198 y[20,3]      *              0             0             1 
+   199 y[20,4]      *              1             0             1 
+   200 y[20,5]      *              0             0             1 
+   201 rdiff[3,15]  *              1             0             1 
+   202 rdiff[4,16]  *              1             0             1 
+   203 rdiff[7,5]   *              1             0             1 
+   204 rdiff[13,12] *              0             0             1 
+   205 rdiff[14,11] *              1             0             1 
+   206 rdiff[5,4]   *              1             0             1 
+   207 rdiff[6,3]   *              1             0             1 
+   208 rdiff[4,15]  *              0             0             1 
+   209 rdiff[7,2]   *              1             0             1 
+   210 rdiff[5,14]  *              0             0             1 
+   211 rdiff[9,19]  *              0             0             1 
+   212 rdiff[16,18] *              0             0             1 
+   213 rdiff[10,16] *              1             0             1 
+   214 rdiff[18,16] *              1             0             1 
+   215 rdiff[1,13]  *              1             0             1 
+   216 rdiff[2,18]  *              0             0             1 
+   217 rdiff[20,1]  *              1             0             1 
+   218 rdiff[16,9]  *              1             0             1 
+   219 rdiff[6,12]  *              1             0             1 
+   220 rdiff[7,17]  *              1             0             1 
+   221 rdiff[8,5]   *              1             0             1 
+   222 rdiff[11,6]  *              1             0             1 
+   223 rdiff[12,9]  *              1             0             1 
+   224 rdiff[2,13]  *              1             0             1 
+   225 rdiff[20,8]  *              1             0             1 
+   226 rdiff[6,7]   *              0             0             1 
+   227 rdiff[7,14]  *              1             0             1 
+   228 rdiff[11,19] *              0             0             1 
+   229 rdiff[18,2]  *              1             0             1 
+   230 rdiff[12,12] *              1             0             1 
+   231 rdiff[14,6]  *              1             0             1 
+   232 rdiff[10,6]  *              0             0             1 
+   233 rdiff[1,5]   *              1             0             1 
+   234 rdiff[13,5]  *              1             0             1 
+   235 rdiff[14,18] *              0             0             1 
+   236 rdiff[15,19] *              1             0             1 
+   237 rdiff[4,4]   *              1             0             1 
+   238 rdiff[5,9]   *              1             0             1 
+   239 rdiff[20,7]  *              0             0             1 
+   240 rdiff[4,18]  *              0             0             1 
+   241 rdiff[7,7]   *              1             0             1 
+   242 rdiff[5,19]  *              1             0             1 
+   243 rdiff[16,13] *              1             0             1 
+   244 rdiff[15,4]  *              1             0             1 
+   245 rdiff[2,5]   *              1             0             1 
+   246 rdiff[6,1]   *              1             0             1 
+   247 rdiff[8,20]  *              1             0             1 
+   248 rdiff[5,12]  *              1             0             1 
+   249 rdiff[9,17]  *              1             0             1 
+   250 rdiff[16,4]  *              1             0             1 
+   251 rdiff[10,14] *              0             0             1 
+   252 rdiff[17,17] *              1             0             1 
+   253 rdiff[10,2]  *              1             0             1 
+   254 rdiff[1,19]  *              0             0             1 
+   255 rdiff[20,12] *              1             0             1 
+   256 rdiff[2,16]  *              1             0             1 
+   257 rdiff[20,3]  *              1             0             1 
+   258 rdiff[7,19]  *              1             0             1 
+   259 rdiff[11,12] *              0             0             1 
+   260 rdiff[18,9]  *              1             0             1 
+   261 rdiff[8,7]   *              1             0             1 
+   262 rdiff[9,6]   *              1             0             1 
+   263 rdiff[12,11] *              1             0             1 
+   264 rdiff[13,10] *              1             0             1 
+   265 rdiff[3,4]   *              1             0             1 
+   266 rdiff[20,10] *              1             0             1 
+   267 rdiff[16,2]  *              1             0             1 
+   268 rdiff[6,5]   *              1             0             1 
+   269 rdiff[7,8]   *              1             0             1 
+   270 rdiff[12,14] *              0             0             1 
+   271 rdiff[13,15] *              1             0             1 
+   272 rdiff[14,4]  *              1             0             1 
+   273 rdiff[19,17] *              0             0             1 
+   274 rdiff[12,2]  *              1             0             1 
+   275 rdiff[1,11]  *              1             0             1 
+   276 rdiff[13,3]  *              0             0             1 
+   277 rdiff[15,13] *              1             0             1 
+   278 rdiff[3,19]  *              1             0             1 
+   279 rdiff[4,12]  *              1             0             1 
+   280 rdiff[7,1]   *              1             0             1 
+   281 rdiff[9,14]  *              1             0             1 
+   282 rdiff[16,15] *              0             0             1 
+   283 rdiff[17,14] *              1             0             1 
+   284 rdiff[16,6]  *              1             0             1 
+   285 rdiff[10,12] *              1             0             1 
+   286 rdiff[17,7]  *              1             0             1 
+   287 rdiff[18,12] *              1             0             1 
+   288 rdiff[8,2]   *              1             0             1 
+   289 rdiff[9,3]   *              0             0             1 
+   290 rdiff[11,5]  *              1             0             1 
+   291 rdiff[1,17]  *              1             0             1 
+   292 rdiff[19,2]  *              0             0             1 
+   293 rdiff[2,14]  *              1             0             1 
+   294 rdiff[5,3]   *              1             0             1 
+   295 rdiff[6,16]  *              0             0             1 
+   296 rdiff[20,16] *              0             0             1 
+   297 rdiff[17,8]  *              1             0             1 
+   298 rdiff[11,14] *              1             0             1 
+   299 rdiff[18,7]  *              1             0             1 
+   300 rdiff[12,17] *              1             0             1 
+   301 rdiff[8,9]   *              1             0             1 
+   302 rdiff[13,20] *              0             0             1 
+   303 rdiff[9,4]   *              0             0             1 
+   304 rdiff[10,11] *              1             0             1 
+   305 rdiff[11,10] *              0             0             1 
+   306 rdiff[12,5]  *              0             0             1 
+   307 rdiff[13,8]  *              1             0             1 
+   308 rdiff[14,15] *              0             0             1 
+   309 rdiff[3,6]   *              0             0             1 
+   310 rdiff[4,9]   *              1             0             1 
+   311 rdiff[19,11] *              0             0             1 
+   312 rdiff[3,12]  *              1             0             1 
+   313 rdiff[6,11]  *              0             0             1 
+   314 rdiff[7,10]  *              1             0             1 
+   315 rdiff[14,10] *              1             0             1 
+   316 rdiff[15,11] *              0             0             1 
+   317 rdiff[11,3]  *              0             0             1 
+   318 rdiff[15,15] *              1             0             1 
+   319 rdiff[5,5]   *              0             0             1 
+   320 rdiff[6,2]   *              0             0             1 
+   321 rdiff[4,14]  *              1             0             1 
+   322 rdiff[8,17]  *              1             0             1 
+   323 rdiff[7,3]   *              1             0             1 
+   324 rdiff[9,12]  *              0             0             1 
+   325 rdiff[6,20]  *              1             0             1 
+   326 rdiff[10,19] *              1             0             1 
+   327 rdiff[17,12] *              1             0             1 
+   328 rdiff[1,2]   *              1             0             1 
+   329 rdiff[1,14]  *              1             0             1 
+   330 rdiff[6,15]  *              1             0             1 
+   331 rdiff[17,5]  *              1             0             1 
+   332 rdiff[18,10] *              1             0             1 
+   333 rdiff[12,20] *              1             0             1 
+   334 rdiff[9,1]   *              1             0             1 
+   335 rdiff[2,12]  *              1             0             1 
+   336 rdiff[5,1]   *              1             0             1 
+   337 rdiff[6,6]   *              1             0             1 
+   338 rdiff[8,11]  *              1             0             1 
+   339 rdiff[13,18] *              1             0             1 
+   340 rdiff[9,10]  *              0             0             1 
+   341 rdiff[14,1]  *              0             0             1 
+   342 rdiff[10,9]  *              1             0             1 
+   343 rdiff[12,7]  *              1             0             1 
+   344 rdiff[1,6]   *              1             0             1 
+   345 rdiff[3,8]   *              0             0             1 
+   346 rdiff[15,16] *              0             0             1 
+   347 rdiff[4,11]  *              1             0             1 
+   348 rdiff[20,6]  *              1             0             1 
+   349 rdiff[3,14]  *              0             0             1 
+   350 rdiff[6,9]   *              1             0             1 
+   351 rdiff[7,4]   *              1             0             1 
+   352 rdiff[16,12] *              1             0             1 
+   353 rdiff[19,20] *              1             0             1 
+   354 rdiff[14,8]  *              1             0             1 
+   355 rdiff[14,20] *              1             0             1 
+   356 rdiff[8,19]  *              1             0             1 
+   357 rdiff[5,13]  *              0             0             1 
+   358 rdiff[9,18]  *              1             0             1 
+   359 rdiff[16,19] *              1             0             1 
+   360 rdiff[10,17] *              1             0             1 
+   361 rdiff[17,18] *              1             0             1 
+   362 rdiff[18,17] *              1             0             1 
+   363 rdiff[1,12]  *              0             0             1 
+   364 rdiff[19,1]  *              1             0             1 
+   365 rdiff[2,19]  *              1             0             1 
+   366 rdiff[20,2]  *              0             0             1 
+   367 rdiff[16,10] *              1             0             1 
+   368 rdiff[6,13]  *              1             0             1 
+   369 rdiff[20,14] *              1             0             1 
+   370 rdiff[17,11] *              1             0             1 
+   371 rdiff[7,16]  *              1             0             1 
+   372 rdiff[11,13] *              1             0             1 
+   373 rdiff[8,6]   *              1             0             1 
+   374 rdiff[19,18] *              1             0             1 
+   375 rdiff[11,9]  *              0             0             1 
+   376 rdiff[12,10] *              1             0             1 
+   377 rdiff[13,11] *              1             0             1 
+   378 rdiff[3,5]   *              0             0             1 
+   379 rdiff[19,6]  *              1             0             1 
+   380 rdiff[20,9]  *              1             0             1 
+   381 rdiff[16,1]  *              0             0             1 
+   382 rdiff[6,4]   *              1             0             1 
+   383 rdiff[7,9]   *              1             0             1 
+   384 rdiff[11,18] *              1             0             1 
+   385 rdiff[12,13] *              0             0             1 
+   386 rdiff[13,16] *              1             0             1 
+   387 rdiff[14,7]  *              1             0             1 
+   388 rdiff[10,7]  *              1             0             1 
+   389 rdiff[12,1]  *              1             0             1 
+   390 rdiff[1,4]   *              0             0             1 
+   391 rdiff[13,4]  *              0             0             1 
+   392 rdiff[2,11]  *              1             0             1 
+   393 rdiff[14,19] *              1             0             1 
+   394 rdiff[3,10]  *              1             0             1 
+   395 rdiff[4,5]   *              1             0             1 
+   396 rdiff[5,8]   *              0             0             1 
+   397 rdiff[8,14]  *              1             0             1 
+   398 rdiff[5,18]  *              1             0             1 
+   399 rdiff[9,15]  *              1             0             1 
+   400 rdiff[17,15] *              1             0             1 
+   401 rdiff[15,7]  *              0             0             1 
+   402 rdiff[19,16] *              0             0             1 
+   403 rdiff[20,19] *              1             0             1 
+   404 rdiff[9,16]  *              1             0             1 
+   405 rdiff[10,15] *              1             0             1 
+   406 rdiff[17,16] *              1             0             1 
+   407 rdiff[1,18]  *              1             0             1 
+   408 rdiff[4,1]   *              0             0             1 
+   409 rdiff[19,3]  *              1             0             1 
+   410 rdiff[2,17]  *              1             0             1 
+   411 rdiff[5,20]  *              1             0             1 
+   412 rdiff[6,19]  *              1             0             1 
+   413 rdiff[11,15] *              1             0             1 
+   414 rdiff[18,6]  *              1             0             1 
+   415 rdiff[12,16] *              1             0             1 
+   416 rdiff[8,8]   *              1             0             1 
+   417 rdiff[9,5]   *              1             0             1 
+   418 rdiff[11,11] *              1             0             1 
+   419 rdiff[19,14] *              1             0             1 
+   420 rdiff[13,9]  *              0             0             1 
+   421 rdiff[14,14] *              1             0             1 
+   422 rdiff[3,7]   *              1             0             1 
+   423 rdiff[20,11] *              0             0             1 
+   424 rdiff[3,13]  *              0             0             1 
+   425 rdiff[6,10]  *              1             0             1 
+   426 rdiff[20,17] *              0             0             1 
+   427 rdiff[17,2]  *              1             0             1 
+   428 rdiff[7,11]  *              1             0             1 
+   429 rdiff[18,1]  *              1             0             1 
+   430 rdiff[12,15] *              1             0             1 
+   431 rdiff[17,20] *              1             0             1 
+   432 rdiff[13,14] *              1             0             1 
+   433 rdiff[14,5]  *              1             0             1 
+   434 rdiff[10,5]  *              0             0             1 
+   435 rdiff[15,8]  *              1             0             1 
+   436 rdiff[12,3]  *              1             0             1 
+   437 rdiff[1,10]  *              0             0             1 
+   438 rdiff[2,9]   *              1             0             1 
+   439 rdiff[14,17] *              1             0             1 
+   440 rdiff[15,12] *              1             0             1 
+   441 rdiff[4,7]   *              1             0             1 
+   442 rdiff[5,6]   *              0             0             1 
+   443 rdiff[3,18]  *              1             0             1 
+   444 rdiff[8,16]  *              1             0             1 
+   445 rdiff[5,16]  *              1             0             1 
+   446 rdiff[9,13]  *              1             0             1 
+   447 rdiff[16,16] *              1             0             1 
+   448 rdiff[10,18] *              1             0             1 
+   449 rdiff[18,18] *              1             0             1 
+   450 rdiff[1,3]   *              0             0             1 
+   451 rdiff[1,15]  *              1             0             1 
+   452 rdiff[4,20]  *              1             0             1 
+   453 rdiff[6,14]  *              1             0             1 
+   454 rdiff[10,13] *              0             0             1 
+   455 rdiff[17,6]  *              1             0             1 
+   456 rdiff[18,13] *              1             0             1 
+   457 rdiff[8,3]   *              1             0             1 
+   458 rdiff[9,2]   *              1             0             1 
+   459 rdiff[10,1]  *              1             0             1 
+   460 rdiff[11,4]  *              0             0             1 
+   461 rdiff[2,15]  *              0             0             1 
+   462 rdiff[6,17]  *              0             0             1 
+   463 rdiff[10,20] *              1             0             1 
+   464 rdiff[7,12]  *              1             0             1 
+   465 rdiff[18,4]  *              1             0             1 
+   466 rdiff[16,20] *              1             0             1 
+   467 rdiff[13,19] *              0             0             1 
+   468 rdiff[9,11]  *              1             0             1 
+   469 rdiff[10,8]  *              0             0             1 
+   470 rdiff[12,6]  *              0             0             1 
+   471 rdiff[14,12] *              1             0             1 
+   472 rdiff[19,10] *              1             0             1 
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

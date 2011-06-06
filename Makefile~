@@ -1,0 +1,8 @@
+# MC548 Makefile
+
+
+# make entrega:
+# Criar pasta ra082941-ra082335 para entrega
+# contendo pastas parte1, parte2 e o arquivo relatorio.pdf
+entrega: 
+# 

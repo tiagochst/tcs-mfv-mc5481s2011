@@ -16,11 +16,11 @@ set U;
 set E within {m in V, p in U}; 
 /* a piece p must be construct by machine m  */
 
-set R:= V;
+set R;
 /* avaiable rooms */
-
-param K;
-param c{E};
+display R;
+param K,>=0;
+param c{E},>=0;
 
 var x{m in V,r in R}, binary;
 /* is machine m in room r? */
@@ -28,7 +28,8 @@ var x{m in V,r in R}, binary;
 var y{p in U,r in R}, binary;
 /* is piece p in room r? */
 
-var rdiff{m in V,p in U}, integer,binary ;
+/*var rdiff{m in V,p in U}, binary ;*/
+var rdiff{(m,p) in E}, binary ;
 /* is piece p in same room as x? */
 
 s.t. nroom{m in V}: sum{r in R}x[m,r]=1;
@@ -37,7 +38,8 @@ s.t. nroom{m in V}: sum{r in R}x[m,r]=1;
 s.t. nproom{p in U}: sum{r in R}y[p,r]=1;
 /* Pieces should be in only one room*/
 
-s.t. sameroom{m in V,p in U,r in R}: rdiff[m,p]>=x[m,r]-y[p,r];
+/*s.t. sameroom{m in V,p in U,r in R}: rdiff[m,p]>=x[m,r]-y[p,r];*/
+s.t. sameroom{(m,p)in E,r in R}: rdiff[m,p]>=x[m,r]-y[p,r];
 /* Same rooms?*/
 
 s.t. room_limit{r in R}: sum{m in V}x[m,r]<=K;

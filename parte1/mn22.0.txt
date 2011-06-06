@@ -1,0 +1,123 @@
+Problem:    mn22
+Rows:       37
+Columns:    35 (35 integer, 35 binary)
+Non-zeros:  116
+Status:     INTEGER OPTIMAL
+Objective:  cost_transp = 1 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 nroom[1]                    1             1             = 
+     2 nroom[2]                    1             1             = 
+     3 nroom[3]                    1             1             = 
+     4 nproom[1]                   1             1             = 
+     5 nproom[2]                   1             1             = 
+     6 nproom[3]                   1             1             = 
+     7 nproom[4]                   1             1             = 
+     8 nproom[5]                   1             1             = 
+     9 nproom[6]                   1             1             = 
+    10 sameroom[1,1,1]
+                                   0            -0               
+    11 sameroom[1,1,2]
+                                   0            -0               
+    12 sameroom[1,1,3]
+                                   0            -0               
+    13 sameroom[1,2,1]
+                                   0            -0               
+    14 sameroom[1,2,2]
+                                   0            -0               
+    15 sameroom[1,2,3]
+                                   0            -0               
+    16 sameroom[2,3,1]
+                                   0            -0               
+    17 sameroom[2,3,2]
+                                   0            -0               
+    18 sameroom[2,3,3]
+                                   0            -0               
+    19 sameroom[2,4,1]
+                                   0            -0               
+    20 sameroom[2,4,2]
+                                   0            -0               
+    21 sameroom[2,4,3]
+                                   0            -0               
+    22 sameroom[2,5,1]
+                                   0            -0               
+    23 sameroom[2,5,2]
+                                   0            -0               
+    24 sameroom[2,5,3]
+                                   0            -0               
+    25 sameroom[3,2,1]
+                                   0            -0               
+    26 sameroom[3,2,2]
+                                   0            -0               
+    27 sameroom[3,2,3]
+                                   0            -0               
+    28 sameroom[3,4,1]
+                                   1            -0               
+    29 sameroom[3,4,2]
+                                   0            -0               
+    30 sameroom[3,4,3]
+                                   2            -0               
+    31 sameroom[3,6,1]
+                                   0            -0               
+    32 sameroom[3,6,2]
+                                   0            -0               
+    33 sameroom[3,6,3]
+                                   0            -0               
+    34 room_limit[1]
+                                   0                           2 
+    35 room_limit[2]
+                                   2                           2 
+    36 room_limit[3]
+                                   1                           2 
+    37 cost_transp                 1                             
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 x[1,1]       *              0             0             1 
+     2 x[1,2]       *              1             0             1 
+     3 x[1,3]       *              0             0             1 
+     4 x[2,1]       *              0             0             1 
+     5 x[2,2]       *              0             0             1 
+     6 x[2,3]       *              1             0             1 
+     7 x[3,1]       *              0             0             1 
+     8 x[3,2]       *              1             0             1 
+     9 x[3,3]       *              0             0             1 
+    10 y[1,1]       *              0             0             1 
+    11 y[1,2]       *              1             0             1 
+    12 y[1,3]       *              0             0             1 
+    13 y[2,1]       *              0             0             1 
+    14 y[2,2]       *              1             0             1 
+    15 y[2,3]       *              0             0             1 
+    16 y[3,1]       *              0             0             1 
+    17 y[3,2]       *              0             0             1 
+    18 y[3,3]       *              1             0             1 
+    19 y[4,1]       *              0             0             1 
+    20 y[4,2]       *              0             0             1 
+    21 y[4,3]       *              1             0             1 
+    22 y[5,1]       *              0             0             1 
+    23 y[5,2]       *              0             0             1 
+    24 y[5,3]       *              1             0             1 
+    25 y[6,1]       *              0             0             1 
+    26 y[6,2]       *              1             0             1 
+    27 y[6,3]       *              0             0             1 
+    28 rdiff[1,1]   *              0             0             1 
+    29 rdiff[1,2]   *              0             0             1 
+    30 rdiff[2,3]   *              0             0             1 
+    31 rdiff[2,4]   *              0             0             1 
+    32 rdiff[2,5]   *              0             0             1 
+    33 rdiff[3,2]   *              0             0             1 
+    34 rdiff[3,4]   *              1             0             1 
+    35 rdiff[3,6]   *              0             0             1 
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

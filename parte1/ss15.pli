@@ -46,8 +46,9 @@ s.t. time{j in J,i in T: i>1}:
    end[j,i] >= t[j,i]+ end[j,i-1];
 /* does my preceding task ended? */
 
-s.t. time2{j in J,i in T: j>1}: 
-   end[j,i] >= t[j,i]+ end[j-1,i];
+/* errado */
+s.t. time2{j in J,i in T,k in J: j>1,x[k,j]=1}: 
+   end[j,i] >= t[j,i]+ end[k,i];
 /* does my preceding project ended? */
 
 var fim integer, >=0;
