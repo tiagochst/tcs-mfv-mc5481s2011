@@ -10,10 +10,14 @@
 */
 
 int main( int argc, char** argv){
-  int i=0,TIME=0;
+  int i=0,TIME=0,j=0;
   char OUTPUT [100], INPUT[100];
   time_t start,end;
   double dif;
+  
+  int costSati[100][100];
+  int costSatj[100][100];
+  int gainSatij[100][100];
 
   FILE * pFile;
 
@@ -63,7 +67,22 @@ int main( int argc, char** argv){
     fscanf (pFile,"%d",&i);
     fscanf (pFile,"%d",&Sv[i]);
   }
-    fscanf (pFile,"%d",&k);
+  
+  fscanf (pFile,"%d",&k);
+  printf("%d",k);
+
+  for(aux=1;aux<=k;aux++){
+    
+    fscanf (pFile,"%d",&i);
+    fscanf (pFile,"%d",&j);
+    printf("i=%d j= %d\n",i,j);
+    
+    fscanf (pFile,"%d",&costSati[i][j]);
+    fscanf (pFile,"%d",&costSatj[i][j]);
+    fscanf (pFile,"%d",&gainSatij[i][j]);
+    
+  }
+
   
   fclose(pFile);
   printf("---- INSTANCIA DO PROBLEMA ----\n",nsat);
@@ -78,6 +97,18 @@ int main( int argc, char** argv){
   printf("\nSATELITES HORIZONTAIS: \n");
   for(aux=1;aux<=nsat;aux++){
     printf("%d ",Sv[aux]);
+  }
+
+  for(i=1;i<=nsat;i++){
+    for(j=1;j<=nsat;j++){
+    
+    printf("\n i =%d",i);
+    printf(" j= %d\n",j);
+    
+    printf("== %d  ",costSati[i][j]);
+    printf ("  %d  ",costSatj[i][j]);
+    printf ("  %d ==\n",  gainSatij[i][j]);
+    }
   }
 
   printf("\n-------------------------\n");
