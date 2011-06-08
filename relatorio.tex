@@ -220,11 +220,10 @@ min\sum_{i=1}^{n}y_i
 \subsection{{[}ss15{]}}
 \subsubsection*{Variáveis usadas no modelo}
 \begin{itemize}
-\item Criou-se uma variável binária $x_{ij}$ para todo projeto $i, j
-  \in J$ que recebe valor $x_{ij}=1$ se e somente se o projeto $i$ precede $j$.
+\item Criou-se uma variável binária $x_{i,j,k}$ para toda tarefa $k \in T$ de todo projeto $i, j  \in J$ que recebe valor $x_{i,j,k}=1$ se e somente se a tarefa $k$ do projeto $i$ precede a tarefa $k$ do projeto $j$.
 
-\item Para cada projeto $j \in J$ e cada tarefa $i \in T$ criou-se uma variável inteira $end_{j,i}$
-  que recebe valor o valor de término da tarefa $i$ do projeto $j$.
+\item Para cada projeto $j \in J$ e cada tarefa $i \in T$ criou-se uma variável inteira $begin_{j,i}$
+  que recebe valor o valor de início da tarefa $i$ do projeto $j$.
 
 \item Criou-se uma varível inteira $fim$ que recebe o tempo de término
   do último projeto.
@@ -233,15 +232,15 @@ min\sum_{i=1}^{n}y_i
 
 \subsubsection*{Retrições do modelo}
 \begin{itemize}
-\item Todo par de projetos $(i,j)$ deve ter uma precedência, em que se $i$
+\item Toda tarefa dos pares de projetos $(i,j)$ deve ter uma precedência, em que se $i$
   precede $j$, $j$ não pode preceder $i$. 
 \begin{equation*}
-  x_{ji}+x_{ij}=1, \forall i,j \in J
+  x_{j,i,k}+x_{i,j,k}=1, \forall i,j \in J
 \end{equation*}
 
-\item Toda tarefa $i \in T$ do projeto  $j \in J$ tem um tempo mínimo de execução antes de terminar. 
+\item Toda tarefa $i \in T$ do projeto  $j \in J$ tem um tempo mínimo de início que é equivalente ao tempo de início da tarefa que a antecede $i -1$ mais o tempo da execução da tarefa predecessora $ t_{j,i-1}$ para o mesmo projeto. 
 \begin{equation*}
-  end_{ji} \geq t_{j,i}, \forall i \in T, \forall j \in J
+  begin_{j,i} \geq begin_{j,i-1}+ t_{j,i-1}, \forall i \in T, \forall j \in J
 \end{equation*}
 
 \item Se um projeto $j$ precede um projeto $i$ o tempo de término da
@@ -249,8 +248,7 @@ min\sum_{i=1}^{n}y_i
   tarefa $z$ do projeto $j$ mais o seu tempo de execução.
  
 \begin{equation*}
-  end_{ji} \geq t_{j,i}+ end_{j-1,i}, \forall i \in T, \forall j \in J
-  : j>1 
+  begin_{j,i} + t_{j,i} \leq begin_{k,i}+(1-x_{j,k,i})*M, \forall i \in T, \forall j,k \in J  : k!=j 
 \end{equation*}
 
 \item A tarefa $k$ do projeto $j$ precede a tarefa $z$ do mesmo
@@ -259,14 +257,14 @@ min\sum_{i=1}^{n}y_i
   tarefa $k$ mais o seu tempo de execução.
  
 \begin{equation*}
-  end_{ji} \geq t_{j,i}+ end_{j,i-1}, \forall i \in T: i>1 , \forall j \in J
+  begin_{k,i} + t_{k,i} \leq begin_{j,i}+x_{j,k,i}*M, \forall i \in T , \forall j,k \in J : k!=j 
 \end{equation*}
 
 \item O tempo total da execução dos projetos deve ser igual ao tempo
   do último terminar.
  
 \begin{equation*}
- fim>= end_{jm}, \forall j \in J
+ fim \geq begin_{j,m}+ t_{j,m}, \forall j \in J
 \end{equation*}
 Em que $m$ é o tempo em que a última tarefa do projeto é executada
 (tarefa no último processador).
@@ -303,22 +301,22 @@ Objetivo: minimizar o tempo de término de todos os projetos:
 \begin{itemize}
 \item Toda máquina deve estar em uma única sala
 \begin{equation*}
-  \sum_{r \in  \{1,2,...,\lceil\frac{|V|}{k}\rceil\}}x_{mr}=1, \forall m \in V
+  \sum_{r \in  \{1,2,...,|V|\}}x_{mr}=1, \forall m \in V
 \end{equation*}
 
 \item Toda peça deve estar em uma única sala
 \begin{equation*}
-  \sum_{r \in  \{1,2,...,\lceil\frac{|V|}{k}\rceil\}}y_{pr}=1, \forall p \in U
+  \sum_{r \in  \{1,2,...,|V|\}}y_{pr}=1, \forall p \in U
 \end{equation*}
 
 \item Número de máquinas por sala não deve exceder limite K
 \begin{equation*}
-  \sum_{m \in V }x_{mr}\leq K, \forall r \in \{1,2,...,\lceil|V|/k\rceil\}
+  \sum_{m \in V }x_{mr}\leq K, \forall r \in \{1,2,...,|V|\}
 \end{equation*}
 
 \item Se uma máquina estiver em sala diferente de sua peça, $rdiff=1$
 \begin{equation*}
-  rdiff_{mp}\geq x_{mr}-y_{pr}, \forall r \in \{1,2,...,\lceil|V|/k\rceil\}, \forall (p,m) \in E
+  rdiff_{mp}\geq x_{mr}-y_{pr}, \forall r \in \{1,2,...,|V|\}, \forall (p,m) \in E
 \end{equation*}
 
 \end{itemize}
@@ -352,7 +350,7 @@ ID exercício & 1 & 2 & 3\tabularnewline
 \hline 
  {[}ss2{]} & 1 & 6  & 16 \tabularnewline
 \hline 
-{[}ss15{]} & 8 & 208  & 293 \tabularnewline
+{[}ss15{]} & 8 & 165  & 230 \tabularnewline
 \hline 
  {[}mn22{]} & 1 & 4131  & 1 \tabularnewline
 \hline 

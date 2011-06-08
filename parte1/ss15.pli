@@ -8,10 +8,11 @@
 #   Murilo Fossa Vicentini
 #   Tiago Chedraoui Silva
 
+param M:=10000;
+/* A large number*/
 
 param n;
 /* number of projects*/
-
 
 param m;
 /* number of tasks and processor*/
@@ -22,42 +23,37 @@ set J :=1..n;
 set T :=1..m;
 /*  tasks */
 
-set P :=1..m;
-/*  processors */
-
 param t {j in J,i in T}; 
 /* ith task's duration of project j  */
 
-var x {j in J,i in J}, binary;
-/* order of projects executions */
+var x {j in J,i in J,k in T}, binary;
+/* order of project's tasks executions in processor k*/
 
-var end {j in J,i in T}, integer, >=0;
-/* taks i of project j precedes task a of project j m*/
+var begin {j in J,i in T}, integer, >=0;
+/* start time of execution of taks i of project j */
 
-s.t. only_one_order{i in J,j in J: i!=j}: x[j,i]+x[i,j]=1;
-/* if proj j is executed first then
-   proj i then j should not preced i */
+s.t. only_one_order{i in J,j in J,k in T: i<j}: x[j,i,k]+x[i,j,k]=1;
+/* if task k of proj j is executed first then
+   task k of proj i then j should not preced i */
 
-s.t. min{j in J,i in T}: 
-   end[j,i] >= t[j,i];
-/* task has a minimal time to complete */
+s.t. tasktime{j in J,i in T:i>1}: 
+   begin[j,i] >= begin[j,i-1]+t[j,i-1];
+/* a task should not begin before it precessor end */
 
-s.t. time{j in J,i in T: i>1}: 
-   end[j,i] >= t[j,i]+ end[j,i-1];
-/* does my preceding task ended? */
+s.t. precede_ji{j in J,k in J,i in T:k!=j}: 
+   begin[j,i] + t[j,i] <= begin[k,i]+(1-x[j,k,i])*M;
+/* does j project's tasks begin befores i project's task?*/
 
-/* errado */
-s.t. time2{j in J,i in T,k in J: j>1,x[k,j]=1}: 
-   end[j,i] >= t[j,i]+ end[k,i];
-/* does my preceding project ended? */
+s.t. precede_ij{j in J,k in J,i in T:k!=j}: 
+   begin[k,i] + t[k,i] <= begin[j,i]+(x[j,k,i])*M;
+/* does i project's tasks begin befores j project's task?*/
 
 var fim integer, >=0;
-s.t. all{j in J}:fim>=end[j,m];
+s.t. all{j in J}:fim>=begin[j,m]+t[j,m];
 /* end of execution is the end of last project */
 
 minimize  time_accomplished: fim;
 /* Objective: minimize ending of tasks */
-
 
 solve;
 printf "%d",fim > "ss15.out";

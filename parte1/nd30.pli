@@ -8,9 +8,6 @@
 #   Murilo Fossa Vicentini
 #   Tiago Chedraoui Silva
 
-set C dimen 2;
-/* Trash ?*/ 
-
 set V; 
 /* n vertex */
 

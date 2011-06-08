@@ -10,13 +10,11 @@
 
 set V; 
 /* n vertex */
-display V;
+
 set E within {i in V, j in V: i<j}; 
-/*set E within V cross V;*/
-display E;
 /* edges of undirect graph */
 
-set C:= V;
+set C:=V;
 /* n avaiable colors */
 
 var x{u in V,k in C}, binary;
