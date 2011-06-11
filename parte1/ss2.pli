@@ -24,7 +24,7 @@ param t {T};
 param d {T};
 /* task's deadline */
 
-param M:=5000;
+param M:= sum{i in T} (t[i])+1;
 /* A large number*/
 
 var x {i in T,j in T}, binary;

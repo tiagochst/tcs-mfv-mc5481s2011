@@ -1,0 +1,1372 @@
+Problem:    ss15
+Rows:       551
+Columns:    251 (251 integer, 200 binary)
+Non-zeros:  1501
+Status:     INTEGER OPTIMAL
+Objective:  time_accomplished = 165 (MINimum)
+
+   No.   Row name        Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 only_one_order[1,2,1]
+                                   1             1             = 
+     2 only_one_order[1,2,2]
+                                   1             1             = 
+     3 only_one_order[1,2,3]
+                                   1             1             = 
+     4 only_one_order[1,2,4]
+                                   1             1             = 
+     5 only_one_order[1,2,5]
+                                   1             1             = 
+     6 only_one_order[1,2,6]
+                                   1             1             = 
+     7 only_one_order[1,2,7]
+                                   1             1             = 
+     8 only_one_order[1,2,8]
+                                   1             1             = 
+     9 only_one_order[1,2,9]
+                                   1             1             = 
+    10 only_one_order[1,2,10]
+                                   1             1             = 
+    11 only_one_order[1,3,1]
+                                   1             1             = 
+    12 only_one_order[1,3,2]
+                                   1             1             = 
+    13 only_one_order[1,3,3]
+                                   1             1             = 
+    14 only_one_order[1,3,4]
+                                   1             1             = 
+    15 only_one_order[1,3,5]
+                                   1             1             = 
+    16 only_one_order[1,3,6]
+                                   1             1             = 
+    17 only_one_order[1,3,7]
+                                   1             1             = 
+    18 only_one_order[1,3,8]
+                                   1             1             = 
+    19 only_one_order[1,3,9]
+                                   1             1             = 
+    20 only_one_order[1,3,10]
+                                   1             1             = 
+    21 only_one_order[1,4,1]
+                                   1             1             = 
+    22 only_one_order[1,4,2]
+                                   1             1             = 
+    23 only_one_order[1,4,3]
+                                   1             1             = 
+    24 only_one_order[1,4,4]
+                                   1             1             = 
+    25 only_one_order[1,4,5]
+                                   1             1             = 
+    26 only_one_order[1,4,6]
+                                   1             1             = 
+    27 only_one_order[1,4,7]
+                                   1             1             = 
+    28 only_one_order[1,4,8]
+                                   1             1             = 
+    29 only_one_order[1,4,9]
+                                   1             1             = 
+    30 only_one_order[1,4,10]
+                                   1             1             = 
+    31 only_one_order[1,5,1]
+                                   1             1             = 
+    32 only_one_order[1,5,2]
+                                   1             1             = 
+    33 only_one_order[1,5,3]
+                                   1             1             = 
+    34 only_one_order[1,5,4]
+                                   1             1             = 
+    35 only_one_order[1,5,5]
+                                   1             1             = 
+    36 only_one_order[1,5,6]
+                                   1             1             = 
+    37 only_one_order[1,5,7]
+                                   1             1             = 
+    38 only_one_order[1,5,8]
+                                   1             1             = 
+    39 only_one_order[1,5,9]
+                                   1             1             = 
+    40 only_one_order[1,5,10]
+                                   1             1             = 
+    41 only_one_order[2,3,1]
+                                   1             1             = 
+    42 only_one_order[2,3,2]
+                                   1             1             = 
+    43 only_one_order[2,3,3]
+                                   1             1             = 
+    44 only_one_order[2,3,4]
+                                   1             1             = 
+    45 only_one_order[2,3,5]
+                                   1             1             = 
+    46 only_one_order[2,3,6]
+                                   1             1             = 
+    47 only_one_order[2,3,7]
+                                   1             1             = 
+    48 only_one_order[2,3,8]
+                                   1             1             = 
+    49 only_one_order[2,3,9]
+                                   1             1             = 
+    50 only_one_order[2,3,10]
+                                   1             1             = 
+    51 only_one_order[2,4,1]
+                                   1             1             = 
+    52 only_one_order[2,4,2]
+                                   1             1             = 
+    53 only_one_order[2,4,3]
+                                   1             1             = 
+    54 only_one_order[2,4,4]
+                                   1             1             = 
+    55 only_one_order[2,4,5]
+                                   1             1             = 
+    56 only_one_order[2,4,6]
+                                   1             1             = 
+    57 only_one_order[2,4,7]
+                                   1             1             = 
+    58 only_one_order[2,4,8]
+                                   1             1             = 
+    59 only_one_order[2,4,9]
+                                   1             1             = 
+    60 only_one_order[2,4,10]
+                                   1             1             = 
+    61 only_one_order[2,5,1]
+                                   1             1             = 
+    62 only_one_order[2,5,2]
+                                   1             1             = 
+    63 only_one_order[2,5,3]
+                                   1             1             = 
+    64 only_one_order[2,5,4]
+                                   1             1             = 
+    65 only_one_order[2,5,5]
+                                   1             1             = 
+    66 only_one_order[2,5,6]
+                                   1             1             = 
+    67 only_one_order[2,5,7]
+                                   1             1             = 
+    68 only_one_order[2,5,8]
+                                   1             1             = 
+    69 only_one_order[2,5,9]
+                                   1             1             = 
+    70 only_one_order[2,5,10]
+                                   1             1             = 
+    71 only_one_order[3,4,1]
+                                   1             1             = 
+    72 only_one_order[3,4,2]
+                                   1             1             = 
+    73 only_one_order[3,4,3]
+                                   1             1             = 
+    74 only_one_order[3,4,4]
+                                   1             1             = 
+    75 only_one_order[3,4,5]
+                                   1             1             = 
+    76 only_one_order[3,4,6]
+                                   1             1             = 
+    77 only_one_order[3,4,7]
+                                   1             1             = 
+    78 only_one_order[3,4,8]
+                                   1             1             = 
+    79 only_one_order[3,4,9]
+                                   1             1             = 
+    80 only_one_order[3,4,10]
+                                   1             1             = 
+    81 only_one_order[3,5,1]
+                                   1             1             = 
+    82 only_one_order[3,5,2]
+                                   1             1             = 
+    83 only_one_order[3,5,3]
+                                   1             1             = 
+    84 only_one_order[3,5,4]
+                                   1             1             = 
+    85 only_one_order[3,5,5]
+                                   1             1             = 
+    86 only_one_order[3,5,6]
+                                   1             1             = 
+    87 only_one_order[3,5,7]
+                                   1             1             = 
+    88 only_one_order[3,5,8]
+                                   1             1             = 
+    89 only_one_order[3,5,9]
+                                   1             1             = 
+    90 only_one_order[3,5,10]
+                                   1             1             = 
+    91 only_one_order[4,5,1]
+                                   1             1             = 
+    92 only_one_order[4,5,2]
+                                   1             1             = 
+    93 only_one_order[4,5,3]
+                                   1             1             = 
+    94 only_one_order[4,5,4]
+                                   1             1             = 
+    95 only_one_order[4,5,5]
+                                   1             1             = 
+    96 only_one_order[4,5,6]
+                                   1             1             = 
+    97 only_one_order[4,5,7]
+                                   1             1             = 
+    98 only_one_order[4,5,8]
+                                   1             1             = 
+    99 only_one_order[4,5,9]
+                                   1             1             = 
+   100 only_one_order[4,5,10]
+                                   1             1             = 
+   101 tasktime[1,2]
+                                  25            16               
+   102 tasktime[1,3]
+                                   9             9               
+   103 tasktime[1,4]
+                                  18            18               
+   104 tasktime[1,5]
+                                  12            12               
+   105 tasktime[1,6]
+                                  17            13               
+   106 tasktime[1,7]
+                                  25            20               
+   107 tasktime[1,8]
+                                  19            19               
+   108 tasktime[1,9]
+                                   7             7               
+   109 tasktime[1,10]
+                                  20            20               
+   110 tasktime[2,2]
+                                  13             1               
+   111 tasktime[2,3]
+                                  13            13               
+   112 tasktime[2,4]
+                                   2             2               
+   113 tasktime[2,5]
+                                  18            13               
+   114 tasktime[2,6]
+                                  16            16               
+   115 tasktime[2,7]
+                                  20            20               
+   116 tasktime[2,8]
+                                  19             6               
+   117 tasktime[2,9]
+                                   9             9               
+   118 tasktime[2,10]
+                                  18            17               
+   119 tasktime[3,2]
+                                   1             1               
+   120 tasktime[3,3]
+                                   6             5               
+   121 tasktime[3,4]
+                                  15            10               
+   122 tasktime[3,5]
+                                  16            10               
+   123 tasktime[3,6]
+                                  12            12               
+   124 tasktime[3,7]
+                                  12            12               
+   125 tasktime[3,8]
+                                  14             2               
+   126 tasktime[3,9]
+                                   8             8               
+   127 tasktime[3,10]
+                                  18            16               
+   128 tasktime[4,2]
+                                   5             3               
+   129 tasktime[4,3]
+                                  11            11               
+   130 tasktime[4,4]
+                                   2             2               
+   131 tasktime[4,5]
+                                   3             3               
+   132 tasktime[4,6]
+                                  16            16               
+   133 tasktime[4,7]
+                                  26            12               
+   134 tasktime[4,8]
+                                  21            20               
+   135 tasktime[4,9]
+                                  15            15               
+   136 tasktime[4,10]
+                                  21            14               
+   137 tasktime[5,2]
+                                  18            13               
+   138 tasktime[5,3]
+                                  18             8               
+   139 tasktime[5,4]
+                                  12             7               
+   140 tasktime[5,5]
+                                  14            14               
+   141 tasktime[5,6]
+                                  23            15               
+   142 tasktime[5,7]
+                                   2             2               
+   143 tasktime[5,8]
+                                  13             3               
+   144 tasktime[5,9]
+                                  10             9               
+   145 tasktime[5,10]
+                                  15             6               
+   146 precede_ji[1,2,1]
+                                   1                         527 
+   147 precede_ji[1,2,2]
+                                  13                         534 
+   148 precede_ji[1,2,3]
+                                   9                         525 
+   149 precede_ji[1,2,4]
+                                  25                         531 
+   150 precede_ji[1,2,5]
+                                  19                         530 
+   151 precede_ji[1,2,6]
+                                  20                         523 
+   152 precede_ji[1,2,7]
+                                  25                         524 
+   153 precede_ji[1,2,8]
+                                  25                         536 
+   154 precede_ji[1,2,9]
+                                  23                         523 
+   155 precede_ji[1,2,10]
+                                  25                         535 
+   156 precede_ji[1,3,1]
+                                   5                         527 
+   157 precede_ji[1,3,2]
+                                  29                         534 
+   158 precede_ji[1,3,3]
+                                  32                         525 
+   159 precede_ji[1,3,4]
+                                  35                         531 
+   160 precede_ji[1,3,5]
+                                  31                         530 
+   161 precede_ji[1,3,6]
+                                  36                         523 
+   162 precede_ji[1,3,7]
+                                  49                         524 
+   163 precede_ji[1,3,8]
+                                  54                         536 
+   164 precede_ji[1,3,9]
+                                  53                         523 
+   165 precede_ji[1,3,10]
+                                  55                         535 
+   166 precede_ji[1,4,1]
+                                   4                         527 
+   167 precede_ji[1,4,2]
+                                  24                         534 
+   168 precede_ji[1,4,3]
+                                  22                         525 
+   169 precede_ji[1,4,4]
+                                  38                         531 
+   170 precede_ji[1,4,5]
+                                  47                         530 
+   171 precede_ji[1,4,6]
+                                  48                         523 
+   172 precede_ji[1,4,7]
+                                  47                         524 
+   173 precede_ji[1,4,8]
+                                  45                         536 
+   174 precede_ji[1,4,9]
+                                  37                         523 
+   175 precede_ji[1,4,10]
+                                  36                         535 
+   176 precede_ji[1,5,1]
+                                 527                         527 
+   177 precede_ji[1,5,2]
+                                 534                         534 
+   178 precede_ji[1,5,3]
+                                 525                         525 
+   179 precede_ji[1,5,4]
+                                 531                         531 
+   180 precede_ji[1,5,5]
+                                 529                         530 
+   181 precede_ji[1,5,6]
+                                 523                         523 
+   182 precede_ji[1,5,7]
+                                   3                         524 
+   183 precede_ji[1,5,8]
+                                   9                         536 
+   184 precede_ji[1,5,9]
+                                   6                         523 
+   185 precede_ji[1,5,10]
+                                  11                         535 
+   186 precede_ji[2,1,1]
+                                 542                         542 
+   187 precede_ji[2,1,2]
+                                 530                         530 
+   188 precede_ji[2,1,3]
+                                 534                         541 
+   189 precede_ji[2,1,4]
+                                 518                         530 
+   190 precede_ji[2,1,5]
+                                 524                         527 
+   191 precede_ji[2,1,6]
+                                 523                         523 
+   192 precede_ji[2,1,7]
+                                 518                         537 
+   193 precede_ji[2,1,8]
+                                 518                         534 
+   194 precede_ji[2,1,9]
+                                 520                         526 
+   195 precede_ji[2,1,10]
+                                 518                         529 
+   196 precede_ji[2,3,1]
+                                   4                         542 
+   197 precede_ji[2,3,2]
+                                  16                         530 
+   198 precede_ji[2,3,3]
+                                  23                         541 
+   199 precede_ji[2,3,4]
+                                  10                         530 
+   200 precede_ji[2,3,5]
+                                  12                         527 
+   201 precede_ji[2,3,6]
+                                  16                         523 
+   202 precede_ji[2,3,7]
+                                  24                         537 
+   203 precede_ji[2,3,8]
+                                  29                         534 
+   204 precede_ji[2,3,9]
+                                  30                         526 
+   205 precede_ji[2,3,10]
+                                  30                         529 
+   206 precede_ji[2,4,1]
+                                   3                         542 
+   207 precede_ji[2,4,2]
+                                  11                         530 
+   208 precede_ji[2,4,3]
+                                  13                         541 
+   209 precede_ji[2,4,4]
+                                  13                         530 
+   210 precede_ji[2,4,5]
+                                  28                         527 
+   211 precede_ji[2,4,6]
+                                  28                         523 
+   212 precede_ji[2,4,7]
+                                  22                         537 
+   213 precede_ji[2,4,8]
+                                  20                         534 
+   214 precede_ji[2,4,9]
+                                  14                         526 
+   215 precede_ji[2,4,10]
+                                  11                         529 
+   216 precede_ji[2,5,1]
+                                 526                         542 
+   217 precede_ji[2,5,2]
+                                 521                         530 
+   218 precede_ji[2,5,3]
+                                 516                         541 
+   219 precede_ji[2,5,4]
+                                 506                         530 
+   220 precede_ji[2,5,5]
+                                 510                         527 
+   221 precede_ji[2,5,6]
+                                 503                         523 
+   222 precede_ji[2,5,7]
+                                 521                         537 
+   223 precede_ji[2,5,8]
+                                 527                         534 
+   224 precede_ji[2,5,9]
+                                 526                         526 
+   225 precede_ji[2,5,10]
+                                 529                         529 
+   226 precede_ji[3,1,1]
+                                 538                         542 
+   227 precede_ji[3,1,2]
+                                 514                         538 
+   228 precede_ji[3,1,3]
+                                 511                         533 
+   229 precede_ji[3,1,4]
+                                 508                         533 
+   230 precede_ji[3,1,5]
+                                 512                         531 
+   231 precede_ji[3,1,6]
+                                 507                         531 
+   232 precede_ji[3,1,7]
+                                 494                         541 
+   233 precede_ji[3,1,8]
+                                 489                         535 
+   234 precede_ji[3,1,9]
+                                 490                         527 
+   235 precede_ji[3,1,10]
+                                 488                         524 
+   236 precede_ji[3,2,1]
+                                 539                         542 
+   237 precede_ji[3,2,2]
+                                 527                         538 
+   238 precede_ji[3,2,3]
+                                 520                         533 
+   239 precede_ji[3,2,4]
+                                 533                         533 
+   240 precede_ji[3,2,5]
+                                 531                         531 
+   241 precede_ji[3,2,6]
+                                 527                         531 
+   242 precede_ji[3,2,7]
+                                 519                         541 
+   243 precede_ji[3,2,8]
+                                 514                         535 
+   244 precede_ji[3,2,9]
+                                 513                         527 
+   245 precede_ji[3,2,10]
+                                 513                         524 
+   246 precede_ji[3,4,1]
+                                 542                         542 
+   247 precede_ji[3,4,2]
+                                 538                         538 
+   248 precede_ji[3,4,3]
+                                 533                         533 
+   249 precede_ji[3,4,4]
+                                   3                         533 
+   250 precede_ji[3,4,5]
+                                  16                         531 
+   251 precede_ji[3,4,6]
+                                  12                         531 
+   252 precede_ji[3,4,7]
+                                 541                         541 
+   253 precede_ji[3,4,8]
+                                 534                         535 
+   254 precede_ji[3,4,9]
+                                 527                         527 
+   255 precede_ji[3,4,10]
+                                 524                         524 
+   256 precede_ji[3,5,1]
+                                 522                         542 
+   257 precede_ji[3,5,2]
+                                 505                         538 
+   258 precede_ji[3,5,3]
+                                 493                         533 
+   259 precede_ji[3,5,4]
+                                 496                         533 
+   260 precede_ji[3,5,5]
+                                 498                         531 
+   261 precede_ji[3,5,6]
+                                 487                         531 
+   262 precede_ji[3,5,7]
+                                 497                         541 
+   263 precede_ji[3,5,8]
+                                 498                         535 
+   264 precede_ji[3,5,9]
+                                 496                         527 
+   265 precede_ji[3,5,10]
+                                 499                         524 
+   266 precede_ji[4,1,1]
+                                 539                         540 
+   267 precede_ji[4,1,2]
+                                 519                         532 
+   268 precede_ji[4,1,3]
+                                 521                         541 
+   269 precede_ji[4,1,4]
+                                 505                         540 
+   270 precede_ji[4,1,5]
+                                 496                         527 
+   271 precede_ji[4,1,6]
+                                 495                         531 
+   272 precede_ji[4,1,7]
+                                 496                         523 
+   273 precede_ji[4,1,8]
+                                 498                         528 
+   274 precede_ji[4,1,9]
+                                 506                         529 
+   275 precede_ji[4,1,10]
+                                 507                         532 
+   276 precede_ji[4,2,1]
+                                 540                         540 
+   277 precede_ji[4,2,2]
+                                 532                         532 
+   278 precede_ji[4,2,3]
+                                 530                         541 
+   279 precede_ji[4,2,4]
+                                 530                         540 
+   280 precede_ji[4,2,5]
+                                 515                         527 
+   281 precede_ji[4,2,6]
+                                 515                         531 
+   282 precede_ji[4,2,7]
+                                 521                         523 
+   283 precede_ji[4,2,8]
+                                 523                         528 
+   284 precede_ji[4,2,9]
+                                 529                         529 
+   285 precede_ji[4,2,10]
+                                 532                         532 
+   286 precede_ji[4,3,1]
+                                   1                         540 
+   287 precede_ji[4,3,2]
+                                   5                         532 
+   288 precede_ji[4,3,3]
+                                  10                         541 
+   289 precede_ji[4,3,4]
+                                 540                         540 
+   290 precede_ji[4,3,5]
+                                 527                         527 
+   291 precede_ji[4,3,6]
+                                 531                         531 
+   292 precede_ji[4,3,7]
+                                   2                         523 
+   293 precede_ji[4,3,8]
+                                   9                         528 
+   294 precede_ji[4,3,9]
+                                  16                         529 
+   295 precede_ji[4,3,10]
+                                  19                         532 
+   296 precede_ji[4,5,1]
+                                 523                         540 
+   297 precede_ji[4,5,2]
+                                 510                         532 
+   298 precede_ji[4,5,3]
+                                 503                         541 
+   299 precede_ji[4,5,4]
+                                 493                         540 
+   300 precede_ji[4,5,5]
+                                 482                         527 
+   301 precede_ji[4,5,6]
+                                 475                         531 
+   302 precede_ji[4,5,7]
+                                 499                         523 
+   303 precede_ji[4,5,8]
+                                 507                         528 
+   304 precede_ji[4,5,9]
+                                 512                         529 
+   305 precede_ji[4,5,10]
+                                 518                         532 
+   306 precede_ji[5,1,1]
+                                  16                         530 
+   307 precede_ji[5,1,2]
+                                   9                         535 
+   308 precede_ji[5,1,3]
+                                  18                         536 
+   309 precede_ji[5,1,4]
+                                  12                         529 
+   310 precede_ji[5,1,5]
+                                  14                         528 
+   311 precede_ji[5,1,6]
+                                  20                         541 
+   312 precede_ji[5,1,7]
+                                 540                         540 
+   313 precede_ji[5,1,8]
+                                 534                         534 
+   314 precede_ji[5,1,9]
+                                 537                         537 
+   315 precede_ji[5,1,10]
+                                 532                         532 
+   316 precede_ji[5,2,1]
+                                  17                         530 
+   317 precede_ji[5,2,2]
+                                  22                         535 
+   318 precede_ji[5,2,3]
+                                  27                         536 
+   319 precede_ji[5,2,4]
+                                  37                         529 
+   320 precede_ji[5,2,5]
+                                  33                         528 
+   321 precede_ji[5,2,6]
+                                  40                         541 
+   322 precede_ji[5,2,7]
+                                  22                         540 
+   323 precede_ji[5,2,8]
+                                  16                         534 
+   324 precede_ji[5,2,9]
+                                  17                         537 
+   325 precede_ji[5,2,10]
+                                  14                         532 
+   326 precede_ji[5,3,1]
+                                  21                         530 
+   327 precede_ji[5,3,2]
+                                  38                         535 
+   328 precede_ji[5,3,3]
+                                  50                         536 
+   329 precede_ji[5,3,4]
+                                  47                         529 
+   330 precede_ji[5,3,5]
+                                  45                         528 
+   331 precede_ji[5,3,6]
+                                  56                         541 
+   332 precede_ji[5,3,7]
+                                  46                         540 
+   333 precede_ji[5,3,8]
+                                  45                         534 
+   334 precede_ji[5,3,9]
+                                  47                         537 
+   335 precede_ji[5,3,10]
+                                  44                         532 
+   336 precede_ji[5,4,1]
+                                  20                         530 
+   337 precede_ji[5,4,2]
+                                  33                         535 
+   338 precede_ji[5,4,3]
+                                  40                         536 
+   339 precede_ji[5,4,4]
+                                  50                         529 
+   340 precede_ji[5,4,5]
+                                  61                         528 
+   341 precede_ji[5,4,6]
+                                  68                         541 
+   342 precede_ji[5,4,7]
+                                  44                         540 
+   343 precede_ji[5,4,8]
+                                  36                         534 
+   344 precede_ji[5,4,9]
+                                  31                         537 
+   345 precede_ji[5,4,10]
+                                  25                         532 
+   346 precede_ij[1,2,1]
+                                  -1                          -1 
+   347 precede_ij[1,2,2]
+                                 -13                         -13 
+   348 precede_ij[1,2,3]
+                                  -9                          -2 
+   349 precede_ij[1,2,4]
+                                 -25                         -13 
+   350 precede_ij[1,2,5]
+                                 -19                         -16 
+   351 precede_ij[1,2,6]
+                                 -20                         -20 
+   352 precede_ij[1,2,7]
+                                 -25                          -6 
+   353 precede_ij[1,2,8]
+                                 -25                          -9 
+   354 precede_ij[1,2,9]
+                                 -23                         -17 
+   355 precede_ij[1,2,10]
+                                 -25                         -14 
+   356 precede_ij[1,3,1]
+                                  -5                          -1 
+   357 precede_ij[1,3,2]
+                                 -29                          -5 
+   358 precede_ij[1,3,3]
+                                 -32                         -10 
+   359 precede_ij[1,3,4]
+                                 -35                         -10 
+   360 precede_ij[1,3,5]
+                                 -31                         -12 
+   361 precede_ij[1,3,6]
+                                 -36                         -12 
+   362 precede_ij[1,3,7]
+                                 -49                          -2 
+   363 precede_ij[1,3,8]
+                                 -54                          -8 
+   364 precede_ij[1,3,9]
+                                 -53                         -16 
+   365 precede_ij[1,3,10]
+                                 -55                         -19 
+   366 precede_ij[1,4,1]
+                                  -4                          -3 
+   367 precede_ij[1,4,2]
+                                 -24                         -11 
+   368 precede_ij[1,4,3]
+                                 -22                          -2 
+   369 precede_ij[1,4,4]
+                                 -38                          -3 
+   370 precede_ij[1,4,5]
+                                 -47                         -16 
+   371 precede_ij[1,4,6]
+                                 -48                         -12 
+   372 precede_ij[1,4,7]
+                                 -47                         -20 
+   373 precede_ij[1,4,8]
+                                 -45                         -15 
+   374 precede_ij[1,4,9]
+                                 -37                         -14 
+   375 precede_ij[1,4,10]
+                                 -36                         -11 
+   376 precede_ij[1,5,1]
+                                -527                         -13 
+   377 precede_ij[1,5,2]
+                                -534                          -8 
+   378 precede_ij[1,5,3]
+                                -525                          -7 
+   379 precede_ij[1,5,4]
+                                -531                         -14 
+   380 precede_ij[1,5,5]
+                                -529                         -15 
+   381 precede_ij[1,5,6]
+                                -523                          -2 
+   382 precede_ij[1,5,7]
+                                  -3                          -3 
+   383 precede_ij[1,5,8]
+                                  -9                          -9 
+   384 precede_ij[1,5,9]
+                                  -6                          -6 
+   385 precede_ij[1,5,10]
+                                 -11                         -11 
+   386 precede_ij[2,1,1]
+                                -542                         -16 
+   387 precede_ij[2,1,2]
+                                -530                          -9 
+   388 precede_ij[2,1,3]
+                                -534                         -18 
+   389 precede_ij[2,1,4]
+                                -518                         -12 
+   390 precede_ij[2,1,5]
+                                -524                         -13 
+   391 precede_ij[2,1,6]
+                                -523                         -20 
+   392 precede_ij[2,1,7]
+                                -518                         -19 
+   393 precede_ij[2,1,8]
+                                -518                          -7 
+   394 precede_ij[2,1,9]
+                                -520                         -20 
+   395 precede_ij[2,1,10]
+                                -518                          -8 
+   396 precede_ij[2,3,1]
+                                  -4                          -1 
+   397 precede_ij[2,3,2]
+                                 -16                          -5 
+   398 precede_ij[2,3,3]
+                                 -23                         -10 
+   399 precede_ij[2,3,4]
+                                 -10                         -10 
+   400 precede_ij[2,3,5]
+                                 -12                         -12 
+   401 precede_ij[2,3,6]
+                                 -16                         -12 
+   402 precede_ij[2,3,7]
+                                 -24                          -2 
+   403 precede_ij[2,3,8]
+                                 -29                          -8 
+   404 precede_ij[2,3,9]
+                                 -30                         -16 
+   405 precede_ij[2,3,10]
+                                 -30                         -19 
+   406 precede_ij[2,4,1]
+                                  -3                          -3 
+   407 precede_ij[2,4,2]
+                                 -11                         -11 
+   408 precede_ij[2,4,3]
+                                 -13                          -2 
+   409 precede_ij[2,4,4]
+                                 -13                          -3 
+   410 precede_ij[2,4,5]
+                                 -28                         -16 
+   411 precede_ij[2,4,6]
+                                 -28                         -12 
+   412 precede_ij[2,4,7]
+                                 -22                         -20 
+   413 precede_ij[2,4,8]
+                                 -20                         -15 
+   414 precede_ij[2,4,9]
+                                 -14                         -14 
+   415 precede_ij[2,4,10]
+                                 -11                         -11 
+   416 precede_ij[2,5,1]
+                                -526                         -13 
+   417 precede_ij[2,5,2]
+                                -521                          -8 
+   418 precede_ij[2,5,3]
+                                -516                          -7 
+   419 precede_ij[2,5,4]
+                                -506                         -14 
+   420 precede_ij[2,5,5]
+                                -510                         -15 
+   421 precede_ij[2,5,6]
+                                -503                          -2 
+   422 precede_ij[2,5,7]
+                                -521                          -3 
+   423 precede_ij[2,5,8]
+                                -527                          -9 
+   424 precede_ij[2,5,9]
+                                -526                          -6 
+   425 precede_ij[2,5,10]
+                                -529                         -11 
+   426 precede_ij[3,1,1]
+                                -538                         -16 
+   427 precede_ij[3,1,2]
+                                -514                          -9 
+   428 precede_ij[3,1,3]
+                                -511                         -18 
+   429 precede_ij[3,1,4]
+                                -508                         -12 
+   430 precede_ij[3,1,5]
+                                -512                         -13 
+   431 precede_ij[3,1,6]
+                                -507                         -20 
+   432 precede_ij[3,1,7]
+                                -494                         -19 
+   433 precede_ij[3,1,8]
+                                -489                          -7 
+   434 precede_ij[3,1,9]
+                                -490                         -20 
+   435 precede_ij[3,1,10]
+                                -488                          -8 
+   436 precede_ij[3,2,1]
+                                -539                          -1 
+   437 precede_ij[3,2,2]
+                                -527                         -13 
+   438 precede_ij[3,2,3]
+                                -520                          -2 
+   439 precede_ij[3,2,4]
+                                -533                         -13 
+   440 precede_ij[3,2,5]
+                                -531                         -16 
+   441 precede_ij[3,2,6]
+                                -527                         -20 
+   442 precede_ij[3,2,7]
+                                -519                          -6 
+   443 precede_ij[3,2,8]
+                                -514                          -9 
+   444 precede_ij[3,2,9]
+                                -513                         -17 
+   445 precede_ij[3,2,10]
+                                -513                         -14 
+   446 precede_ij[3,4,1]
+                                -542                          -3 
+   447 precede_ij[3,4,2]
+                                -538                         -11 
+   448 precede_ij[3,4,3]
+                                -533                          -2 
+   449 precede_ij[3,4,4]
+                                  -3                          -3 
+   450 precede_ij[3,4,5]
+                                 -16                         -16 
+   451 precede_ij[3,4,6]
+                                 -12                         -12 
+   452 precede_ij[3,4,7]
+                                -541                         -20 
+   453 precede_ij[3,4,8]
+                                -534                         -15 
+   454 precede_ij[3,4,9]
+                                -527                         -14 
+   455 precede_ij[3,4,10]
+                                -524                         -11 
+   456 precede_ij[3,5,1]
+                                -522                         -13 
+   457 precede_ij[3,5,2]
+                                -505                          -8 
+   458 precede_ij[3,5,3]
+                                -493                          -7 
+   459 precede_ij[3,5,4]
+                                -496                         -14 
+   460 precede_ij[3,5,5]
+                                -498                         -15 
+   461 precede_ij[3,5,6]
+                                -487                          -2 
+   462 precede_ij[3,5,7]
+                                -497                          -3 
+   463 precede_ij[3,5,8]
+                                -498                          -9 
+   464 precede_ij[3,5,9]
+                                -496                          -6 
+   465 precede_ij[3,5,10]
+                                -499                         -11 
+   466 precede_ij[4,1,1]
+                                -539                         -16 
+   467 precede_ij[4,1,2]
+                                -519                          -9 
+   468 precede_ij[4,1,3]
+                                -521                         -18 
+   469 precede_ij[4,1,4]
+                                -505                         -12 
+   470 precede_ij[4,1,5]
+                                -496                         -13 
+   471 precede_ij[4,1,6]
+                                -495                         -20 
+   472 precede_ij[4,1,7]
+                                -496                         -19 
+   473 precede_ij[4,1,8]
+                                -498                          -7 
+   474 precede_ij[4,1,9]
+                                -506                         -20 
+   475 precede_ij[4,1,10]
+                                -507                          -8 
+   476 precede_ij[4,2,1]
+                                -540                          -1 
+   477 precede_ij[4,2,2]
+                                -532                         -13 
+   478 precede_ij[4,2,3]
+                                -530                          -2 
+   479 precede_ij[4,2,4]
+                                -530                         -13 
+   480 precede_ij[4,2,5]
+                                -515                         -16 
+   481 precede_ij[4,2,6]
+                                -515                         -20 
+   482 precede_ij[4,2,7]
+                                -521                          -6 
+   483 precede_ij[4,2,8]
+                                -523                          -9 
+   484 precede_ij[4,2,9]
+                                -529                         -17 
+   485 precede_ij[4,2,10]
+                                -532                         -14 
+   486 precede_ij[4,3,1]
+                                  -1                          -1 
+   487 precede_ij[4,3,2]
+                                  -5                          -5 
+   488 precede_ij[4,3,3]
+                                 -10                         -10 
+   489 precede_ij[4,3,4]
+                                -540                         -10 
+   490 precede_ij[4,3,5]
+                                -527                         -12 
+   491 precede_ij[4,3,6]
+                                -531                         -12 
+   492 precede_ij[4,3,7]
+                                  -2                          -2 
+   493 precede_ij[4,3,8]
+                                  -9                          -8 
+   494 precede_ij[4,3,9]
+                                 -16                         -16 
+   495 precede_ij[4,3,10]
+                                 -19                         -19 
+   496 precede_ij[4,5,1]
+                                -523                         -13 
+   497 precede_ij[4,5,2]
+                                -510                          -8 
+   498 precede_ij[4,5,3]
+                                -503                          -7 
+   499 precede_ij[4,5,4]
+                                -493                         -14 
+   500 precede_ij[4,5,5]
+                                -482                         -15 
+   501 precede_ij[4,5,6]
+                                -475                          -2 
+   502 precede_ij[4,5,7]
+                                -499                          -3 
+   503 precede_ij[4,5,8]
+                                -507                          -9 
+   504 precede_ij[4,5,9]
+                                -512                          -6 
+   505 precede_ij[4,5,10]
+                                -518                         -11 
+   506 precede_ij[5,1,1]
+                                 -16                         -16 
+   507 precede_ij[5,1,2]
+                                  -9                          -9 
+   508 precede_ij[5,1,3]
+                                 -18                         -18 
+   509 precede_ij[5,1,4]
+                                 -12                         -12 
+   510 precede_ij[5,1,5]
+                                 -14                         -13 
+   511 precede_ij[5,1,6]
+                                 -20                         -20 
+   512 precede_ij[5,1,7]
+                                -540                         -19 
+   513 precede_ij[5,1,8]
+                                -534                          -7 
+   514 precede_ij[5,1,9]
+                                -537                         -20 
+   515 precede_ij[5,1,10]
+                                -532                          -8 
+   516 precede_ij[5,2,1]
+                                 -17                          -1 
+   517 precede_ij[5,2,2]
+                                 -22                         -13 
+   518 precede_ij[5,2,3]
+                                 -27                          -2 
+   519 precede_ij[5,2,4]
+                                 -37                         -13 
+   520 precede_ij[5,2,5]
+                                 -33                         -16 
+   521 precede_ij[5,2,6]
+                                 -40                         -20 
+   522 precede_ij[5,2,7]
+                                 -22                          -6 
+   523 precede_ij[5,2,8]
+                                 -16                          -9 
+   524 precede_ij[5,2,9]
+                                 -17                         -17 
+   525 precede_ij[5,2,10]
+                                 -14                         -14 
+   526 precede_ij[5,3,1]
+                                 -21                          -1 
+   527 precede_ij[5,3,2]
+                                 -38                          -5 
+   528 precede_ij[5,3,3]
+                                 -50                         -10 
+   529 precede_ij[5,3,4]
+                                 -47                         -10 
+   530 precede_ij[5,3,5]
+                                 -45                         -12 
+   531 precede_ij[5,3,6]
+                                 -56                         -12 
+   532 precede_ij[5,3,7]
+                                 -46                          -2 
+   533 precede_ij[5,3,8]
+                                 -45                          -8 
+   534 precede_ij[5,3,9]
+                                 -47                         -16 
+   535 precede_ij[5,3,10]
+                                 -44                         -19 
+   536 precede_ij[5,4,1]
+                                 -20                          -3 
+   537 precede_ij[5,4,2]
+                                 -33                         -11 
+   538 precede_ij[5,4,3]
+                                 -40                          -2 
+   539 precede_ij[5,4,4]
+                                 -50                          -3 
+   540 precede_ij[5,4,5]
+                                 -61                         -16 
+   541 precede_ij[5,4,6]
+                                 -68                         -12 
+   542 precede_ij[5,4,7]
+                                 -44                         -20 
+   543 precede_ij[5,4,8]
+                                 -36                         -15 
+   544 precede_ij[5,4,9]
+                                 -31                         -14 
+   545 precede_ij[5,4,10]
+                                 -25                         -11 
+   546 all[1]                      8             8               
+   547 all[2]                     33            14               
+   548 all[3]                     63            19               
+   549 all[4]                     44            11               
+   550 all[5]                     19            11               
+   551 time_accomplished
+                                 165                             
+
+   No. Column name       Activity     Lower bound   Upper bound
+------ ------------    ------------- ------------- -------------
+     1 x[1,2,1]     *              0             0             1 
+     2 x[2,1,1]     *              1             0             1 
+     3 x[1,2,2]     *              0             0             1 
+     4 x[2,1,2]     *              1             0             1 
+     5 x[1,2,3]     *              0             0             1 
+     6 x[2,1,3]     *              1             0             1 
+     7 x[1,2,4]     *              0             0             1 
+     8 x[2,1,4]     *              1             0             1 
+     9 x[1,2,5]     *              0             0             1 
+    10 x[2,1,5]     *              1             0             1 
+    11 x[1,2,6]     *              0             0             1 
+    12 x[2,1,6]     *              1             0             1 
+    13 x[1,2,7]     *              0             0             1 
+    14 x[2,1,7]     *              1             0             1 
+    15 x[1,2,8]     *              0             0             1 
+    16 x[2,1,8]     *              1             0             1 
+    17 x[1,2,9]     *              0             0             1 
+    18 x[2,1,9]     *              1             0             1 
+    19 x[1,2,10]    *              0             0             1 
+    20 x[2,1,10]    *              1             0             1 
+    21 x[1,3,1]     *              0             0             1 
+    22 x[3,1,1]     *              1             0             1 
+    23 x[1,3,2]     *              0             0             1 
+    24 x[3,1,2]     *              1             0             1 
+    25 x[1,3,3]     *              0             0             1 
+    26 x[3,1,3]     *              1             0             1 
+    27 x[1,3,4]     *              0             0             1 
+    28 x[3,1,4]     *              1             0             1 
+    29 x[1,3,5]     *              0             0             1 
+    30 x[3,1,5]     *              1             0             1 
+    31 x[1,3,6]     *              0             0             1 
+    32 x[3,1,6]     *              1             0             1 
+    33 x[1,3,7]     *              0             0             1 
+    34 x[3,1,7]     *              1             0             1 
+    35 x[1,3,8]     *              0             0             1 
+    36 x[3,1,8]     *              1             0             1 
+    37 x[1,3,9]     *              0             0             1 
+    38 x[3,1,9]     *              1             0             1 
+    39 x[1,3,10]    *              0             0             1 
+    40 x[3,1,10]    *              1             0             1 
+    41 x[1,4,1]     *              0             0             1 
+    42 x[4,1,1]     *              1             0             1 
+    43 x[1,4,2]     *              0             0             1 
+    44 x[4,1,2]     *              1             0             1 
+    45 x[1,4,3]     *              0             0             1 
+    46 x[4,1,3]     *              1             0             1 
+    47 x[1,4,4]     *              0             0             1 
+    48 x[4,1,4]     *              1             0             1 
+    49 x[1,4,5]     *              0             0             1 
+    50 x[4,1,5]     *              1             0             1 
+    51 x[1,4,6]     *              0             0             1 
+    52 x[4,1,6]     *              1             0             1 
+    53 x[1,4,7]     *              0             0             1 
+    54 x[4,1,7]     *              1             0             1 
+    55 x[1,4,8]     *              0             0             1 
+    56 x[4,1,8]     *              1             0             1 
+    57 x[1,4,9]     *              0             0             1 
+    58 x[4,1,9]     *              1             0             1 
+    59 x[1,4,10]    *              0             0             1 
+    60 x[4,1,10]    *              1             0             1 
+    61 x[1,5,1]     *              1             0             1 
+    62 x[5,1,1]     *              0             0             1 
+    63 x[1,5,2]     *              1             0             1 
+    64 x[5,1,2]     *              0             0             1 
+    65 x[1,5,3]     *              1             0             1 
+    66 x[5,1,3]     *              0             0             1 
+    67 x[1,5,4]     *              1             0             1 
+    68 x[5,1,4]     *              0             0             1 
+    69 x[1,5,5]     *              1             0             1 
+    70 x[5,1,5]     *              0             0             1 
+    71 x[1,5,6]     *              1             0             1 
+    72 x[5,1,6]     *              0             0             1 
+    73 x[1,5,7]     *              0             0             1 
+    74 x[5,1,7]     *              1             0             1 
+    75 x[1,5,8]     *              0             0             1 
+    76 x[5,1,8]     *              1             0             1 
+    77 x[1,5,9]     *              0             0             1 
+    78 x[5,1,9]     *              1             0             1 
+    79 x[1,5,10]    *              0             0             1 
+    80 x[5,1,10]    *              1             0             1 
+    81 x[2,3,1]     *              0             0             1 
+    82 x[3,2,1]     *              1             0             1 
+    83 x[2,3,2]     *              0             0             1 
+    84 x[3,2,2]     *              1             0             1 
+    85 x[2,3,3]     *              0             0             1 
+    86 x[3,2,3]     *              1             0             1 
+    87 x[2,3,4]     *              0             0             1 
+    88 x[3,2,4]     *              1             0             1 
+    89 x[2,3,5]     *              0             0             1 
+    90 x[3,2,5]     *              1             0             1 
+    91 x[2,3,6]     *              0             0             1 
+    92 x[3,2,6]     *              1             0             1 
+    93 x[2,3,7]     *              0             0             1 
+    94 x[3,2,7]     *              1             0             1 
+    95 x[2,3,8]     *              0             0             1 
+    96 x[3,2,8]     *              1             0             1 
+    97 x[2,3,9]     *              0             0             1 
+    98 x[3,2,9]     *              1             0             1 
+    99 x[2,3,10]    *              0             0             1 
+   100 x[3,2,10]    *              1             0             1 
+   101 x[2,4,1]     *              0             0             1 
+   102 x[4,2,1]     *              1             0             1 
+   103 x[2,4,2]     *              0             0             1 
+   104 x[4,2,2]     *              1             0             1 
+   105 x[2,4,3]     *              0             0             1 
+   106 x[4,2,3]     *              1             0             1 
+   107 x[2,4,4]     *              0             0             1 
+   108 x[4,2,4]     *              1             0             1 
+   109 x[2,4,5]     *              0             0             1 
+   110 x[4,2,5]     *              1             0             1 
+   111 x[2,4,6]     *              0             0             1 
+   112 x[4,2,6]     *              1             0             1 
+   113 x[2,4,7]     *              0             0             1 
+   114 x[4,2,7]     *              1             0             1 
+   115 x[2,4,8]     *              0             0             1 
+   116 x[4,2,8]     *              1             0             1 
+   117 x[2,4,9]     *              0             0             1 
+   118 x[4,2,9]     *              1             0             1 
+   119 x[2,4,10]    *              0             0             1 
+   120 x[4,2,10]    *              1             0             1 
+   121 x[2,5,1]     *              1             0             1 
+   122 x[5,2,1]     *              0             0             1 
+   123 x[2,5,2]     *              1             0             1 
+   124 x[5,2,2]     *              0             0             1 
+   125 x[2,5,3]     *              1             0             1 
+   126 x[5,2,3]     *              0             0             1 
+   127 x[2,5,4]     *              1             0             1 
+   128 x[5,2,4]     *              0             0             1 
+   129 x[2,5,5]     *              1             0             1 
+   130 x[5,2,5]     *              0             0             1 
+   131 x[2,5,6]     *              1             0             1 
+   132 x[5,2,6]     *              0             0             1 
+   133 x[2,5,7]     *              1             0             1 
+   134 x[5,2,7]     *              0             0             1 
+   135 x[2,5,8]     *              1             0             1 
+   136 x[5,2,8]     *              0             0             1 
+   137 x[2,5,9]     *              1             0             1 
+   138 x[5,2,9]     *              0             0             1 
+   139 x[2,5,10]    *              1             0             1 
+   140 x[5,2,10]    *              0             0             1 
+   141 x[3,4,1]     *              1             0             1 
+   142 x[4,3,1]     *              0             0             1 
+   143 x[3,4,2]     *              1             0             1 
+   144 x[4,3,2]     *              0             0             1 
+   145 x[3,4,3]     *              1             0             1 
+   146 x[4,3,3]     *              0             0             1 
+   147 x[3,4,4]     *              0             0             1 
+   148 x[4,3,4]     *              1             0             1 
+   149 x[3,4,5]     *              0             0             1 
+   150 x[4,3,5]     *              1             0             1 
+   151 x[3,4,6]     *              0             0             1 
+   152 x[4,3,6]     *              1             0             1 
+   153 x[3,4,7]     *              1             0             1 
+   154 x[4,3,7]     *              0             0             1 
+   155 x[3,4,8]     *              1             0             1 
+   156 x[4,3,8]     *              0             0             1 
+   157 x[3,4,9]     *              1             0             1 
+   158 x[4,3,9]     *              0             0             1 
+   159 x[3,4,10]    *              1             0             1 
+   160 x[4,3,10]    *              0             0             1 
+   161 x[3,5,1]     *              1             0             1 
+   162 x[5,3,1]     *              0             0             1 
+   163 x[3,5,2]     *              1             0             1 
+   164 x[5,3,2]     *              0             0             1 
+   165 x[3,5,3]     *              1             0             1 
+   166 x[5,3,3]     *              0             0             1 
+   167 x[3,5,4]     *              1             0             1 
+   168 x[5,3,4]     *              0             0             1 
+   169 x[3,5,5]     *              1             0             1 
+   170 x[5,3,5]     *              0             0             1 
+   171 x[3,5,6]     *              1             0             1 
+   172 x[5,3,6]     *              0             0             1 
+   173 x[3,5,7]     *              1             0             1 
+   174 x[5,3,7]     *              0             0             1 
+   175 x[3,5,8]     *              1             0             1 
+   176 x[5,3,8]     *              0             0             1 
+   177 x[3,5,9]     *              1             0             1 
+   178 x[5,3,9]     *              0             0             1 
+   179 x[3,5,10]    *              1             0             1 
+   180 x[5,3,10]    *              0             0             1 
+   181 x[4,5,1]     *              1             0             1 
+   182 x[5,4,1]     *              0             0             1 
+   183 x[4,5,2]     *              1             0             1 
+   184 x[5,4,2]     *              0             0             1 
+   185 x[4,5,3]     *              1             0             1 
+   186 x[5,4,3]     *              0             0             1 
+   187 x[4,5,4]     *              1             0             1 
+   188 x[5,4,4]     *              0             0             1 
+   189 x[4,5,5]     *              1             0             1 
+   190 x[5,4,5]     *              0             0             1 
+   191 x[4,5,6]     *              1             0             1 
+   192 x[5,4,6]     *              0             0             1 
+   193 x[4,5,7]     *              1             0             1 
+   194 x[5,4,7]     *              0             0             1 
+   195 x[4,5,8]     *              1             0             1 
+   196 x[5,4,8]     *              0             0             1 
+   197 x[4,5,9]     *              1             0             1 
+   198 x[5,4,9]     *              0             0             1 
+   199 x[4,5,10]    *              1             0             1 
+   200 x[5,4,10]    *              0             0             1 
+   201 begin[1,2]   *             30             0               
+   202 begin[1,1]   *              5             0               
+   203 begin[1,3]   *             39             0               
+   204 begin[1,4]   *             57             0               
+   205 begin[1,5]   *             69             0               
+   206 begin[1,6]   *             86             0               
+   207 begin[1,7]   *            111             0               
+   208 begin[1,8]   *            130             0               
+   209 begin[1,9]   *            137             0               
+   210 begin[1,10]  *            157             0               
+   211 begin[2,2]   *             17             0               
+   212 begin[2,1]   *              4             0               
+   213 begin[2,3]   *             30             0               
+   214 begin[2,4]   *             32             0               
+   215 begin[2,5]   *             50             0               
+   216 begin[2,6]   *             66             0               
+   217 begin[2,7]   *             86             0               
+   218 begin[2,8]   *            105             0               
+   219 begin[2,9]   *            114             0               
+   220 begin[2,10]  *            132             0               
+   221 begin[3,2]   *              1             0               
+   222 begin[3,1]   *              0             0               
+   223 begin[3,3]   *              7             0               
+   224 begin[3,4]   *             22             0               
+   225 begin[3,5]   *             38             0               
+   226 begin[3,6]   *             50             0               
+   227 begin[3,7]   *             62             0               
+   228 begin[3,8]   *             76             0               
+   229 begin[3,9]   *             84             0               
+   230 begin[3,10]  *            102             0               
+   231 begin[4,2]   *              6             0               
+   232 begin[4,1]   *              1             0               
+   233 begin[4,3]   *             17             0               
+   234 begin[4,4]   *             19             0               
+   235 begin[4,5]   *             22             0               
+   236 begin[4,6]   *             38             0               
+   237 begin[4,7]   *             64             0               
+   238 begin[4,8]   *             85             0               
+   239 begin[4,9]   *            100             0               
+   240 begin[4,10]  *            121             0               
+   241 begin[5,2]   *             39             0               
+   242 begin[5,1]   *             21             0               
+   243 begin[5,3]   *             57             0               
+   244 begin[5,4]   *             69             0               
+   245 begin[5,5]   *             83             0               
+   246 begin[5,6]   *            106             0               
+   247 begin[5,7]   *            108             0               
+   248 begin[5,8]   *            121             0               
+   249 begin[5,9]   *            131             0               
+   250 begin[5,10]  *            146             0               
+   251 fim          *            165             0               
+
+Integer feasibility conditions:
+
+KKT.PE: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+KKT.PB: max.abs.err = 0.00e+00 on row 0
+        max.rel.err = 0.00e+00 on row 0
+        High quality
+
+End of output

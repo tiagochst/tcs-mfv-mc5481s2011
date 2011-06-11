@@ -127,14 +127,14 @@ Objective:  deadline_not_accomplished = 6 (MINimum)
    118 order[2,6]                  1             1             = 
    119 ending[1]                   6                           6 
    120 ending[2]                   9                          12 
-   121 ending[3]               -4983                          -0 
+   121 ending[3]                 -31                          -0 
    122 ending[4]                   5                           5 
    123 ending[5]                  13                          15 
-   124 ending[6]               -4984                          13 
-   125 ending[7]               -4975                          -0 
-   126 ending[8]               -4969                           3 
-   127 ending[9]               -4972                          16 
-   128 ending[10]              -4968                           6 
+   124 ending[6]                 -32                          13 
+   125 ending[7]                 -23                          -0 
+   126 ending[8]                 -17                           3 
+   127 ending[9]                 -20                          16 
+   128 ending[10]                -16                           6 
    129 deadline_not_accomplished
                                    6                             
 

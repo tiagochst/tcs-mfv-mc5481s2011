@@ -446,25 +446,25 @@ Objective:  deadline_not_accomplished = 16 (MINimum)
    437 order[15,16]                1             1             = 
    438 order[8,19]                 1             1             = 
    439 ending[1]                  19                          19 
-   440 ending[2]               -4890                          -1 
-   441 ending[3]               -4885                           7 
-   442 ending[4]               -4902                          14 
-   443 ending[5]               -4902                          -1 
+   440 ending[2]                 -33                          -1 
+   441 ending[3]                 -28                           7 
+   442 ending[4]                 -45                          14 
+   443 ending[5]                 -45                          -1 
    444 ending[6]                  15                          15 
    445 ending[7]                  15                          16 
-   446 ending[8]               -4916                           9 
-   447 ending[9]               -4903                           2 
-   448 ending[10]              -4915                          26 
-   449 ending[11]              -4952                           3 
+   446 ending[8]                 -59                           9 
+   447 ending[9]                 -46                           2 
+   448 ending[10]                -58                          26 
+   449 ending[11]                -95                           3 
    450 ending[12]                 24                          24 
-   451 ending[13]              -4916                          -1 
-   452 ending[14]              -4934                          -2 
-   453 ending[15]              -4965                           9 
-   454 ending[16]              -4920                          10 
-   455 ending[17]              -4937                           4 
-   456 ending[18]              -4946                          -6 
-   457 ending[19]              -4947                          14 
-   458 ending[20]              -4926                          15 
+   451 ending[13]                -59                          -1 
+   452 ending[14]                -77                          -2 
+   453 ending[15]               -108                           9 
+   454 ending[16]                -63                          10 
+   455 ending[17]                -80                           4 
+   456 ending[18]                -89                          -6 
+   457 ending[19]                -90                          14 
+   458 ending[20]                -69                          15 
    459 deadline_not_accomplished
                                   16                             
 

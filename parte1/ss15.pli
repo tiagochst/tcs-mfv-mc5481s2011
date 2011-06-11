@@ -8,8 +8,6 @@
 #   Murilo Fossa Vicentini
 #   Tiago Chedraoui Silva
 
-param M:=10000;
-/* A large number*/
 
 param n;
 /* number of projects*/
@@ -25,6 +23,9 @@ set T :=1..m;
 
 param t {j in J,i in T}; 
 /* ith task's duration of project j  */
+
+param M:= sum{j in J,i in T} t[j,i];
+/* A large number*/
 
 var x {j in J,i in J,k in T}, binary;
 /* order of project's tasks executions in processor k*/

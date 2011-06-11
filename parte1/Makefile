@@ -68,7 +68,7 @@ P41:
 	glpsol -m ss15.pli -d ss15/ss15.1.dat  --memlim 1000 --tmlim $(time) --output ss15.1.txt --wcpxlp ss15.1.lp 
 
 P42:
-	glpsol -m ss15.pli -d ss15/ss15.2.dat --memlim 1000 --tmlim $(time) --output ss15.2.txt --wcpxlp ss15.2.lp 
+	glpsol -m ss15.pli -d ss15/ss15.2.dat --output ss15.2.txt --wcpxlp ss15.2.lp 
 
 P50:
 	glpsol -m mn22.pli -d mn22/mn22.0.dat --memlim 1000 --tmlim $(time) --output mn22.0.txt --wcpxlp mn22.0.lp 
