@@ -3,7 +3,6 @@
 \usepackage[brazil]{babel}
 \usepackage[utf8]{inputenc}
 
-
 \usepackage{ae,aecompl}
 \usepackage{pslatex}
 \usepackage{epsfig}
@@ -20,6 +19,7 @@
 \usepackage{mathtools}
 \usepackage{amsmath}
 
+\usepackage{fmtcount} % displaying latex counters
 
 %\usepackage[compact]{titlesec}
 %\titlespacing{\section}{0pt}{*0}{*0}
@@ -29,10 +29,10 @@
 \geometry{ 
   letterpaper,	% Formato do papel
   tmargin=25mm,	% Margem superior
-  bmargin=25mm,	% Margem inferior
+  bmargin=5mm,	% Margem inferior
   lmargin=20mm,	% Margem esquerda
   rmargin=20mm,	% Margem direita
-  footskip=10mm	% Espaço entre o rodapé e o fim do texto
+  footskip=5mm	% Espaço entre o rodapé e o fim do texto
 }
 \include{abaco} 
 \renewcommand{\thetable}{\Roman{table}}
@@ -209,6 +209,12 @@ tarefa $i$ precede $j$.
  \sum_{i \in T, i \neq j} x_{ij}*t_{i} \leq d_{j}-t_{j}+ M*y_{j} \forall j \in T
 \end{equation*}
  
+Em que M é um número grande e para calculá-lo somou-se todos os tempos
+das tarefas mais um. 
+\begin{equation*}
+ M = \sum_{i \in T} (t_{i}) +1
+\end{equation*}
+ 
 \end{itemize}
 
 \subsubsection*{Função objetivo}
@@ -251,6 +257,10 @@ min\sum_{i=1}^{n}y_i
   begin_{j,i} + t_{j,i} \leq begin_{k,i}+(1-x_{j,k,i})*M, \forall i \in T, \forall j,k \in J  : k!=j 
 \end{equation*}
 
+
+Em que M é um número grande e para calculá-lo somou-se todos os tempos
+das tarefas de todos os projetos. 
+
 \item A tarefa $k$ do projeto $j$ precede a tarefa $z$ do mesmo
   projeto, logo o tempo de término da
   tarefa $z$ deve ser maior que o tempo de término da
@@ -258,6 +268,14 @@ min\sum_{i=1}^{n}y_i
  
 \begin{equation*}
   begin_{k,i} + t_{k,i} \leq begin_{j,i}+x_{j,k,i}*M, \forall i \in T , \forall j,k \in J : k!=j 
+\end{equation*}
+
+Em que M é um número grande e para calculá-lo somou-se todos os tempos
+das tarefas de todos os projetos. 
+
+
+\begin{equation*}
+ M = \sum_{j \in J,i \in T} (t_{j,i}) 
 \end{equation*}
 
 \item O tempo total da execução dos projetos deve ser igual ao tempo
@@ -335,7 +353,9 @@ min\sum_{(i,j) \in E}c_{i,j}*rdiff_{i,j}
 
 \subsection{Resultados}
 
-% Export from lyx and paste here!
+
+% reset the counter to the first footnote's value
+\addtocounter{footnote}{1}
 
 \begin{table}[h!]
 \begin{centering}
@@ -350,20 +370,28 @@ ID exercício & 1 & 2 & 3\tabularnewline
 \hline 
  {[}ss2{]} & 1 & 6  & 16 \tabularnewline
 \hline 
-{[}ss15{]} & 8 & 165  & 230 \tabularnewline
+{[}ss15{]} & 8 & 165  & 245$^{\decimal{footnote}}$\addtocounter{footnote}{1}  \tabularnewline
 \hline 
  {[}mn22{]} & 1 & 4131  & 1 \tabularnewline
 \hline 
 \end{tabular}
 \par\end{centering}
-
 \caption{Resultados da parte 1}
 \end{table}
 
+%\newpage
+\addtocounter{footnote}{-1} 
+\footnotetext{ Utilizando a abordagem apresentada na seção do
+  problema, e utilizando-a durante 8 horas em um servidor do
+laboratório de redes da Unicamp encontrou-se o resultado não ótimo
+257. Contudo, se considerarmos somente a ordem dos projetos a solução é
+encontrada em questão de segundos e o resultado é melhor, 245, porém
+talvez não seja o ótimo. Como
+sabe-se que esse resultado é um resultado para a abordagem 
+da seção do problema (seção 2.4) esse resultado foi considerado o melhor que encontramos.}
 % ******************************************************
 % Parte 2
 % ******************************************************
-
 \section{Parte 2}
 
 
