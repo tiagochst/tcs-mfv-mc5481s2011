@@ -4,6 +4,7 @@
 #include<unistd.h>
 #include<signal.h>
 #include<math.h>
+#include<time.h>
 
 /* Program 
    Authors:
@@ -11,6 +12,7 @@
    - Tiago Chedraoui Silva
 */
 
+/* Types of data*/
 typedef struct {
   int x,y;
   int gain;
@@ -34,23 +36,24 @@ typedef struct {
   CShard chosen[50914];
 } Solution;
 
+/* Global variables,
+   used beacause of alarm signal
+*/
 Solution zf;
 char OUTPUT [100];
 
 
 void Greedy_solver(Shard s[],Satelite sat[], int nsat, int k);
+void copy_sol(Solution* a);
+void Local_search(Shard s[],Satelite sat[], int nsat, int k);
 
-int min(int a,int b){
-  if(a<b)
-    return a;
-  return b;
-}
-int max(int a,int b){
-  if(a>b)
-    return a;
-  return b;
-}
+/*Macros */
+#define max(a, b) (a > b ? a : b)
+#define min(a, b) (a > b ? b : a)
 
+/*****     FUNCTIONS     *****/
+
+/* Sort functions */
 void change(Shard s[],int i,int j ){
   Shard aux=s[i];
   s[i]=s[j];
@@ -82,7 +85,7 @@ void quicksort(Shard s[],int begin,int end){
 }
 
 
-/*****     FUNCTIONS     *****/
+/* Input/output functions */
 void write_solution()
 {
   int i;
@@ -319,8 +322,7 @@ int main( int argc, char** argv)
   zf.value=0;
   zf.nshards=0;
   Greedy_solver(shard,sat,nsat,k);
-
-
+  Local_search(shard,sat,nsat,k);
 
   verify_sort(nsat,k,shard,sat);
   gain=0;
@@ -336,8 +338,88 @@ int main( int argc, char** argv)
   return 0;	
 }
 
+void copy_sol(Solution* a)
+{
+  int i;
+  (*a).value=zf.value;
+  (*a).nshards=zf.nshards;
 
-void Greedy_solver(Shard s[],Satelite sat[], int nsat, int k){
+  for(i=0;i<(*a).nshards;i++){
+    (*a).chosen[i]= zf.chosen[i];
+  }
+  printf("\n==NSHARDS: %d",(*a).nshards);
+ 
+}
+
+void save_sol(Solution* a)
+{
+  int i;
+  zf.value=(*a).value;
+  zf.nshards=(*a).nshards;
+
+  for(i=0;i<(*a).nshards;i++){
+     zf.chosen[i]=(*a).chosen[i];
+  }
+  printf("\n==NSHARDS: %d",zf.nshards);
+ 
+}
+
+void Local_search(Shard s[],Satelite sat[], int nsat, int k)
+{
+  Solution zrand;
+  Shard LRC[100];/*At least 100 options*/
+  int rm_shard,nlrc;
+  /*Recover best solution*/
+  copy_sol(&zrand);
+  printf("\n==NSHARDS: %d",zrand.nshards);
+  /* We choose a random shard to take off
+     And make a list of k new possibilities
+     to be chosen at random
+     stops when cannot do more at actual state
+     if better result, save
+     if not a better result try other random shard
+   */
+
+  /* initialize random seed: */
+    srand ( time(NULL) );
+  //while(1){
+    /* generate ramdom number: */
+   rm_shard = rand() % zrand.nshards + 1;
+    //    nlrc=find_lrc(LRC,k,s,rm_shard,nsat,sat);
+    /* Free memory and shard*/
+   rm(rm_shard,&zrand,nsat,sat);
+   save_sol(&zrand);
+    //}
+}
+
+int rm(int rm_shard,Solution* zrand,int nsat,Satelite sat[])
+{
+  int i;
+
+  /*Todo: recover memory  */
+  (*zrand).chosen[rm_shard].x;
+  (*zrand).chosen[rm_shard].y;
+
+  /*Todo: recover value
+    Save value in chosen is better, isn't?
+   */
+  (*zrand).value;
+  /* Remove shard from solution */
+  for(i=rm_shard;i<(*zrand).nshards;i++){
+    (*zrand).chosen[rm_shard]=(*zrand).chosen[rm_shard+1];
+  }
+  printf("tentando remover =/");
+  (*zrand).nshards--;
+}
+
+int find_lrc(Shard LRC[],int nshards,Shard s[],int rm_shard,
+	     int nsat, Satelite sat[])
+{
+
+}
+
+void Greedy_solver(Shard s[],Satelite sat[], int nsat, int k)
+{
   int i,vmin,vmax;
   for(i=1;i<=k;i++){
     vmin=min(s[i].vcost,s[i].hcost);
