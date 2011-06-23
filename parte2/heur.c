@@ -21,7 +21,44 @@ typedef struct {
   int vmemory; 
 } Satelite;
 
+typedef struct {
+  int x;
+  int y;
+  char dir;
+} CShard;
+
+typedef struct {
+  int value;
+  int nshards; 
+  CShard chosen[50913];
+} Solution;
+
+Solution zf;
+char OUTPUT [100];
+
 /*****     FUNCTIONS     *****/
+void write_solution()
+{
+  int i;
+  FILE * pFile;
+
+  pFile = fopen(OUTPUT, "w"); 
+  if (pFile == NULL) {
+    printf("INPUT file is invalid\n");
+    exit(0);
+  }
+
+  fprintf(pFile, "%d\n",zf.value);
+  fprintf(pFile, "%d\n",zf.nshards);
+
+  for(i=0;i<zf.nshards;i++){
+    fprintf(pFile, "%d ",zf.chosen[i].x);
+    fprintf(pFile, "%d ",zf.chosen[i].y);
+    fprintf(pFile, "%c\n",zf.chosen[i].dir);
+  }
+  fclose(pFile);
+}
+
 void read_instances(char INPUT[], int* nsat,int* k,
 		    Shard shard [],Satelite sat[])
 {
@@ -32,7 +69,7 @@ void read_instances(char INPUT[], int* nsat,int* k,
   pFile = fopen(INPUT, "r"); 
   if (pFile == NULL) {
     printf("INPUT file is invalid\n");
-    return 0;
+    exit(0);
   }
 
   fscanf (pFile,"%d",&aux);
@@ -155,6 +192,8 @@ void end_heur(int signum)
 {
   printf("\nFim do programa: alarme é tratado pela função end_heur().\n");
   printf("TIME LIMIT EXCEDED\n");
+  write_solution();
+
   exit(0);
 }
 
@@ -166,7 +205,7 @@ int main( int argc, char** argv)
 {
   /*Program parameters*/
   int TIME;
-  char OUTPUT [100], INPUT[100];
+  char INPUT[100];
 
   /*Intances*/
   Shard shard [50913];
@@ -186,8 +225,17 @@ int main( int argc, char** argv)
   verify_input(nsat,k,shard,sat);
   printf("Iniciando processamento dos dados...\n");
 
+    zf.chosen[0].x=2;
+    zf.chosen[0].y=3;
+    zf.chosen[0].dir="h";
+
   alarm(TIME);
   while(1){
+    zf.value=2;
+    zf.nshards=1;
+    zf.chosen[0].x=2;
+    zf.chosen[0].y=3;
+    zf.chosen[0].dir='h';
   }
 
   return 0;	
