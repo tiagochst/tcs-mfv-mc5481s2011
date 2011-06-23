@@ -103,6 +103,7 @@ void write_solution()
     fprintf(pFile, "%c\n",zf.chosen[i].dir);
   }
   fclose(pFile);
+
 }
 
 void read_instances(char INPUT[], int* nsat,int* k,
@@ -294,7 +295,7 @@ int main( int argc, char** argv)
   Shard shard [50914];
   Satelite sat[301];
   int nsat=0,k=0;
-
+  int i,gain;
   /* Defining my signal alarm*/
   signal(SIGALRM, end_heur);
 
@@ -319,7 +320,17 @@ int main( int argc, char** argv)
   zf.nshards=0;
   Greedy_solver(shard,sat,nsat,k);
 
+
+
   verify_sort(nsat,k,shard,sat);
+  gain=0;
+  for(i=1;i<=k;i++){
+    gain+=shard[i].gain;
+  }
+
+  printf(" porcentagem de shards: %f",(float)zf.nshards/k);
+  printf(" porcentagem de ganho: %f",(float)zf.value/gain);
+
   while(1);
   
   return 0;	
@@ -331,32 +342,42 @@ void Greedy_solver(Shard s[],Satelite sat[], int nsat, int k){
   for(i=1;i<=k;i++){
     vmin=min(s[i].vcost,s[i].hcost);
     vmax=max(s[i].vcost,s[i].hcost);
-
-    if(sat[s[i].x].hmemory>= vmin){
-      zf.value=zf.value+s[i].gain;
-      zf.chosen[zf.nshards].x=s[i].x;
-      zf.chosen[zf.nshards].y=s[i].y;
-      if(vmin==s[i].vcost){
+    
+    if(vmin==s[i].hcost){
+      if(sat[s[i].x].hmemory>= vmin){
+	zf.value=zf.value+s[i].gain;
+	zf.chosen[zf.nshards].x=s[i].x;
+	zf.chosen[zf.nshards].y=s[i].y;
+	zf.chosen[zf.nshards].dir='h';
+	sat[s[i].x].hmemory-=s[i].hcost;
+	zf.nshards++;
+      }
+      else if(sat[s[i].y].vmemory>= vmax){
+	zf.value=zf.value+s[i].gain;
+	zf.chosen[zf.nshards].x=s[i].x;
+	zf.chosen[zf.nshards].y=s[i].y;
 	zf.chosen[zf.nshards].dir='v';
 	sat[s[i].y].vmemory-=s[i].vcost;
-      }else{
-	zf.chosen[zf.nshards].dir='h';
-      	sat[s[i].y].hmemory-=s[i].hcost;
-      }
-      zf.nshards++;
+	zf.nshards++;
+        }
     }
-    else if(sat[s[i].y].vmemory>=vmax){
-      zf.value=zf.value+s[i].gain;
-      zf.chosen[zf.nshards].x=s[i].x;
-      zf.chosen[zf.nshards].y=s[i].y;
-      if(vmax==s[i].vcost){
+    else if(vmin==s[i].vcost){
+      if(sat[s[i].y].vmemory>= vmin){
+	zf.value=zf.value+s[i].gain;
+	zf.chosen[zf.nshards].x=s[i].x;
+	zf.chosen[zf.nshards].y=s[i].y;
 	zf.chosen[zf.nshards].dir='v';
 	sat[s[i].y].vmemory-=s[i].vcost;
-      }else{
-	zf.chosen[zf.nshards].dir='h';
-      	sat[s[i].y].hmemory-=s[i].hcost;
+	zf.nshards++;
       }
-      zf.nshards++;
+      else if(sat[s[i].x].hmemory>= vmax){
+	zf.value=zf.value+s[i].gain;
+	zf.chosen[zf.nshards].x=s[i].x;
+	zf.chosen[zf.nshards].y=s[i].y;
+	zf.chosen[zf.nshards].dir='h';
+	sat[s[i].x].hmemory-=s[i].hcost;
+	zf.nshards++;
+      }
     }
   }
 }
