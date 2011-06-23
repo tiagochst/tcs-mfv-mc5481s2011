@@ -33,6 +33,9 @@ var x {i in T,j in T}, binary;
 s.t. loop{j in T, i in T:j!=i}: x[i,j]+x[j,i]=1;
 /* Only one preciding other */
 
+s.t. seq{j in T, i in T,k in T:j!=i}: x[i,j]+x[j,k]-1<=x[i,k];
+/* If task a precedes b and b preceds c, a should preced a */
+
 s.t. order{(i,j) in S}: x[i,j]=1;
 /* order respected? */
 

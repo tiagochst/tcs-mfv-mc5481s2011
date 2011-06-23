@@ -33,6 +33,8 @@ var x {j in J,i in J,k in T}, binary;
 var begin {j in J,i in T}, integer, >=0;
 /* start time of execution of taks i of project j */
 
+var fim integer, >=0;
+
 s.t. only_one_order{i in J,j in J,k in T: i<j}: x[j,i,k]+x[i,j,k]=1;
 /* if task k of proj j is executed first then
    task k of proj i then j should not preced i */
@@ -49,7 +51,6 @@ s.t. precede_ij{j in J,k in J,i in T:k!=j}:
    begin[k,i] + t[k,i] <= begin[j,i]+(x[j,k,i])*M;
 /* does i project's tasks begin befores j project's task?*/
 
-var fim integer, >=0;
 s.t. all{j in J}:fim>=begin[j,m]+t[j,m];
 /* end of execution is the end of last project */
 

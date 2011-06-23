@@ -107,7 +107,7 @@ pertence ao caminho mínimo.
 \item Todo vértice diferente do inicial e do final deve conter ou
   nenhuma aresta entrando e saindo ou uma entrando e saindo.
 \begin{equation*}
-  \sum_{i \in V}^{m}y_{ik}=\sum_{j \in V}^{m}y_{kj}, \forall k \in V,
+  \sum_{i \in V}^{m}y_{ik}=\sum_{j \in V}^{m}y_{kj},\quad \forall k \in V,
   \forall (i,k) e (k,j) \in A 
 \end{equation*}
 
@@ -152,17 +152,17 @@ colorido com a cor $k$.
 
 \item Todo vértice deve receber exatamente uma cor
 \begin{equation*}
-  \sum_{k=1}^{m}x_{uk}=1, \forall u \in V
+  \sum_{k=1}^{m}x_{uk}=1,\quad \forall u \in V
 \end{equation*}
 
 \item Se um vértice recebe a cor k, esta deve ser usada
 \begin{equation*}
-  x_{uk} \leq y_k, \forall u \in V, k \in \{1 ... m\}
+  x_{uk} \leq y_k, \quad\forall u \in V, k \in \{1 ... m\}
 \end{equation*}
 
 \item Os Vértices vizinhos não podem ter a mesma cor
 \begin{equation*}
-  x_{uk} + x_{vk} \leq 1, \forall (u,v) \in E, k \in \{1 ... m\}
+  x_{uk} + x_{vk} \leq 1, \quad\forall (u,v) \in E, k \in \{1 ... m\}
 \end{equation*}
  
 \end{itemize}
@@ -192,13 +192,21 @@ tarefa $i$ precede $j$.
 \item Todo par de tarefas $(i,j)$ deve ter uma precedência, em que se $i$
   precede $j$, $j$ não pode preceder $i$. 
 \begin{equation*}
-  x_{ji}+x_{ij}=1, \forall i,j \in T
+  x_{ji}+x_{ij}=1, \quad\forall i,j \in T
 \end{equation*}
+
+\item Todo par de tarefas $(i,j)$ deve ter uma transitividade de precedência, em que se $i$
+  precede $j$, e $j$ precede $k$, $i$ precede $k$. Se $x_{ij}=1$ e
+  $x_{jk}=1$, então $x_{ik}=1$.
+\begin{equation*}
+  x_{ij}+x_{jk}-1 \leq x_{i,k}, \quad \forall i,j,k \in T
+\end{equation*}
+
 
 \item Para cada par de tarefas $(i,j)$ em S, a tarefa $i$,
   obrigatoriamente tem que preceder $j$. 
 \begin{equation*}
-  x_{ij} = 1, \forall (i,j) \in S
+  x_{ij} = 1,\quad \forall (i,j) \in S
 \end{equation*}
 
 \item Se uma $j$ tarefa é precedida por outras n tarefas, o tempo de
@@ -206,7 +214,7 @@ tarefa $i$ precede $j$.
   as tarefas predecessoras, mais o seu tempo para ser executada. Se
   for esse término for menor que o deadline, $y_{j}=0$, senão $y_{j}=1$ 
 \begin{equation*}
- \sum_{i \in T, i \neq j} x_{ij}*t_{i} \leq d_{j}-t_{j}+ M*y_{j} \forall j \in T
+ \sum_{i \in T, i \neq j} x_{ij}*t_{i} \leq d_{j}-t_{j}+ M*y_{j}\quad \forall j \in T
 \end{equation*}
  
 Em que M é um número grande e para calculá-lo somou-se todos os tempos
@@ -241,12 +249,12 @@ min\sum_{i=1}^{n}y_i
 \item Toda tarefa dos pares de projetos $(i,j)$ deve ter uma precedência, em que se $i$
   precede $j$, $j$ não pode preceder $i$. 
 \begin{equation*}
-  x_{j,i,k}+x_{i,j,k}=1, \forall i,j \in J
+  x_{j,i,k}+x_{i,j,k}=1, \quad \forall i,j \in J
 \end{equation*}
 
 \item Toda tarefa $i \in T$ do projeto  $j \in J$ tem um tempo mínimo de início que é equivalente ao tempo de início da tarefa que a antecede $i -1$ mais o tempo da execução da tarefa predecessora $ t_{j,i-1}$ para o mesmo projeto. 
 \begin{equation*}
-  begin_{j,i} \geq begin_{j,i-1}+ t_{j,i-1}, \forall i \in T, \forall j \in J
+  begin_{j,i} \geq begin_{j,i-1}+ t_{j,i-1}, \quad\forall i \in T, \forall j \in J
 \end{equation*}
 
 \item Se um projeto $j$ precede um projeto $i$ o tempo de término da
@@ -254,7 +262,7 @@ min\sum_{i=1}^{n}y_i
   tarefa $z$ do projeto $j$ mais o seu tempo de execução.
  
 \begin{equation*}
-  begin_{j,i} + t_{j,i} \leq begin_{k,i}+(1-x_{j,k,i})*M, \forall i \in T, \forall j,k \in J  : k!=j 
+  begin_{j,i} + t_{j,i} \leq begin_{k,i}+(1-x_{j,k,i})*M,\quad \forall i \in T, \forall j,k \in J  : k!=j 
 \end{equation*}
 
 
@@ -267,7 +275,7 @@ das tarefas de todos os projetos.
   tarefa $k$ mais o seu tempo de execução.
  
 \begin{equation*}
-  begin_{k,i} + t_{k,i} \leq begin_{j,i}+x_{j,k,i}*M, \forall i \in T , \forall j,k \in J : k!=j 
+  begin_{k,i} + t_{k,i} \leq begin_{j,i}+x_{j,k,i}*M,\quad \forall i \in T , \forall j,k \in J : k!=j 
 \end{equation*}
 
 Em que M é um número grande e para calculá-lo somou-se todos os tempos
@@ -282,7 +290,7 @@ das tarefas de todos os projetos.
   do último terminar.
  
 \begin{equation*}
- fim \geq begin_{j,m}+ t_{j,m}, \forall j \in J
+ fim \geq begin_{j,m}+ t_{j,m},\quad \forall j \in J
 \end{equation*}
 Em que $m$ é o tempo em que a última tarefa do projeto é executada
 (tarefa no último processador).
@@ -319,22 +327,22 @@ Objetivo: minimizar o tempo de término de todos os projetos:
 \begin{itemize}
 \item Toda máquina deve estar em uma única sala
 \begin{equation*}
-  \sum_{r \in  \{1,2,...,|V|\}}x_{mr}=1, \forall m \in V
+  \sum_{r \in  \{1,2,...,|V|\}}x_{mr}=1,\quad \forall m \in V
 \end{equation*}
 
 \item Toda peça deve estar em uma única sala
 \begin{equation*}
-  \sum_{r \in  \{1,2,...,|V|\}}y_{pr}=1, \forall p \in U
+  \sum_{r \in  \{1,2,...,|V|\}}y_{pr}=1, \quad\forall p \in U
 \end{equation*}
 
 \item Número de máquinas por sala não deve exceder limite K
 \begin{equation*}
-  \sum_{m \in V }x_{mr}\leq K, \forall r \in \{1,2,...,|V|\}
+  \sum_{m \in V }x_{mr}\leq K,\quad \forall r \in \{1,2,...,|V|\}
 \end{equation*}
 
 \item Se uma máquina estiver em sala diferente de sua peça, $rdiff=1$
 \begin{equation*}
-  rdiff_{mp}\geq x_{mr}-y_{pr}, \forall r \in \{1,2,...,|V|\}, \forall (p,m) \in E
+  rdiff_{mp}\geq x_{mr}-y_{pr},\quad \forall r \in \{1,2,...,|V|\}, \forall (p,m) \in E
 \end{equation*}
 
 \end{itemize}
@@ -368,7 +376,7 @@ ID exercício & 1 & 2 & 3\tabularnewline
 \hline 
  {[}mn27{]} & 3 & 7 & 13 \tabularnewline
 \hline 
- {[}ss2{]} & 1 & 6  & 16 \tabularnewline
+ {[}ss2{]} & 1 & 6  & 17 \tabularnewline
 \hline 
 {[}ss15{]} & 8 & 165  & 245$^{\decimal{footnote}}$\addtocounter{footnote}{1}  \tabularnewline
 \hline 
