@@ -1,8 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-#include <unistd.h>
+#include<unistd.h>
 #include<signal.h>
+#include<math.h>
 
 /* Program 
    Authors:
@@ -30,11 +31,56 @@ typedef struct {
 typedef struct {
   int value;
   int nshards; 
-  CShard chosen[50913];
+  CShard chosen[50914];
 } Solution;
 
 Solution zf;
 char OUTPUT [100];
+
+
+void Greedy_solver(Shard s[],Satelite sat[], int nsat, int k);
+
+int min(int a,int b){
+  if(a<b)
+    return a;
+  return b;
+}
+int max(int a,int b){
+  if(a>b)
+    return a;
+  return b;
+}
+
+void change(Shard s[],int i,int j ){
+  Shard aux=s[i];
+  s[i]=s[j];
+  s[j]=aux;
+}
+
+int partition(Shard s[],int p,int r){
+  Shard aux=s[r];
+  int i,j;
+
+  i=p-1;
+  for(j=p;j<r;j++){
+    if((float)s[j].gain/min(s[j].hcost,s[j].vcost)>=(float)aux.gain/min(aux.hcost,aux.vcost)){
+      i++;
+      change(s,i,j);
+    }
+  }
+  change(s,i+1,r);
+  return i+1;
+}
+
+void quicksort(Shard s[],int begin,int end){
+  int q;
+  if (begin<end){
+    q=partition(s,begin,end);
+    quicksort(s,begin,q-1);
+    quicksort(s,q+1,end);
+  }
+}
+
 
 /*****     FUNCTIONS     *****/
 void write_solution()
@@ -99,7 +145,7 @@ void read_instances(char INPUT[], int* nsat,int* k,
 }
 
 /* Command line error message */
-void errorParam()
+void error_args()
 {
   printf("\n****************************************************\n");
   printf(" Program should receive the following parameters :\n");
@@ -122,7 +168,7 @@ void get_args(int argc, char** argv,int* TIME,char IN [],char OUT[])
   int i;
 
   if (argc < 6){
-    errorParam();
+    error_args();
     exit(0);
   }  	    
   else{
@@ -168,7 +214,7 @@ void verify_input(int nsat,int k,Shard shard [],Satelite sat[])
   for(aux=1;aux<=nsat;aux++){
     printf("%d ",sat[aux].vmemory);
   }
-  printf("\n ",sat[aux].vmemory);
+  printf("\n ");
   
   for(i=1;i<=k;i++){
     printf ("  %d  ", shard[i].x);
@@ -188,7 +234,7 @@ void verify_input(int nsat,int k,Shard shard [],Satelite sat[])
    We should print our best solution 
    reached within time limit
 */
-void end_heur(int signum) 
+void end_heur() 
 {
   printf("\nFim do programa: alarme é tratado pela função end_heur().\n");
   printf("TIME LIMIT EXCEDED\n");
@@ -196,6 +242,43 @@ void end_heur(int signum)
 
   exit(0);
 }
+
+/*
+  Verify if input is read correct
+  Should be used only for debug
+*/
+void verify_sort(int nsat,int k,Shard shard [],Satelite sat[])
+{
+  int aux,i;
+
+  printf("---- INSTANCIA DO PROBLEMA ----\n");
+  printf("NUMERO DE SATELITES: %d\n",nsat);
+
+  printf("SATELITES HORIZONTAIS: \n");
+  for(aux=1;aux<=nsat;aux++){
+    printf("%d ",sat[aux].hmemory);
+  }
+
+  printf("\nSATELITES VERTICAIS: \n");
+ 
+  for(aux=1;aux<=nsat;aux++){
+    printf("%d ",sat[aux].vmemory);
+  }
+  printf("\n ");
+  
+  for(i=1;i<=k;i++){
+    printf ("  %d  ", shard[i].x);
+    printf ("  %d  ", shard[i].y);
+    printf ("  %d  ", shard[i].gain);
+    printf ("  %d  ", shard[i].hcost);
+    printf ("  %d \n", shard[i].vcost);
+  }
+  
+  printf("\n-------------------------\n");
+
+}
+ 
+
 
 /* Main program
    - Read input
@@ -208,8 +291,8 @@ int main( int argc, char** argv)
   char INPUT[100];
 
   /*Intances*/
-  Shard shard [50913];
-  Satelite sat[300];
+  Shard shard [50914];
+  Satelite sat[301];
   int nsat=0,k=0;
 
   /* Defining my signal alarm*/
@@ -219,25 +302,61 @@ int main( int argc, char** argv)
   get_args(argc,argv,&TIME,INPUT,OUTPUT);
   printf("\nINPUT:%s,OUTPUT:%s,TIME:%d\n",INPUT,OUTPUT,TIME);
 
+  alarm(TIME); /*Alarme para tempo limite iniciado*/
+
   printf("Iniciando leitura de dados...\n");
   read_instances(INPUT,&nsat,&k,shard,sat);
 
   verify_input(nsat,k,shard,sat);
   printf("Iniciando processamento dos dados...\n");
 
-    zf.chosen[0].x=2;
-    zf.chosen[0].y=3;
-    zf.chosen[0].dir="h";
+  quicksort(shard,1,k);
+  printf("sort realizado");
+  /*
+    Greedy solution
+  */
+  zf.value=0;
+  zf.nshards=0;
+  Greedy_solver(shard,sat,nsat,k);
 
-  alarm(TIME);
-  while(1){
-    zf.value=2;
-    zf.nshards=1;
-    zf.chosen[0].x=2;
-    zf.chosen[0].y=3;
-    zf.chosen[0].dir='h';
-  }
-
+  verify_sort(nsat,k,shard,sat);
+  while(1);
+  
   return 0;	
 }
 
+
+void Greedy_solver(Shard s[],Satelite sat[], int nsat, int k){
+  int i,vmin,vmax;
+  for(i=1;i<=k;i++){
+    vmin=min(s[i].vcost,s[i].hcost);
+    vmax=max(s[i].vcost,s[i].hcost);
+
+    if(sat[s[i].x].hmemory>= vmin){
+      zf.value=zf.value+s[i].gain;
+      zf.chosen[zf.nshards].x=s[i].x;
+      zf.chosen[zf.nshards].y=s[i].y;
+      if(vmin==s[i].vcost){
+	zf.chosen[zf.nshards].dir='v';
+	sat[s[i].y].vmemory-=s[i].vcost;
+      }else{
+	zf.chosen[zf.nshards].dir='h';
+      	sat[s[i].y].hmemory-=s[i].hcost;
+      }
+      zf.nshards++;
+    }
+    else if(sat[s[i].y].vmemory>=vmax){
+      zf.value=zf.value+s[i].gain;
+      zf.chosen[zf.nshards].x=s[i].x;
+      zf.chosen[zf.nshards].y=s[i].y;
+      if(vmax==s[i].vcost){
+	zf.chosen[zf.nshards].dir='v';
+	sat[s[i].y].vmemory-=s[i].vcost;
+      }else{
+	zf.chosen[zf.nshards].dir='h';
+      	sat[s[i].y].hmemory-=s[i].hcost;
+      }
+      zf.nshards++;
+    }
+  }
+}
