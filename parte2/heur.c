@@ -44,6 +44,10 @@ typedef struct {
 Solution zf;
 char OUTPUT [100];
 int gain;
+Shard solshard [50914];
+Satelite solsat[301];
+Shard inshard [50914];
+Satelite insat[301];
 
 void Greedy_solver(Shard s[],Satelite sat[], int nsat, int k);
 void copy_sol(Solution* a);
@@ -245,9 +249,90 @@ void end_heur()
   printf("\nFim do programa: alarme é tratado pela função end_heur().\n");
   printf("TIME LIMIT EXCEDED\n");
   write_solution();
+  verify_solution();
 
   exit(0);
 }
+
+void verify_solution(){
+  /*Reler arquivo 1*/
+  int i=0,j=0,aux=0,k,p,nsat;
+  FILE * pFile;
+
+  /* Leitura de arquivo de entrada  */
+  pFile = fopen("verifica.dat", "r"); 
+  if (pFile == NULL) {
+    printf("INPUT file is invalid\n");
+    exit(0);
+  }
+  
+  fscanf (pFile,"%d",&nsat);
+  
+  for(j=1;j<=nsat;j++){
+    fscanf (pFile,"%d",&i);
+    fscanf (pFile,"%d",&insat[i].hmemory);
+  }
+  for(j=1;j<=nsat;j++){
+    fscanf (pFile,"%d",&i);
+    fscanf (pFile,"%d",&insat[i].vmemory);
+  }
+  
+  fscanf (pFile,"%d",&k);
+   
+  for(j=1;j<=k;j++){
+    fscanf (pFile,"%d",&inshard[j].x);
+    fscanf (pFile,"%d",&inshard[j].y);
+    fscanf (pFile,"%d",&inshard[j].gain);
+    fscanf (pFile,"%d",&inshard[j].hcost);
+    fscanf (pFile,"%d",&inshard[j].vcost);
+  }
+  
+  fclose(pFile);
+
+  /*Buscar por shards no arquivo 1*/
+  /*Criar vetor auxiliar de satelites e verficar 
+    se saida e menor que a memoria para cada satelite*/ 
+   
+  for(i=0;i<zf.nshards;i++){
+
+    if(zf.chosen[i].dir=='h'){
+      for(p=0;p<zf.nshards;p++){
+	if(inshard[p].x==zf.chosen[i].x && inshard[p].y==zf.chosen[i].y)
+	  solsat[zf.chosen[i].x].hmemory+=inshard[p].hcost;
+      }
+      /*usar x para somar em 
+	sat[zf.chosen[i].x] o custo desse shard*/
+    }
+    else if(zf.chosen[i].dir=='v'){
+      for(p=0;p<zf.nshards;p++){
+	if(inshard[p].x==zf.chosen[i].x && inshard[p].y==zf.chosen[i].y)
+	  solsat[zf.chosen[i].y].vmemory+=inshard[p].vcost;
+      }
+    }
+    
+    /*usar y*/
+    /*usar x para somar em 
+      sat[zf.chosen[i].y] o custo desse shard*/
+    
+  }
+  /*Compara valores do arq1 um com solucao*/
+  for(p=1;p<=nsat;p++){
+    //printf("\nh sol %d in %d",solsat[p].hmemory,insat[p].hmemory);
+    if(solsat[p].hmemory>insat[p].hmemory){
+      printf("ERRORRR!!!!");
+      exit(0);
+    }
+    //printf("\nv sol %d in %d",solsat[p].vmemory,insat[p].vmemory);
+    if(solsat[p].vmemory>insat[p].vmemory){
+      printf("ERRORRR!!!!");
+      exit(0);
+    }
+  }
+  printf("\n@@@@   SOLUTION FEASEBLE  @@@@@\n");
+      
+}
+  
+
 
 /*
   Verify if input is read correct
@@ -334,7 +419,7 @@ int main( int argc, char** argv)
   Greedy_solver(shard,sat,nsat,k);
   Local_search(shard,sat,nsat,k);
 
-   printf(" porcentagem de shards: %f",(float)zf.nshards/k);
+  printf(" porcentagem de shards: %f",(float)zf.nshards/k);
   printf(" porcentagem de ganho: %f",(float)zf.value/gain);
 
   while(1);
