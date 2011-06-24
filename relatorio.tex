@@ -402,6 +402,13 @@ da seção do problema (seção 2.4) esse resultado foi considerado o melhor que
 % ******************************************************
 \section{Parte 2}
 
+Na segunda parte desenvolveu-se uma heurística gulosa, no qual
+ordenava-se os shards em relação ao ganho do shard com o mínimo de
+custo entre o satélite vertical e o horizontal.
+A partir disso pegava-se os shards até que não fossem mais possível.
+Tentou-se desenvolver um busca local a partir da solução gulosa.
+No qual retirava-se um shard da solução e tentava colocar outros no lugar.
+
 \subsection{Resultados}
 
 
@@ -415,42 +422,85 @@ da seção do problema (seção 2.4) esse resultado foi considerado o melhor que
  & Melhor solução encontrada & Parâmetro Tempo  \tabularnewline
 \hline 
 \hline 
-small-0 & 8874 & TIME \tabularnewline
+small-0 & 8882 & 5s \tabularnewline %8882
 \hline 
-small-1 & 56297 & TIME \tabularnewline
+small-1 & 56435 & 5s  \tabularnewline %56435
 \hline 
-small-2 & 29351 & TIME \tabularnewline
+small-2 & 29430 & 5s \tabularnewline %29430
 \hline 
-small-3 & 14848 & TIME \tabularnewline
+small-3 & 14848 & 5s \tabularnewline %14848
 \hline 
-small-4 & 31403 & TIME \tabularnewline
+small-4 & 31403 & 5s \tabularnewline %31403
 \hline 
-medium-0 & 3354366 & TIME \tabularnewline
+medium-0 & 3354366 & 5s \tabularnewline %3354366
 \hline 
-medium-1 & 1334090 & TIME \tabularnewline
+medium-1 & 1334090 & 5s \tabularnewline %1334090
 \hline 
-medium-2 & 3590494 & TIME \tabularnewline
+medium-2 & 3590494 & 5s \tabularnewline %3590494
 \hline 
-medium-3 & 1927658 & TIME \tabularnewline
+medium-3 & 1927658 & 5s \tabularnewline %1927658
 \hline 
-medium-4 & 3696487 & TIME \tabularnewline
+medium-4 & 3696487 & 5s \tabularnewline %3696487
 \hline 
-medium-5 & 2350322 & TIME \tabularnewline
+medium-5 & 2350322 & 5s \tabularnewline %2350322
 \hline 
-medium-6 & 743412 & TIME \tabularnewline
+medium-6 & 743412 & 5s \tabularnewline %743412
 \hline 
-medium-7 & 1157211 & TIME \tabularnewline
+medium-7 & 1157211 & 5s \tabularnewline %1157211
 \hline 
-big-0 & 10148418 & TIME \tabularnewline
+big-0 & 10148418 & 5s \tabularnewline %10148418
 \hline 
-big-1 & 19194050 & TIME \tabularnewline
+big-1 & 19194050 & 5s \tabularnewline %19194050
 \hline 
 
 \end{tabular}
 \par\end{centering}
-\caption{Resultados da parte 2}
+\caption{Resultados da parte 2 - Somente parte gulosa}
 \end{table}
 
+
+\begin{table}[h!]
+\begin{centering}
+\begin{tabular}{|c|c|c|}
+\hline 
+ & Melhor solução encontrada & Parâmetro Tempo  \tabularnewline
+\hline 
+\hline 
+small-0 & 9485 & 2 min  \tabularnewline %8882
+\hline 
+small-1 & 58791 & 2 min  \tabularnewline %56435
+\hline 
+small-2 & 30667 & 2 min  \tabularnewline %29430
+\hline 
+small-3 & 15910 & 2 min  \tabularnewline %14848
+\hline 
+small-4 & 32297 & 2 min  \tabularnewline %31403
+\hline 
+medium-0 & 3466780 & 2 min  \tabularnewline %3354366
+\hline 
+medium-1 & 1389795 & 2 min  \tabularnewline %1334090
+\hline 
+medium-2 & 3705735 & 2 min  \tabularnewline %3590494
+\hline 
+medium-3 & 1994583 & 2 min  \tabularnewline %1927658
+\hline 
+medium-4 & 3828762 & 2 min  \tabularnewline %3696487
+\hline 
+medium-5 & 2413080 & 2 min  \tabularnewline %2350322
+\hline 
+medium-6 & 763815 & 2 min  \tabularnewline %743412
+\hline 
+medium-7 & 1192933 & 2 min  \tabularnewline %1157211
+\hline 
+big-0 & 10410027 & 2 min  \tabularnewline %10148418
+\hline 
+big-1 & 19679387 & 2 min  \tabularnewline %19194050
+\hline 
+
+\end{tabular}
+\par\end{centering}
+\caption{Resultados da parte 2 - parte gulosa e busca local}
+\end{table}
 
 % ******************************************************
 % REFERENCIAS BIBLIOGRÁFICAS
