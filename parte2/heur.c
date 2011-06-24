@@ -85,7 +85,7 @@ int choose_lrc(Solution* zrand,int LRC[],int nshard,Shard s[],
     if(save==1){
       s[LRC[i]].active=0;
       (*zrand).value=(*zrand).value+s[LRC[i]].gain;
-      (*zrand).chosen[(*zrand).nshards].idx=i;
+      (*zrand).chosen[(*zrand).nshards].idx=LRC[i];
       (*zrand).chosen[(*zrand).nshards].x=s[LRC[i]].x;
       (*zrand).chosen[(*zrand).nshards].y=s[LRC[i]].y;
       (*zrand).nshards++;
@@ -364,7 +364,7 @@ int main( int argc, char** argv)
   /*Intances*/
   Shard shard [50914];
   Satelite sat[301];
-  int nsat=0,k=0;
+  int nsat=0,k=0,i;
 
   /* Defining my signal alarm*/
   signal(SIGALRM, end_heur);
@@ -377,6 +377,11 @@ int main( int argc, char** argv)
   printf("Iniciando leitura de dados...\n");
   read_instances(INPUT,&nsat,&k,shard,sat);
 
+  /* all shards should be avaiables*/
+  for(i=1;i<=k;i++){
+    shard[i].active=1;
+  }
+
   printf("Iniciando processamento dos dados...\n");
   quicksort(shard,1,k);
   printf("sort realizado");
@@ -388,6 +393,7 @@ int main( int argc, char** argv)
   zf.nshards=0;
 
   Greedy_solver(shard,sat,k);
+
   /* does not get out of local search this except for a given time*/
   Local_search(shard,sat,k);
 
@@ -470,10 +476,12 @@ void verify_solution(){
   for(j=1;j<=nsat;j++){
     fscanf (pFile,"%d",&i);
     fscanf (pFile,"%d",&insat[i].hmemory);
+    solsat[i].hmemory=0;
   }
   for(j=1;j<=nsat;j++){
     fscanf (pFile,"%d",&i);
     fscanf (pFile,"%d",&insat[i].vmemory);
+    solsat[i].vmemory=0;
   }
   
   fscanf (pFile,"%d",&k);
@@ -486,7 +494,7 @@ void verify_solution(){
     fscanf (pFile,"%d",&inshard[j].vcost);
   }
   
-  fclose(pFile);
+ 
 
   /*Buscar por shards no arquivo 1*/
   /*Criar vetor auxiliar de satelites e verficar 
@@ -495,15 +503,21 @@ void verify_solution(){
   for(i=0;i<zf.nshards;i++){
     
     if(zf.chosen[i].dir=='h'){
-      for(p=0;p<zf.nshards;p++){
-	if(inshard[p].x==zf.chosen[i].x && inshard[p].y==zf.chosen[i].y)
+      for(p=1;p<k;p++){
+	if(inshard[p].x==zf.chosen[i].x && inshard[p].y==zf.chosen[i].y){
+	  if(zf.chosen[i].x==1)
+	    /*	    printf("%d %d %d %d val %d atual %d\n",inshard[p].x,zf.chosen[i].x , inshard[p].y,zf.chosen[i].y,inshard[p].hcost, solsat[zf.chosen[i].x].hmemory);*/
 	  solsat[zf.chosen[i].x].hmemory+=inshard[p].hcost;
+	}
       }
     }
     else if(zf.chosen[i].dir=='v'){
-      for(p=0;p<zf.nshards;p++){
-	if(inshard[p].x==zf.chosen[i].x && inshard[p].y==zf.chosen[i].y)
+      for(p=1;p<k;p++){
+	if(inshard[p].x==zf.chosen[i].x && inshard[p].y==zf.chosen[i].y){
 	  solsat[zf.chosen[i].y].vmemory+=inshard[p].vcost;
+	  /* printf("%d %d %d %d\n",inshard[p].x,zf.chosen[i].x , inshard[p].y,zf.chosen[i].y);
+	   */
+	}
       }
     }
   }
@@ -511,11 +525,15 @@ void verify_solution(){
   /*Compara valores do arq1 um com solucao*/
   for(p=1;p<=nsat;p++){
     if(solsat[p].hmemory>insat[p].hmemory){
-      printf("ERRORRR!!!!");
+      printf("\nh idx %d sol %d in %d",p,solsat[p].hmemory,insat[p].hmemory);
+      printf("\nERRORRR\n!!!!");
+      write_solution();
       exit(0);
     }
     if(solsat[p].vmemory>insat[p].vmemory){
+      printf("\nv idx %d sol %d in %d",p,solsat[p].vmemory,insat[p].vmemory);
       printf("ERRORRR!!!!");
+      write_solution();
       exit(0);
     }
   }
