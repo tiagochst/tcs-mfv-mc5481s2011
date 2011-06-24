@@ -1,10 +1,4 @@
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<unistd.h>
-#include<signal.h>
-#include<math.h>
-#include<time.h>
+#include"heur.h"
 
 /* Program 
    Authors:
@@ -12,52 +6,190 @@
    - Tiago Chedraoui Silva
 */
 
-/* Types of data*/
-typedef struct {
-  int x,y;
-  int gain;
-  int hcost,vcost; 
-  int active;/*Is shard already in solution?*/
-} Shard;
-
-typedef struct {
-  int hmemory;
-  int vmemory; 
-} Satelite;
-
-typedef struct {
-  int x;
-  int y;
-  char dir;
-  int idx;
-} CShard;
-
-typedef struct {
-  int value;
-  int nshards; 
-  CShard chosen[50914];
-} Solution;
-
-/* Global variables,
-   used beacause of alarm signal
-*/
+/*
+ * Global variables,   used beacause of alarm signal
+ * Other gv are only for debug purpose see heur.h 
+ */
 Solution zf;
 char OUTPUT [100];
-int gain;
-Shard solshard [50914];
-Satelite solsat[301];
-Shard inshard [50914];
-Satelite insat[301];
-
-void Greedy_solver(Shard s[],Satelite sat[], int nsat, int k);
-void copy_sol(Solution* a);
-void Local_search(Shard s[],Satelite sat[], int nsat, int k);
-
-/*Macros */
-#define max(a, b) (a > b ? a : b)
-#define min(a, b) (a > b ? b : a)
 
 /*****     FUNCTIONS     *****/
+
+void Local_search(Shard s[],Satelite sat[], int k)
+{
+  Solution zrand;
+  int LRC[11];/*At least 100 options*/
+  int rm_shard,nlrc;
+  int i;
+
+  /* We choose a shard from solution to take off 
+     And make a list (lrc) of 11 new possibilities
+     to be chosen (the last one is the removed one) 
+     we try to put every one of lrc taht fits in
+     (memory limits our choice)
+     if better result, save 
+     if not a better result try other random shard
+  */
+  while(1){
+    /*get the best solution, this will be our start point*/
+    copy_sol(&zrand);
+   
+    /*
+      For every shard of solution we take it out
+      And try to put other shards
+    */
+    for(rm_shard=zrand.nshards-1; rm_shard>=0; rm_shard--){
+      
+      /*Clear possible candidates to be in place in solution*/    
+      for(i=0;i<11;i++){
+	LRC[i]=0;
+      }
+    
+      nlrc=find_lrc(LRC,k,s,rm_shard);
+ 
+      /*insert removed node at end of lrc*/
+      LRC[nlrc]=zrand.chosen[rm_shard].idx;
+      nlrc++;
+      
+      /*removing node from solution*/
+      rm(rm_shard,&zrand,sat,s);
+
+      choose_lrc(&zrand,LRC,nlrc,s,sat);
+    
+      if(zrand.value>zf.value){
+	save_sol(&zrand);
+      }
+    }
+  }
+}
+
+int choose_lrc(Solution* zrand,int LRC[],int nshard,Shard s[],
+	       Satelite sat[])
+{
+  int save=0,i;
+
+  /*Every shard of lrc is tried*/
+  for(i=0;i<nshard;i++){
+
+    /*If it fits in solution, put it in*/
+    if(sat[s[LRC[i]].x].hmemory>= s[LRC[i]].hcost){
+      save=1;
+      (*zrand).chosen[(*zrand).nshards].dir='h';
+      sat[s[LRC[i]].x].hmemory-=s[LRC[i]].hcost;
+    }
+    else if(sat[s[LRC[i]].y].vmemory>= s[LRC[i]].vcost){
+      save=1;
+      (*zrand).chosen[(*zrand).nshards].dir='v';
+      sat[s[LRC[i]].y].vmemory-=s[LRC[i]].vcost;
+    }
+    if(save==1){
+      s[LRC[i]].active=0;
+      (*zrand).value=(*zrand).value+s[LRC[i]].gain;
+      (*zrand).chosen[(*zrand).nshards].idx=i;
+      (*zrand).chosen[(*zrand).nshards].x=s[LRC[i]].x;
+      (*zrand).chosen[(*zrand).nshards].y=s[LRC[i]].y;
+      (*zrand).nshards++;
+      save=0;
+    }
+  }
+  return i;
+}
+
+void rm(int rm_shard,Solution* zrand,Satelite sat[],Shard s[])
+{
+  int i;
+
+  /*Remove shard and restore memory, shards avaiability,
+    and  decrease value of best solution
+  */
+  if((*zrand).chosen[rm_shard].dir=='h'){
+    sat[(*zrand).chosen[rm_shard].x].hmemory+=s[(*zrand).chosen[rm_shard].idx].hcost;
+    s[(*zrand).chosen[rm_shard].idx].active=1;
+  }
+  else{
+    sat[(*zrand).chosen[rm_shard].y].vmemory+=s[(*zrand).chosen[rm_shard].idx].vcost;
+    s[(*zrand).chosen[rm_shard].idx].active=1;
+  }
+  
+  (*zrand).value-=s[(*zrand).chosen[rm_shard].idx].gain;
+  
+  /* Remove shard from solution */
+  for(i=rm_shard;i<(*zrand).nshards;i++){
+    (*zrand).chosen[i]=(*zrand).chosen[i+1];
+  }
+  (*zrand).nshards--;
+}
+
+int find_lrc(int LRC[],int nshards,Shard s[],int rm_shard)
+{
+  int aux,i=0,find;
+  if(zf.chosen[rm_shard].dir=='h'){
+    find=zf.chosen[rm_shard].x;
+    for(aux=1;aux<=nshards;aux++){
+      if(i==10)
+	break;
+      if(s[aux].x==find && s[aux].active==1){
+	LRC[i]=aux;
+	i++;
+      }
+    }
+  }
+  else{
+    find=zf.chosen[rm_shard].y;
+    for(aux=1;aux<=nshards;aux++){
+      if(i==10)
+	break;
+      if(s[aux].y==find && s[aux].active==1){
+	LRC[i]=aux;
+	i++;
+      }
+    }
+  }
+  return i;
+}
+
+void Greedy_solver(Shard s[],Satelite sat[],int k)
+{
+  int i,vmin,vmax,save;
+  for(i=1;i<=k;i++){
+    vmin=min(s[i].vcost,s[i].hcost);
+    vmax=max(s[i].vcost,s[i].hcost);
+    save=0;
+    if(vmin==s[i].hcost){
+      if(sat[s[i].x].hmemory>= vmin){
+	save=1;
+	zf.chosen[zf.nshards].dir='h';
+	sat[s[i].x].hmemory-=s[i].hcost;
+      }
+      else if(sat[s[i].y].vmemory>= vmax){
+	save=1;
+	zf.chosen[zf.nshards].dir='v';
+	sat[s[i].y].vmemory-=s[i].vcost;
+      }
+    }
+    else if(vmin==s[i].vcost){
+      if(sat[s[i].y].vmemory>= vmin){
+	save=1;
+	zf.chosen[zf.nshards].dir='v';
+	sat[s[i].y].vmemory-=s[i].vcost;
+      }
+      else if(sat[s[i].x].hmemory>= vmax){
+	save=1;
+	zf.chosen[zf.nshards].dir='h';
+	sat[s[i].x].hmemory-=s[i].hcost;
+      }
+    }
+    if(save==1){
+      s[i].active=0;
+      zf.value=zf.value+s[i].gain;
+      zf.chosen[zf.nshards].idx=i;
+      zf.chosen[zf.nshards].x=s[i].x;
+      zf.chosen[zf.nshards].y=s[i].y;
+      zf.nshards++;
+    }
+  }
+}
+
 
 /* Sort functions */
 void change(Shard s[],int i,int j ){
@@ -128,9 +260,11 @@ void read_instances(char INPUT[], int* nsat,int* k,
     exit(0);
   }
 
+  /* Leitura do numero de satelites */
   fscanf (pFile,"%d",&aux);
   *nsat=aux;
 
+  /* Leitura dos satelites */
   for(j=1;j<=*nsat;j++){
     fscanf (pFile,"%d",&i);
     fscanf (pFile,"%d",&sat[i].hmemory);
@@ -139,10 +273,12 @@ void read_instances(char INPUT[], int* nsat,int* k,
     fscanf (pFile,"%d",&i);
     fscanf (pFile,"%d",&sat[i].vmemory);
   }
-  
+
+  /* Leitura do numero de shards */
   fscanf (pFile,"%d",&aux);
   *k=aux;
 
+  /* Leitura dos shards */
   for(j=1;j<=*k;j++){
     fscanf (pFile,"%d",&shard[j].x);
     fscanf (pFile,"%d",&shard[j].y);
@@ -199,9 +335,88 @@ void get_args(int argc, char** argv,int* TIME,char IN [],char OUT[])
       }
     }
   }
-  printf("\nINPUT:%s,OUTPUT:%s,TIME:%d\n",IN,OUT,*TIME);
 }
 
+
+/* Time limit's signal handler
+   We should print our best solution 
+   reached within time limit
+*/
+void end_heur() 
+{
+  printf("\nTIME LIMIT EXCEDED");
+  write_solution();
+  verify_solution();
+
+  exit(0);
+}
+
+/* Main program
+   - Read input
+   - Find a solution
+*/
+int main( int argc, char** argv)
+{
+  /*Program parameters*/
+  int TIME;
+  char INPUT[100];
+
+  /*Intances*/
+  Shard shard [50914];
+  Satelite sat[301];
+  int nsat=0,k=0;
+
+  /* Defining my signal alarm*/
+  signal(SIGALRM, end_heur);
+
+  printf("Iniciando leitura de parametros...\n");
+  get_args(argc,argv,&TIME,INPUT,OUTPUT);
+
+  alarm(TIME); /*Alarme para tempo limite iniciado*/
+
+  printf("Iniciando leitura de dados...\n");
+  read_instances(INPUT,&nsat,&k,shard,sat);
+
+  printf("Iniciando processamento dos dados...\n");
+  quicksort(shard,1,k);
+  printf("sort realizado");
+
+  /*
+    Greedy solution
+  */
+  zf.value=0;
+  zf.nshards=0;
+
+  Greedy_solver(shard,sat,k);
+  /* does not get out of local search this except for a given time*/
+  Local_search(shard,sat,k);
+
+  return 0;	
+}
+
+void copy_sol(Solution* a)
+{
+  int i;
+  (*a).value=zf.value;
+  (*a).nshards=zf.nshards;
+
+  for(i=0;i<(*a).nshards;i++){
+    (*a).chosen[i]= zf.chosen[i];
+  }
+}
+
+void save_sol(Solution* a)
+{
+  int i;
+  zf.value=(*a).value;
+  zf.nshards=(*a).nshards;
+
+  for(i=0;i<(*a).nshards;i++){
+    zf.chosen[i]=(*a).chosen[i];
+  }
+}
+
+/*Debug functions*/
 
 /*
   Verify if input is read correct
@@ -238,28 +453,12 @@ void verify_input(int nsat,int k,Shard shard [],Satelite sat[])
 
 }
 
-
-
-/* Time limit's signal handler
-   We should print our best solution 
-   reached within time limit
-*/
-void end_heur() 
-{
-  printf("\nFim do programa: alarme é tratado pela função end_heur().\n");
-  printf("TIME LIMIT EXCEDED\n");
-  write_solution();
-  verify_solution();
-
-  exit(0);
-}
-
 void verify_solution(){
-  /*Reler arquivo 1*/
-  int i=0,j=0,aux=0,k,p,nsat;
+  /*Reread file of input*/
+  int i=0,j=0,k,p,nsat;
   FILE * pFile;
 
-  /* Leitura de arquivo de entrada  */
+  /* Reading input file (you should make a copy named verifica.dat)  */
   pFile = fopen("verifica.dat", "r"); 
   if (pFile == NULL) {
     printf("INPUT file is invalid\n");
@@ -292,16 +491,14 @@ void verify_solution(){
   /*Buscar por shards no arquivo 1*/
   /*Criar vetor auxiliar de satelites e verficar 
     se saida e menor que a memoria para cada satelite*/ 
-   
+  
   for(i=0;i<zf.nshards;i++){
-
+    
     if(zf.chosen[i].dir=='h'){
       for(p=0;p<zf.nshards;p++){
 	if(inshard[p].x==zf.chosen[i].x && inshard[p].y==zf.chosen[i].y)
 	  solsat[zf.chosen[i].x].hmemory+=inshard[p].hcost;
       }
-      /*usar x para somar em 
-	sat[zf.chosen[i].x] o custo desse shard*/
     }
     else if(zf.chosen[i].dir=='v'){
       for(p=0;p<zf.nshards;p++){
@@ -309,20 +506,14 @@ void verify_solution(){
 	  solsat[zf.chosen[i].y].vmemory+=inshard[p].vcost;
       }
     }
-    
-    /*usar y*/
-    /*usar x para somar em 
-      sat[zf.chosen[i].y] o custo desse shard*/
-    
   }
+
   /*Compara valores do arq1 um com solucao*/
   for(p=1;p<=nsat;p++){
-    //printf("\nh sol %d in %d",solsat[p].hmemory,insat[p].hmemory);
     if(solsat[p].hmemory>insat[p].hmemory){
       printf("ERRORRR!!!!");
       exit(0);
     }
-    //printf("\nv sol %d in %d",solsat[p].vmemory,insat[p].vmemory);
     if(solsat[p].vmemory>insat[p].vmemory){
       printf("ERRORRR!!!!");
       exit(0);
@@ -330,311 +521,4 @@ void verify_solution(){
   }
   printf("\n@@@@   SOLUTION FEASEBLE  @@@@@\n");
       
-}
-  
-
-
-/*
-  Verify if input is read correct
-  Should be used only for debug
-*/
-void verify_sort(int nsat,int k,Shard shard [],Satelite sat[])
-{
-  int aux,i;
-
-  printf("---- INSTANCIA DO PROBLEMA ----\n");
-  printf("NUMERO DE SATELITES: %d\n",nsat);
-
-  printf("SATELITES HORIZONTAIS: \n");
-  for(aux=1;aux<=nsat;aux++){
-    printf("%d ",sat[aux].hmemory);
-  }
-
-  printf("\nSATELITES VERTICAIS: \n");
- 
-  for(aux=1;aux<=nsat;aux++){
-    printf("%d ",sat[aux].vmemory);
-  }
-  printf("\n ");
-  
-  for(i=1;i<=k;i++){
-    printf ("  %d  ", shard[i].x);
-    printf ("  %d  ", shard[i].y);
-    printf ("  %d  ", shard[i].gain);
-    printf ("  %d  ", shard[i].hcost);
-    printf ("  %d \n", shard[i].vcost);
-  }
-  
-  printf("\n-------------------------\n");
-
-}
- 
-
-
-/* Main program
-   - Read input
-   - Find a solution
-*/
-int main( int argc, char** argv)
-{
-  /*Program parameters*/
-  int TIME;
-  char INPUT[100];
-
-  /*Intances*/
-  Shard shard [50914];
-  Satelite sat[301];
-  int nsat=0,k=0;
-  int i;
-  /* Defining my signal alarm*/
-  signal(SIGALRM, end_heur);
-
-  printf("Iniciando leitura de parametros...\n");
-  get_args(argc,argv,&TIME,INPUT,OUTPUT);
-  printf("\nINPUT:%s,OUTPUT:%s,TIME:%d\n",INPUT,OUTPUT,TIME);
-
-  alarm(TIME); /*Alarme para tempo limite iniciado*/
-
-  printf("Iniciando leitura de dados...\n");
-  read_instances(INPUT,&nsat,&k,shard,sat);
-
-
-  gain=0;
-  for(i=1;i<=k;i++){
-    shard[i].active=1;
-    gain+=shard[i].gain;
-  }
-
-  verify_input(nsat,k,shard,sat);
-  printf("Iniciando processamento dos dados...\n");
-
-  quicksort(shard,1,k);
-  verify_sort(nsat,k,shard,sat);
-  printf("sort realizado");
-  /*
-    Greedy solution
-  */
-  zf.value=0;
-  zf.nshards=0;
-  Greedy_solver(shard,sat,nsat,k);
-  Local_search(shard,sat,nsat,k);
-
-  printf(" porcentagem de shards: %f",(float)zf.nshards/k);
-  printf(" porcentagem de ganho: %f",(float)zf.value/gain);
-
-  while(1);
-  
-  return 0;	
-}
-
-void copy_sol(Solution* a)
-{
-  int i;
-  (*a).value=zf.value;
-  (*a).nshards=zf.nshards;
-
-  for(i=0;i<(*a).nshards;i++){
-    (*a).chosen[i]= zf.chosen[i];
-  }
-  // printf("\n==NSHARDS: %d",(*a).nshards);
- 
-}
-
-void save_sol(Solution* a)
-{
-  int i;
-  zf.value=(*a).value;
-  zf.nshards=(*a).nshards;
-
-  for(i=0;i<(*a).nshards;i++){
-    zf.chosen[i]=(*a).chosen[i];
-  }
-  //printf("\n==NSHARDS: %d",zf.nshards);
- 
-}
-
-void Local_search(Shard s[],Satelite sat[], int nsat, int k)
-{
-  Solution zrand;
-  int LRC[11];/*At least 100 options*/
-  int rm_shard,nlrc;
-  int i,j,z;
-  /* We choose a random shard to take off And make a list of k new possibilities
-     to be chosen at random stops when cannot do more at actual state
-     if better result, save if not a better result try other random shard
-  */
-  while(1){
-    copy_sol(&zrand);
-    //printf("\n Devem ser iguais otima %d  rand %d",zf.nshards,zrand.nshards);
-    
-    
-    /*
-      For every shard of solution we take it out
-      And try to put other shards
-    */
-    for(rm_shard=zrand.nshards-1; rm_shard>=0; rm_shard--){
-      /*Recover best solution*/
-      //copy_sol(&zrand);
-      
-      /*Possible candidates to be in place in solution*/    
-      for(i=0;i<11;i++){
-	LRC[i]=0;
-      }
-      //printf("\n Devem ser iguais otima %d  rand %d",zf.value,zrand.value);
-    
-      nlrc=find_lrc(LRC,k,s,rm_shard,nsat,sat);
-      LRC[nlrc]=zrand.chosen[rm_shard].idx;
-      nlrc++;
-      rm(rm_shard,&zrand,nsat,sat,s);
-      //printf("\n== REMOVI: %d %d", zrand.chosen[rm_shard].x,zrand.chosen[rm_shard].y);
-      //printf("\n== LISTA DE POSSIVEIS %d CANDIDATOS:\n",nlrc);
-      /*    for(i=0;i<nlrc;i++){
-	    printf("x %d y %d gain %d\n",s[LRC[i]].x,s[LRC[i]].y,s[LRC[i]].gain);
-	    }  
-      */
-      z=choose_lrc(&zrand,LRC,nlrc,s,sat);
-      /* Free memory and shard*/
-      //printf("\n Comparando otima %d  rand %d",zf.value,zrand.value);
-    
-      if(zrand.value>zf.value){
-	save_sol(&zrand);
-	printf("\n porcentagem de shards: %f",(float)zf.nshards/k);
-	printf("\n porcentagem de ganho: %f",(float)zf.value/gain);
-      }
-      else{
-	/*Need to recover state before rand*/
-	//s[(zrand).chosen[rm_shard].idx].active=0;
-	//s[LRC[z]].active=1;
-      }
-    }
-  }
-}
-
-int choose_lrc(Solution* zrand,int LRC[],int nshard,Shard s[],Satelite sat[])
-{
-  int save=0,i,min_vcost,min_hcost,init=nshard,tries=0;
-  /* generate ramdom number: */
-
-  for(i=0;i<nshard;i++){
-
-    //printf("RAND: x %d y %d g %d",s[LRC[i]].x,s[LRC[i]].y,s[LRC[i]].gain);
-
-    if(sat[s[LRC[i]].x].hmemory>= s[LRC[i]].hcost){
-      save=1;
-      (*zrand).chosen[(*zrand).nshards].dir='h';
-      sat[s[LRC[i]].x].hmemory-=s[LRC[i]].hcost;
-    }
-    else if(sat[s[LRC[i]].y].vmemory>= s[LRC[i]].vcost){
-      save=1;
-      (*zrand).chosen[(*zrand).nshards].dir='v';
-      sat[s[LRC[i]].y].vmemory-=s[LRC[i]].vcost;
-    }
-    if(save==1){
-      s[LRC[i]].active=0;
-      // printf("\nGANHOS %d Val anteiror: %d\n",s[LRC[i]].gain,(*zrand).value);
-      (*zrand).value=(*zrand).value+s[LRC[i]].gain;
-      (*zrand).chosen[(*zrand).nshards].idx=i;
-      (*zrand).chosen[(*zrand).nshards].x=s[LRC[i]].x;
-      (*zrand).chosen[(*zrand).nshards].y=s[LRC[i]].y;
-      (*zrand).nshards++;
-      save=0;
-    }
-  }
-  return i;
-}
-
-int rm(int rm_shard,Solution* zrand,int nsat,Satelite sat[],Shard s[])
-{
-  int i;
-
-  /*Todo: recover memory  */
-  if((*zrand).chosen[rm_shard].dir=='h'){
-    sat[(*zrand).chosen[rm_shard].x].hmemory+=s[(*zrand).chosen[rm_shard].idx].hcost;
-    s[(*zrand).chosen[rm_shard].idx].active=1;
-  }
-  else{
-    sat[(*zrand).chosen[rm_shard].y].vmemory+=s[(*zrand).chosen[rm_shard].idx].vcost;
-    s[(*zrand).chosen[rm_shard].idx].active=1;
-  }
-  /*Todo: recover value
-    Save value in chosen is better, isn't?
-  */
-  //printf("Retirando da sol otima %d\n",s[(*zrand).chosen[rm_shard].idx].gain);
-  (*zrand).value-=s[(*zrand).chosen[rm_shard].idx].gain;
-  /* Remove shard from solution */
-  for(i=rm_shard;i<(*zrand).nshards;i++){
-    (*zrand).chosen[i]=(*zrand).chosen[i+1];
-  }
-  (*zrand).nshards--;
-}
-
-int find_lrc(int LRC[],int nshards,Shard s[],int rm_shard,
-	     int nsat, Satelite sat[])
-{
-  int aux,i=0,find;
-  if(zf.chosen[rm_shard].dir=='h'){
-    find=zf.chosen[rm_shard].x;
-    for(aux=1;aux<=nshards;aux++){
-      if(i==10)
-	break;
-      if(s[aux].x==find && s[aux].active==1){
-	LRC[i]=aux;
-	i++;
-      }
-    }
-  }
-  else{
-    find=zf.chosen[rm_shard].y;
-    for(aux=1;aux<=nshards;aux++){
-      if(i==10)
-	break;
-      if(s[aux].y==find && s[aux].active==1){
-	LRC[i]=aux;
-	i++;
-      }
-    }
-  }
-  return i;
-}
-
-void Greedy_solver(Shard s[],Satelite sat[], int nsat, int k)
-{
-  int i,vmin,vmax,save;
-  for(i=1;i<=k;i++){
-    vmin=min(s[i].vcost,s[i].hcost);
-    vmax=max(s[i].vcost,s[i].hcost);
-    save=0;
-    if(vmin==s[i].hcost){
-      if(sat[s[i].x].hmemory>= vmin){
-	save=1;
-	zf.chosen[zf.nshards].dir='h';
-	sat[s[i].x].hmemory-=s[i].hcost;
-      }
-      else if(sat[s[i].y].vmemory>= vmax){
-	save=1;
-	zf.chosen[zf.nshards].dir='v';
-	sat[s[i].y].vmemory-=s[i].vcost;
-      }
-    }
-    else if(vmin==s[i].vcost){
-      if(sat[s[i].y].vmemory>= vmin){
-	save=1;
-	zf.chosen[zf.nshards].dir='v';
-	sat[s[i].y].vmemory-=s[i].vcost;
-      }
-      else if(sat[s[i].x].hmemory>= vmax){
-	save=1;
-	zf.chosen[zf.nshards].dir='h';
-	sat[s[i].x].hmemory-=s[i].hcost;
-      }
-    }
-    if(save==1){
-      s[i].active=0;
-      zf.value=zf.value+s[i].gain;
-      zf.chosen[zf.nshards].idx=i;
-      zf.chosen[zf.nshards].x=s[i].x;
-      zf.chosen[zf.nshards].y=s[i].y;
-      zf.nshards++;
-    }
-  }
 }
