@@ -53,19 +53,15 @@ void Local_search(Shard s[],Satelite sat[], int k,int nsat)
       }
     
       nlrc=find_lrc(LRC,k,s,rm_shard);
- 
-      /*insert removed node at end of lrc*/
-      /*     LRC[nlrc]=zrand.chosen[rm_shard].idx;
-      nlrc++;
-      */
+
       /*removing node from solution*/
       rm(rm_shard,&zrand,sat,s);
 
       choose_lrc(&zrand,LRC,nlrc,s,sat);
     
       if(zrand.value>zf.value){
-	printf("\n%d %d",zrand.value,it);
 	save_sol(&zrand);
+	verify_solution();
       }
       else{
 	recover_state(sat,k,s,nsat);
@@ -408,7 +404,7 @@ int main( int argc, char** argv)
   zf.nshards=0;
 
   Greedy_solver(shard,sat,k);
- 
+
   /* does not get out of local search this except for a given time*/
   Local_search(shard,sat,k,nsat);
 

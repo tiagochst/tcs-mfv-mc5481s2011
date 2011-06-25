@@ -415,23 +415,20 @@ Posteriormente, desenvolveu-se uma busca local a partir da solução
 gulosa.
 
 Na busca local retirava-se um shard da solução ótima e tentava colocar
-outros candidatos no lugar.
-
-Isso era feito para todos os shards da solução ótima, se o resultado
-fosse melhorado ele era salvo. Feito isso uma vez, isso é repetido até
-que o tempo limite seja atingido.
-
-A remoção de um shard da solução ótima é realizada do que possuir
+outros candidatos no lugar. A remoção de um shard da solução ótima é realizada do que possuir
 menor relação custo/benefício para a melhor, ou seja, se um shard
 ocupa mais espaço e possibilita um menor ganho.
 
-A lista de candidatos (LRC) foi limitada a 11 candidatos, estes
-constituídos dos 10 que possuem melhores relação custo/benefício e o 
-último sendo o próprio shard removido da solução ótima.
-Isso implica que pelo menos um shard será escolhido.
-
+A lista de candidatos (LRC) foi limitada a 10 candidatos, estes
+constituídos dos 10 que possuem melhores relação custo/benefício.
 A escolha dos candidatos foi novamente feito através de uma busca
 gulosa. Percorre-se a lista lrc e tenta inserir cada um.
+
+Isso era feito para todos os shards da solução ótima, se o resultado
+fosse melhorado ele era salvo. Caso não fosse, o estado anterior era
+restaurado, de modo que a mudança na solução que foi ruim, fosse
+descartado. Feito isso uma vez, isso é repetido até
+que o tempo limite seja atingido.
 
 A idéia inicial do algoritmo guloso era dar uma solução boa em tempo
 curto e a busca local seria justamente inserir uma variabilidade no algoritmo.
@@ -451,7 +448,7 @@ aplicando a busca local sobre a solução gulosa encontrada.
  & Melhor solução encontrada & Parâmetro Tempo  \tabularnewline
 \hline 
 \hline 
-small-0 & 8882 & 5s \tabularnewline %8882
+small-0 & 8874 & 5s \tabularnewline %8882
 \hline 
 small-1 & 56435 & 5s  \tabularnewline %56435
 \hline 
