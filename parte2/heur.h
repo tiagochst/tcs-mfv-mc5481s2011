@@ -51,10 +51,13 @@ int gain;
 #define max(a, b) (a > b ? a : b)
 #define min(a, b) (a > b ? b : a)
 
+void save_state(Satelite sat[], int nsat,Shard shard[],int k);
+void recover_state(Satelite sat[], int nsat,Shard shard[],int k);
+
 
 /*            Heuristic function         */
 void Greedy_solver(Shard s[],Satelite sat[],int k);
-void Local_search(Shard s[],Satelite sat[], int k);
+void Local_search(Shard s[],Satelite sat[], int k,int nsat);
 
 /*remove a shard from solution to have more space*/
 void rm(int rm_shard,Solution* zrand,Satelite sat[],Shard s[]);
@@ -99,5 +102,3 @@ void end_heur();
 /*             Coping and saving solution          */
 void copy_sol(Solution* a);
 void save_sol(Solution* a);
-
- 

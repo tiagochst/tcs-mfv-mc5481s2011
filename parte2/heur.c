@@ -24,7 +24,7 @@ void Local_search(Shard s[],Satelite sat[], int k,int nsat)
   Solution zrand;
   int LRC[11];/*At least 100 options*/
   int rm_shard,nlrc;
-  int i,it=0;
+  int i;
 
   /* We choose a shard from solution to take off 
      And make a list (lrc) of 11 new possibilities
@@ -61,13 +61,11 @@ void Local_search(Shard s[],Satelite sat[], int k,int nsat)
     
       if(zrand.value>zf.value){
 	save_sol(&zrand);
-	verify_solution();
       }
       else{
 	recover_state(sat,k,s,nsat);
 	copy_sol(&zrand);
       }
-      it++;
     }
   }
 }
@@ -296,6 +294,8 @@ void read_instances(char INPUT[], int* nsat,int* k,
     fscanf (pFile,"%d",&shard[j].gain);
     fscanf (pFile,"%d",&shard[j].hcost);
     fscanf (pFile,"%d",&shard[j].vcost);
+    /* all shards should be avaiables*/
+    shard[j].active=1;
   }
   
   fclose(pFile);
@@ -357,8 +357,6 @@ void end_heur()
 {
   printf("\nTIME LIMIT EXCEDED");
   write_solution();
-  verify_solution();
-
   exit(0);
 }
 
@@ -375,7 +373,7 @@ int main( int argc, char** argv)
   /*Intances*/
   Shard shard [50914];
   Satelite sat[301];
-  int nsat=0,k=0,i;
+  int nsat=0,k=0;
 
   /* Defining my signal alarm*/
   signal(SIGALRM, end_heur);
@@ -387,11 +385,6 @@ int main( int argc, char** argv)
 
   printf("Iniciando leitura de dados...\n");
   read_instances(INPUT,&nsat,&k,shard,sat);
-
-  /* all shards should be avaiables*/
-  for(i=1;i<=k;i++){
-    shard[i].active=1;
-  }
 
   printf("Iniciando processamento dos dados...\n");
   quicksort(shard,1,k);

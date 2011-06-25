@@ -106,7 +106,7 @@ a variável binária $y_{ij}$ que assume valor $y_{ij}=1$ se e somente se a ares
 pertence ao caminho mínimo.
 \end{itemize}
 
-\subsubsection*{Retrições do modelo}
+\subsubsection*{Restrições do modelo}
 \begin{itemize}
 
 \item Todo vértice diferente do inicial e do final deve conter ou
@@ -145,14 +145,14 @@ min\sum_{{i,j} \in A}c_{i,j}y_{i,j}
 \subsubsection*{Variáveis usadas no modelo}
 \begin{itemize}
 \item Para cada vértice $u \in V$ e para cada cor $k \in \{1,2,...,m\}$, criou-se
-a variável binária $x_{uk}$ que assume valor $x_{uk}=1$ se e somente se o vertíce $u$ foi
+a variável binária $x_{uk}$ que assume valor $x_{uk}=1$ se e somente se o vértice $u$ foi
 colorido com a cor $k$.
 
 \item Criou-se uma variável binária $y_k$ para toda cor $k \in
   \{1,2,...,m\}$. $y_k=1$ se e somente se pelo menos um vértice recebeu essa cor.
 \end{itemize}
 
-\subsubsection*{Retrições do modelo}
+\subsubsection*{Restrições do modelo}
 \begin{itemize}
 
 \item Todo vértice deve receber exatamente uma cor
@@ -188,10 +188,10 @@ min\sum_{k=1}^{m}y_k
 tarefa $i$ precede $j$.
 
 \item Para cada tarefa $i \in T$ criou-se uma variável binária $y_{i}$
-  que recebe valor $y_{i}=1$ se e somente se a tarefa i não cumprio o deadline.
+  que recebe valor $y_{i}=1$ se e somente se a tarefa i não cumpriu o deadline.
 \end{itemize}
 
-\subsubsection*{Retrições do modelo}
+\subsubsection*{Restrições do modelo}
 \begin{itemize}
 
 \item Todo par de tarefas $(i,j)$ deve ter uma precedência, em que se $i$
@@ -200,7 +200,7 @@ tarefa $i$ precede $j$.
   x_{ji}+x_{ij}=1, \quad\forall i,j \in T
 \end{equation*}
 
-\item Todo par de tarefas $(i,j)$ deve ter uma transitividade de precedência, em que se $i$
+\item Todo par de tarefas $(i,j)$ deve ter uma transitoriedade de precedência, em que se $i$
   precede $j$, e $j$ precede $k$, $i$ precede $k$. Se $x_{ij}=1$ e
   $x_{jk}=1$, então $x_{ik}=1$.
 \begin{equation*}
@@ -244,12 +244,12 @@ min\sum_{i=1}^{n}y_i
 \item Para cada projeto $j \in J$ e cada tarefa $i \in T$ criou-se uma variável inteira $begin_{j,i}$
   que recebe valor o valor de início da tarefa $i$ do projeto $j$.
 
-\item Criou-se uma varível inteira $fim$ que recebe o tempo de término
+\item Criou-se uma variável inteira $fim$ que recebe o tempo de término
   do último projeto.
 
 \end{itemize}
 
-\subsubsection*{Retrições do modelo}
+\subsubsection*{Restrições do modelo}
 \begin{itemize}
 \item Toda tarefa dos pares de projetos $(i,j)$ deve ter uma precedência, em que se $i$
   precede $j$, $j$ não pode preceder $i$. 
@@ -313,22 +313,22 @@ Objetivo: minimizar o tempo de término de todos os projetos:
 \subsubsection*{Variáveis usadas no modelo}
 \begin{itemize}
 \item Para cada máquina $m \in V$ e para cada sala $r \in
-  \{1,2,...,|V|\}$, criou-sea variável binária $x_{mr}$ que assume valor
+  \{1,2,...,|V|\}$, criou-se a variável binária $x_{mr}$ que assume valor
   $x_{mr}=1$ se e somente se  a máquina $m$
   foi colocada na sala $r$.
 
 
 \item Para cada peça $p \in U$ e para cada sala $r \in
-  \{1,2,...,|U|\}$, criou-sea variável binária $y_{pr}$ que assume valor
+  \{1,2,...,|U|\}$, criou-se a variável binária $y_{pr}$ que assume valor
   $y_{pr}=1$ se e somente se a peça $p$  foi colocada na sala $r$.
 
 \item Criou-se uma variável binária $rdiff_{mp}$ para
-  cada aresta da méquina $(m,p) \in  E$ para a qual
+  cada aresta da máquina $(m,p) \in  E$ para a qual
   $rdiff_{mp}=1$ se e somente se a máquina e a peça especificada pela aresta estão em salas diferentes.
 
 \end{itemize}
 
-\subsubsection*{Retrições do modelo}
+\subsubsection*{Restrições do modelo}
 \begin{itemize}
 \item Toda máquina deve estar em uma única sala
 \begin{equation*}
@@ -433,11 +433,49 @@ que o tempo limite seja atingido.
 A idéia inicial do algoritmo guloso era dar uma solução boa em tempo
 curto e a busca local seria justamente inserir uma variabilidade no algoritmo.
 
+\subsection{Análise de complexidade do algoritmo}
+Denotaremos a $|Sat|= m $ e $|Shards|= n $. 
+
+\begin{enumerate}
+\item função main $O(n^2+nm)$
+  \begin{enumerate}
+  \item função get\underline{ }args: $O(1)$
+  \item função read\underline{ }instances: $O(n+m)$
+  \item função quicksort: $O(n^2)$ 
+  \item função Greedy\underline{ }solver: $O(n)$
+  \item  Local\underline{ }search: $O(n^2+nm)$
+    \begin{enumerate}
+    \item copy\underline{ }sol: $O(n)$
+    \item save\underline{ }state: $O(n+m)$
+    \item recover\underline{ }statel: $O(n+m)$
+    \item find\underline{ }lrc: $O(n)$
+    \item choose\underline{ }lrc: $O(n)$
+    \item save\underline{ }sol: $O(n)$ 
+    \end{enumerate}
+  \end{enumerate}
+\end{enumerate}
+
+Observações:
+\begin{itemize}
+\item Local\underline{ }search executa $|n|$ as  funções de $i$ até $vi$
+listadas acima;
+
+\item A função main tem sua complexidade delimitada pela função
+Local\underline{ }search; e exata é executada até
+que o tempo seja atingido.
+\end{itemize}
+
 \subsection{Resultados}
 
-Colocamos dois resultados o primeiro para a solução gulosa e o segundo
-aplicando a busca local sobre a solução gulosa encontrada.
+Apresentamos dois resultados, o primeiro para a solução gulosa (ver
+tabela \ref{tab:gul}) e o segundo
+aplicando a busca local (ver
+tabela \ref{tab:loc})sobre a solução gulosa encontrada.
 
+Posteriormente, utilizando duas instâncias de entrada (big-0 e
+small-0) projetou-se um gráfico (ver figuras  \ref{graf:big} e \ref{graf:small}) com a melhora da
+solução em relação ao número de iterações para a heurística.
+ 
 % reset the counter to the first footnote's value
 \addtocounter{footnote}{1}
 
@@ -445,7 +483,7 @@ aplicando a busca local sobre a solução gulosa encontrada.
 \begin{centering}
 \begin{tabular}{|c|c|c|}
 \hline 
- & Melhor solução encontrada & Parâmetro Tempo  \tabularnewline
+Instância & Melhor solução encontrada & Parâmetro Tempo  \tabularnewline
 \hline 
 \hline 
 small-0 & 8874 & 5s \tabularnewline %8882
@@ -482,6 +520,7 @@ big-1 & 19194050 & 5s \tabularnewline %19194050
 \end{tabular}
 \par\end{centering}
 \caption{Resultados da parte 2 - Somente parte gulosa}
+\label{tab:gul}
 \end{table}
 
 
@@ -489,7 +528,7 @@ big-1 & 19194050 & 5s \tabularnewline %19194050
 \begin{centering}
 \begin{tabular}{|c|c|c|}
 \hline 
- & Melhor solução encontrada & Parâmetro Tempo  \tabularnewline
+Instância & Melhor solução encontrada & Parâmetro Tempo  \tabularnewline
 \hline 
 \hline 
 small-0 & 9937 & 2 min  \tabularnewline %max 13666
@@ -526,6 +565,7 @@ big-1 & 19714711 & 2 min  \tabularnewline %max 25453577
 \end{tabular}
 \par\end{centering}
 \caption{Resultados da parte 2 - parte gulosa e busca local}
+\label{tab:loc}
 \end{table}
 
 
@@ -551,6 +591,7 @@ big-1 & 19714711 & 2 min  \tabularnewline %max 25453577
 \end{tikzpicture}
 \end{center}
 \caption{Melhora com busca local - Ganho fotografando shards }
+\label{graf:big}
 \end{figure}
 
 
@@ -576,7 +617,10 @@ big-1 & 19714711 & 2 min  \tabularnewline %max 25453577
 \end{tikzpicture}
 \end{center}
 \caption{Melhora com busca local - Ganho fotografando shards }
+\label{graf:small}
 \end{figure}
+
+\section{Ambientes computacionais}
 
 
 % ******************************************************
