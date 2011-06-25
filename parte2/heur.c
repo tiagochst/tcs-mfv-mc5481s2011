@@ -16,7 +16,7 @@ char OUTPUT [100];
 Solution oldzf;
 Satelite oldsat[301];
 Shard oldshard [50914];
-
+int gain;
 /*****     FUNCTIONS     *****/
 
 void Local_search(Shard s[],Satelite sat[], int k,int nsat)
@@ -64,8 +64,7 @@ void Local_search(Shard s[],Satelite sat[], int k,int nsat)
       choose_lrc(&zrand,LRC,nlrc,s,sat);
     
       if(zrand.value>zf.value){
-	if(it%100==1)
-	  printf("\n %d %d",zrand.value,it);
+	printf("\n%d %d",zrand.value,it);
 	save_sol(&zrand);
       }
       else{
@@ -294,7 +293,6 @@ void read_instances(char INPUT[], int* nsat,int* k,
   /* Leitura do numero de shards */
   fscanf (pFile,"%d",&aux);
   *k=aux;
-
   /* Leitura dos shards */
   for(j=1;j<=*k;j++){
     fscanf (pFile,"%d",&shard[j].x);
@@ -410,8 +408,7 @@ int main( int argc, char** argv)
   zf.nshards=0;
 
   Greedy_solver(shard,sat,k);
-  verify_solution();
-
+ 
   /* does not get out of local search this except for a given time*/
   Local_search(shard,sat,k,nsat);
 
@@ -430,6 +427,7 @@ void save_state(Satelite sat[], int nsat,Shard shard[],int k){
   /* Leitura dos shards */
   for(j=1;j<=k;j++){
     oldshard[j].x=shard[j].x;
+    oldshard[j].active=shard[j].active;
     oldshard[j].y=shard[j].y;
     oldshard[j].hcost=shard[j].hcost;
     oldshard[j].gain=shard[j].gain;
@@ -447,6 +445,7 @@ void recover_state(Satelite sat[],int nsat,Shard shard[],int k){
   
   /* Leitura dos shards */
   for(j=1;j<=k;j++){
+    shard[j].active=oldshard[j].active;
     shard[j].x=oldshard[j].x;
     shard[j].y=oldshard[j].y;
     shard[j].hcost=oldshard[j].hcost;

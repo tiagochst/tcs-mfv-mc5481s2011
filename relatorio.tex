@@ -19,6 +19,11 @@
 \usepackage{mathtools}
 \usepackage{amsmath}
 
+% Gráficos
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.3}
+\usepgfplotslibrary{groupplots}
+
 \usepackage{fmtcount} % displaying latex counters
 
 %\usepackage[compact]{titlesec}
@@ -406,11 +411,35 @@ Na segunda parte desenvolveu-se uma heurística gulosa, no qual
 ordenava-se os shards em relação ao ganho do shard com o mínimo de
 custo entre o satélite vertical e o horizontal.
 A partir disso pegava-se os shards até que não fossem mais possível.
-Tentou-se desenvolver um busca local a partir da solução gulosa.
-No qual retirava-se um shard da solução e tentava colocar outros no lugar.
+Posteriormente, desenvolveu-se uma busca local a partir da solução
+gulosa.
+
+Na busca local retirava-se um shard da solução ótima e tentava colocar
+outros candidatos no lugar.
+
+Isso era feito para todos os shards da solução ótima, se o resultado
+fosse melhorado ele era salvo. Feito isso uma vez, isso é repetido até
+que o tempo limite seja atingido.
+
+A remoção de um shard da solução ótima é realizada do que possuir
+menor relação custo/benefício para a melhor, ou seja, se um shard
+ocupa mais espaço e possibilita um menor ganho.
+
+A lista de candidatos (LRC) foi limitada a 11 candidatos, estes
+constituídos dos 10 que possuem melhores relação custo/benefício e o 
+último sendo o próprio shard removido da solução ótima.
+Isso implica que pelo menos um shard será escolhido.
+
+A escolha dos candidatos foi novamente feito através de uma busca
+gulosa. Percorre-se a lista lrc e tenta inserir cada um.
+
+A idéia inicial do algoritmo guloso era dar uma solução boa em tempo
+curto e a busca local seria justamente inserir uma variabilidade no algoritmo.
 
 \subsection{Resultados}
 
+Colocamos dois resultados o primeiro para a solução gulosa e o segundo
+aplicando a busca local sobre a solução gulosa encontrada.
 
 % reset the counter to the first footnote's value
 \addtocounter{footnote}{1}
@@ -466,41 +495,92 @@ big-1 & 19194050 & 5s \tabularnewline %19194050
  & Melhor solução encontrada & Parâmetro Tempo  \tabularnewline
 \hline 
 \hline 
-small-0 & 9485 & 2 min  \tabularnewline %8882
+small-0 & 9937 & 2 min  \tabularnewline %max 13666
 \hline 
-small-1 & 58791 & 2 min  \tabularnewline %56435
+small-1 & 58763 & 2 min  \tabularnewline %max 76022
 \hline 
-small-2 & 30667 & 2 min  \tabularnewline %29430
+small-2 & 33013 & 2 min  \tabularnewline %max 39212
 \hline 
-small-3 & 15910 & 2 min  \tabularnewline %14848
+small-3 & 17449 & 2 min  \tabularnewline %max 21307
 \hline 
-small-4 & 32297 & 2 min  \tabularnewline %31403
+small-4 & 33029 & 2 min  \tabularnewline %max 49391
 \hline 
-medium-0 & 3466780 & 2 min  \tabularnewline %3354366
+medium-0 &  3484321 & 2 min  \tabularnewline %max 4718409
 \hline 
-medium-1 & 1389795 & 2 min  \tabularnewline %1334090
+medium-1 & 1394863 & 2 min  \tabularnewline %max 1845683
 \hline 
-medium-2 & 3705735 & 2 min  \tabularnewline %3590494
+medium-2 & 3756501 & 2 min  \tabularnewline %max 5002484
 \hline 
-medium-3 & 1994583 & 2 min  \tabularnewline %1927658
+medium-3 & 2001891 & 2 min  \tabularnewline %max 2804919
 \hline 
-medium-4 & 3828762 & 2 min  \tabularnewline %3696487
+medium-4 & 3858310 & 2 min  \tabularnewline %max  5021152
 \hline 
-medium-5 & 2413080 & 2 min  \tabularnewline %2350322
+medium-5 & 2454255 & 2 min  \tabularnewline %max 3194956
 \hline 
-medium-6 & 763815 & 2 min  \tabularnewline %743412
+medium-6 & 779016 & 2 min  \tabularnewline %max 1139797
 \hline 
-medium-7 & 1192933 & 2 min  \tabularnewline %1157211
+medium-7 & 1203455 & 2 min  \tabularnewline %max 1690257
 \hline 
-big-0 & 10410027 & 2 min  \tabularnewline %10148418
+big-0 & 10538294 & 2 min  \tabularnewline %max 14510868
 \hline 
-big-1 & 19679387 & 2 min  \tabularnewline %19194050
+big-1 & 19714711 & 2 min  \tabularnewline %max 25453577 
 \hline 
 
 \end{tabular}
 \par\end{centering}
 \caption{Resultados da parte 2 - parte gulosa e busca local}
 \end{table}
+
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+	x tick label style={
+		/pgf/number format/1000 sep=},
+	ylabel= Valor da função objetivo,
+	enlargelimits=0.15,
+        height=8cm,
+        width=16cm,
+	bar width=7pt,
+        xlabel=iterações
+ %       xtick ={131, 133, 134, 135, 138, 139,142,144,145,275,277,278,391},
+ %       xticklabels ={131, 133, 134, 135, 138,139,142,144,145,275,277,278,391},
+        ]
+
+    \addplot  table[x=it,y=ganho] {big.dat};
+\legend{Big-0}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{Melhora com busca local - Ganho fotografando shards }
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+	x tick label style={
+		/pgf/number format/1000 sep=},
+	ylabel= Valor da função objetivo,
+	enlargelimits=0.15,
+        height=8cm,
+        width=16cm,
+	bar width=7pt,
+        xlabel=iterações
+ %       xtick ={131, 133, 134, 135, 138, 139,142,144,145,275,277,278,391},
+ %       xticklabels ={131, 133, 134, 135, 138,139,142,144,145,275,277,278,391},
+        ]
+
+    \addplot  table[x=it,y=ganho] {small.dat};
+\legend{Small-0}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\caption{Melhora com busca local - Ganho fotografando shards }
+\end{figure}
+
 
 % ******************************************************
 % REFERENCIAS BIBLIOGRÁFICAS
