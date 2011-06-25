@@ -264,9 +264,9 @@ Objetivo: minimizar o número de tarefas que terminem fora do prazo:
     begin_{j,i} \geq begin_{j,i-1}+ t_{j,i-1}, \quad\forall i \in T, \forall j \in J
   \end{equation*}
 
-\item Se um projeto $j$ precede um projeto $i$ o tempo de término da
-  tarefa $k$ do projeto $i$ deve ser maior que o tempo de término da
-  tarefa $z$ do projeto $j$ mais o seu tempo de execução.
+\item Se um projeto $j$ precede um projeto $k$ o tempo de término da
+  tarefa $i$ do projeto $k$ deve ser maior que o tempo de término da
+  tarefa $i$ do projeto $j$ mais o seu tempo de execução.
   
   \begin{equation*}
     begin_{j,i} + t_{j,i} \leq begin_{k,i}+(1-x_{j,k,i})*M,\quad \forall i \in T, \forall j,k \in J  : k!=j 
@@ -276,10 +276,9 @@ Objetivo: minimizar o número de tarefas que terminem fora do prazo:
   Em que M é um número grande e para calculá-lo somou-se todos os tempos
   das tarefas de todos os projetos. 
 
-\item A tarefa $k$ do projeto $j$ precede a tarefa $z$ do mesmo
-  projeto, logo o tempo de término da
-  tarefa $z$ deve ser maior que o tempo de término da
-  tarefa $k$ mais o seu tempo de execução.
+\item  Se um projeto $k$ precede um projeto $j$ o tempo de término da
+  tarefa $i$ do projeto $j$ deve ser maior que o tempo de término da
+  tarefa $i$ do projeto $k$ mais o seu tempo de execução.
   
   \begin{equation*}
     begin_{k,i} + t_{k,i} \leq begin_{j,i}+x_{j,k,i}*M,\quad \forall i \in T , \forall j,k \in J : k!=j 
