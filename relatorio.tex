@@ -26,10 +26,10 @@
 
 \usepackage{fmtcount} % displaying latex counters
 
-%\usepackage[compact]{titlesec}
-%\titlespacing{\section}{0pt}{*0}{*0}
-%\titlespacing{\subsection}{0pt}{*0}{*0}
-%\titlespacing{\subsubsection}{0pt}{*0}{*0}
+% \usepackage[compact]{titlesec}
+% \titlespacing{\section}{0pt}{*0}{*0}
+% \titlespacing{\subsection}{0pt}{*0}{*0}
+% \titlespacing{\subsubsection}{0pt}{*0}{*0}
 
 \geometry{ 
   letterpaper,	% Formato do papel
@@ -46,64 +46,66 @@
 
 \begin{document}
 % CAPA
-  \thispagestyle{empty}
-  
-  \begin{minipage}[h]{0.10\linewidth}
-    \ABACO{1}{9}{6}{9}{0.5} 
-  \end{minipage}
-  \begin{minipage}[h!]{0.7\linewidth}
-    \vspace*{\fill}
-    \centering
-    {\large \textbf{UNIVERSIDADE~ESTADUAL~DE~CAMPINAS}}\\ 
-    {\large INSTITUTO~DE~COMPUTAÇÃO}                   
-    \vspace*{\fill} 
-  \end{minipage}
-    \\\vspace{0.5cm}
-  
-  \begin{center} 
-    \rule{11.0cm}{0.4pt}\vspace*{-\baselineskip}\vspace{-2.0pt}
-    \rule{11.0cm}{1.6pt} \vspace*{1.0pt}\\
-      {\Large \textsc{Relatório do projeto de MC548}}\\
-	\vspace*{-\baselineskip}\vspace{4.2pt} \rule{11.0cm}{0.4pt}
-	\vspace*{-\baselineskip}\vspace{3.2pt} \rule{11.0cm}{1.6pt}\\
-    {\textsl{}}
-    \\\vspace{1cm}
-    \begin{tabular}{ll}
-   \textbf{Aluno}:   Murilo~Fossa~Vicentini &
-      \textbf{RA}:          082335 \\ 
-      \textbf{Aluno}:        Tiago~Chedraoui~Silva & 
-      \textbf{RA}:        082941 \\
-    \end{tabular}
-  \end{center}
-  \vspace{0.5cm}
+\thispagestyle{empty}
 
-  % Sumário
-  \tableofcontents
+\begin{minipage}[h]{0.10\linewidth}
+  \ABACO{1}{9}{6}{9}{0.5} 
+\end{minipage}
+\begin{minipage}[h!]{0.7\linewidth}
+  \vspace*{\fill}
+  \centering
+  {\large \textbf{UNIVERSIDADE~ESTADUAL~DE~CAMPINAS}}\\ 
+  {\large INSTITUTO~DE~COMPUTAÇÃO}                   
+  \vspace*{\fill} 
+\end{minipage}
+\\\vspace{0.5cm}
+
+\begin{center} 
+  \rule{11.0cm}{0.4pt}\vspace*{-\baselineskip}\vspace{-2.0pt}
+  \rule{11.0cm}{1.6pt} \vspace*{1.0pt}\\
+  {\Large \textsc{Relatório do projeto de MC548}}\\
+  \vspace*{-\baselineskip}\vspace{4.2pt} \rule{11.0cm}{0.4pt}
+  \vspace*{-\baselineskip}\vspace{3.2pt} \rule{11.0cm}{1.6pt}\\
+  {\textsl{}}
+  \\\vspace{1cm}
+  \begin{tabular}{ll}
+    \textbf{Aluno}:   Murilo~Fossa~Vicentini &
+    \textbf{RA}:          082335 \\ 
+    \textbf{Aluno}:        Tiago~Chedraoui~Silva & 
+    \textbf{RA}:        082941 \\
+  \end{tabular}
+\end{center}
+\vspace{0.5cm}
+
+% Sumário
+\tableofcontents
+\listoftables
+\listoffigures 
 
 \vspace{2mm}
 \newpage
 
 \section{Integrantes}
-   \begin{tabular}{rl}
-      \textbf{Aluno}:   Murilo~Fossa~Vicentini &
-      \textbf{RA}:          082335 \\ 
-      \textbf{Aluno}:        Tiago~Chedraoui~Silva & 
-      \textbf{RA}:        082941 \\
-    \end{tabular}
+\begin{tabular}{rl}
+  \textbf{Aluno}:   Murilo~Fossa~Vicentini &
+  \textbf{RA}:          082335 \\ 
+  \textbf{Aluno}:        Tiago~Chedraoui~Silva & 
+  \textbf{RA}:        082941 \\
+\end{tabular}
 
 
 % ******************************************************
 % Parte 1
 % ******************************************************
- 
+
 \section{Parte 1}
 
 \subsection{{[}nd30{]}}
 \subsubsection*{Variáveis usadas no modelo}
 \begin{itemize}
 \item Para cada aresta $(i,j) \in A$ , criou-se
-a variável binária $y_{ij}$ que assume valor $y_{ij}=1$ se e somente se a aresta (i,j)
-pertence ao caminho mínimo.
+  a variável binária $y_{ij}$ que assume valor $y_{ij}=1$ se e somente se a aresta (i,j)
+  pertence ao caminho mínimo.
 \end{itemize}
 
 \subsubsection*{Restrições do modelo}
@@ -111,25 +113,25 @@ pertence ao caminho mínimo.
 
 \item Todo vértice diferente do inicial e do final deve conter ou
   nenhuma aresta entrando e saindo ou uma entrando e saindo.
-\begin{equation*}
-  \sum_{i \in V}^{m}y_{ik}=\sum_{j \in V}^{m}y_{kj},\quad \forall k \in V,
-  \forall (i,k) e (k,j) \in A 
-\end{equation*}
+  \begin{equation*}
+    \sum_{i \in V}^{m}y_{ik}=\sum_{j \in V}^{m}y_{kj},\quad \forall k \in V,
+    \forall (i,k) \; \text{e} \; (k,j) \in A 
+  \end{equation*}
 
 \item Peso total do caminho não deve exceder K
-\begin{equation*}
-\sum_{{i,j} \in A}w_{i,j}y_{i,j} \leq K
-\end{equation*}
+  \begin{equation*}
+    \sum_{{i,j} \in A}w_{i,j}y_{i,j} \leq K
+  \end{equation*}
 
 \item Deve existir uma aresta que sai de s
-\begin{equation*}
-\sum_{j \in V}y_{s,j} = 1 
-\end{equation*}
+  \begin{equation*}
+    \sum_{j \in V}y_{s,j} = 1 
+  \end{equation*}
 
 \item Deve existir uma aresta que chega em t
-\begin{equation*}
-\sum_{j \in V}y_{j,t} = 1 
-\end{equation*}
+  \begin{equation*}
+    \sum_{j \in V}y_{j,t} = 1 
+  \end{equation*}
 
 \end{itemize}
 
@@ -137,7 +139,7 @@ pertence ao caminho mínimo.
 \subsubsection*{Função objetivo}
 Objetivo: minimizar o custo do caminho 
 \begin{equation}
-min\sum_{{i,j} \in A}c_{i,j}y_{i,j}
+  min\sum_{{i,j} \in A}c_{i,j}y_{i,j}
 \end{equation}
 
 \subsection{{[}mn27{]}}
@@ -145,8 +147,8 @@ min\sum_{{i,j} \in A}c_{i,j}y_{i,j}
 \subsubsection*{Variáveis usadas no modelo}
 \begin{itemize}
 \item Para cada vértice $u \in V$ e para cada cor $k \in \{1,2,...,m\}$, criou-se
-a variável binária $x_{uk}$ que assume valor $x_{uk}=1$ se e somente se o vértice $u$ foi
-colorido com a cor $k$.
+  a variável binária $x_{uk}$ que assume valor $x_{uk}=1$ se e somente se o vértice $u$ foi
+  colorido com a cor $k$.
 
 \item Criou-se uma variável binária $y_k$ para toda cor $k \in
   \{1,2,...,m\}$. $y_k=1$ se e somente se pelo menos um vértice recebeu essa cor.
@@ -156,27 +158,27 @@ colorido com a cor $k$.
 \begin{itemize}
 
 \item Todo vértice deve receber exatamente uma cor
-\begin{equation*}
-  \sum_{k=1}^{m}x_{uk}=1,\quad \forall u \in V
-\end{equation*}
+  \begin{equation*}
+    \sum_{k=1}^{m}x_{uk}=1,\quad \forall u \in V
+  \end{equation*}
 
 \item Se um vértice recebe a cor k, esta deve ser usada
-\begin{equation*}
-  x_{uk} \leq y_k, \quad\forall u \in V, k \in \{1 ... m\}
-\end{equation*}
+  \begin{equation*}
+    x_{uk} \leq y_k, \quad\forall u \in V, k \in \{1 ... m\}
+  \end{equation*}
 
 \item Os Vértices vizinhos não podem ter a mesma cor
-\begin{equation*}
-  x_{uk} + x_{vk} \leq 1, \quad\forall (u,v) \in E, k \in \{1 ... m\}
-\end{equation*}
- 
+  \begin{equation*}
+    x_{uk} + x_{vk} \leq 1, \quad\forall (u,v) \in E, k \in \{1 ... m\}
+  \end{equation*}
+  
 \end{itemize}
 
 
 \subsubsection*{Função objetivo}
 Objetivo: minimizar o número de cores usadas:
 \begin{equation}
-min\sum_{k=1}^{m}y_k
+  min\sum_{k=1}^{m}y_k
 \end{equation}
 
 
@@ -185,7 +187,7 @@ min\sum_{k=1}^{m}y_k
 \begin{itemize}
 \item Criou-se uma variável binária $x_{ij}$ para toda tarefa $i, j
   \in T$ que recebe valor $x_{ij}=1$ se e somente se a
-tarefa $i$ precede $j$.
+  tarefa $i$ precede $j$.
 
 \item Para cada tarefa $i \in T$ criou-se uma variável binária $y_{i}$
   que recebe valor $y_{i}=1$ se e somente se a tarefa i não cumpriu o deadline.
@@ -196,44 +198,44 @@ tarefa $i$ precede $j$.
 
 \item Todo par de tarefas $(i,j)$ deve ter uma precedência, em que se $i$
   precede $j$, $j$ não pode preceder $i$. 
-\begin{equation*}
-  x_{ji}+x_{ij}=1, \quad\forall i,j \in T
-\end{equation*}
+  \begin{equation*}
+    x_{ji}+x_{ij}=1, \quad\forall i,j \in T
+  \end{equation*}
 
 \item Todo par de tarefas $(i,j)$ deve ter uma transitoriedade de precedência, em que se $i$
   precede $j$, e $j$ precede $k$, $i$ precede $k$. Se $x_{ij}=1$ e
   $x_{jk}=1$, então $x_{ik}=1$.
-\begin{equation*}
-  x_{ij}+x_{jk}-1 \leq x_{i,k}, \quad \forall i,j,k \in T
-\end{equation*}
+  \begin{equation*}
+    x_{ij}+x_{jk}-1 \leq x_{i,k}, \quad \forall i,j,k \in T
+  \end{equation*}
 
 
 \item Para cada par de tarefas $(i,j)$ em S, a tarefa $i$,
   obrigatoriamente tem que preceder $j$. 
-\begin{equation*}
-  x_{ij} = 1,\quad \forall (i,j) \in S
-\end{equation*}
+  \begin{equation*}
+    x_{ij} = 1,\quad \forall (i,j) \in S
+  \end{equation*}
 
 \item Se uma $j$ tarefa é precedida por outras n tarefas, o tempo de
   término da tarefa $j$ deve ser no mínimo o tempo de execução de todas
   as tarefas predecessoras, mais o seu tempo para ser executada. Se
   for esse término for menor que o deadline, $y_{j}=0$, senão $y_{j}=1$ 
-\begin{equation*}
- \sum_{i \in T, i \neq j} x_{ij}*t_{i} \leq d_{j}-t_{j}+ M*y_{j}\quad \forall j \in T
-\end{equation*}
- 
-Em que M é um número grande e para calculá-lo somou-se todos os tempos
-das tarefas mais um. 
-\begin{equation*}
- M = \sum_{i \in T} (t_{i}) +1
-\end{equation*}
- 
+  \begin{equation*}
+    \sum_{i \in T, i \neq j} x_{ij}*t_{i} \leq d_{j}-t_{j}+ M*y_{j}\quad \forall j \in T
+  \end{equation*}
+  
+  Em que M é um número grande e para calculá-lo somou-se todos os tempos
+  das tarefas mais um. 
+  \begin{equation*}
+    M = \sum_{i \in T} (t_{i}) +1
+  \end{equation*}
+  
 \end{itemize}
 
 \subsubsection*{Função objetivo}
 Objetivo: minimizar o número de tarefas que terminem fora do prazo:
 \begin{equation}
-min\sum_{i=1}^{n}y_i
+  min\sum_{i=1}^{n}y_i
 \end{equation}
 
 \subsection{{[}ss15{]}}
@@ -253,59 +255,59 @@ min\sum_{i=1}^{n}y_i
 \begin{itemize}
 \item Toda tarefa dos pares de projetos $(i,j)$ deve ter uma precedência, em que se $i$
   precede $j$, $j$ não pode preceder $i$. 
-\begin{equation*}
-  x_{j,i,k}+x_{i,j,k}=1, \quad \forall i,j \in J
-\end{equation*}
+  \begin{equation*}
+    x_{j,i,k}+x_{i,j,k}=1, \quad \forall i,j \in J
+  \end{equation*}
 
 \item Toda tarefa $i \in T$ do projeto  $j \in J$ tem um tempo mínimo de início que é equivalente ao tempo de início da tarefa que a antecede $i -1$ mais o tempo da execução da tarefa predecessora $ t_{j,i-1}$ para o mesmo projeto. 
-\begin{equation*}
-  begin_{j,i} \geq begin_{j,i-1}+ t_{j,i-1}, \quad\forall i \in T, \forall j \in J
-\end{equation*}
+  \begin{equation*}
+    begin_{j,i} \geq begin_{j,i-1}+ t_{j,i-1}, \quad\forall i \in T, \forall j \in J
+  \end{equation*}
 
 \item Se um projeto $j$ precede um projeto $i$ o tempo de término da
   tarefa $k$ do projeto $i$ deve ser maior que o tempo de término da
   tarefa $z$ do projeto $j$ mais o seu tempo de execução.
- 
-\begin{equation*}
-  begin_{j,i} + t_{j,i} \leq begin_{k,i}+(1-x_{j,k,i})*M,\quad \forall i \in T, \forall j,k \in J  : k!=j 
-\end{equation*}
+  
+  \begin{equation*}
+    begin_{j,i} + t_{j,i} \leq begin_{k,i}+(1-x_{j,k,i})*M,\quad \forall i \in T, \forall j,k \in J  : k!=j 
+  \end{equation*}
 
 
-Em que M é um número grande e para calculá-lo somou-se todos os tempos
-das tarefas de todos os projetos. 
+  Em que M é um número grande e para calculá-lo somou-se todos os tempos
+  das tarefas de todos os projetos. 
 
 \item A tarefa $k$ do projeto $j$ precede a tarefa $z$ do mesmo
   projeto, logo o tempo de término da
   tarefa $z$ deve ser maior que o tempo de término da
   tarefa $k$ mais o seu tempo de execução.
- 
-\begin{equation*}
-  begin_{k,i} + t_{k,i} \leq begin_{j,i}+x_{j,k,i}*M,\quad \forall i \in T , \forall j,k \in J : k!=j 
-\end{equation*}
+  
+  \begin{equation*}
+    begin_{k,i} + t_{k,i} \leq begin_{j,i}+x_{j,k,i}*M,\quad \forall i \in T , \forall j,k \in J : k!=j 
+  \end{equation*}
 
-Em que M é um número grande e para calculá-lo somou-se todos os tempos
-das tarefas de todos os projetos. 
+  Em que M é um número grande e para calculá-lo somou-se todos os tempos
+  das tarefas de todos os projetos. 
 
 
-\begin{equation*}
- M = \sum_{j \in J,i \in T} (t_{j,i}) 
-\end{equation*}
+  \begin{equation*}
+    M = \sum_{j \in J,i \in T} (t_{j,i}) 
+  \end{equation*}
 
 \item O tempo total da execução dos projetos deve ser igual ao tempo
   do último terminar.
- 
-\begin{equation*}
- fim \geq begin_{j,m}+ t_{j,m},\quad \forall j \in J
-\end{equation*}
-Em que $m$ é o tempo em que a última tarefa do projeto é executada
-(tarefa no último processador).
+  
+  \begin{equation*}
+    fim \geq begin_{j,m}+ t_{j,m},\quad \forall j \in J
+  \end{equation*}
+  Em que $m$ é o tempo em que a última tarefa do projeto é executada
+  (tarefa no último processador).
 \end{itemize}
 
 
 \subsubsection*{Função objetivo}
 Objetivo: minimizar o tempo de término de todos os projetos:
 \begin{equation}
-\min fim
+  \min fim
 \end{equation}
 
 
@@ -331,24 +333,24 @@ Objetivo: minimizar o tempo de término de todos os projetos:
 \subsubsection*{Restrições do modelo}
 \begin{itemize}
 \item Toda máquina deve estar em uma única sala
-\begin{equation*}
-  \sum_{r \in  \{1,2,...,|V|\}}x_{mr}=1,\quad \forall m \in V
-\end{equation*}
+  \begin{equation*}
+    \sum_{r \in  \{1,2,...,|V|\}}x_{mr}=1,\quad \forall m \in V
+  \end{equation*}
 
 \item Toda peça deve estar em uma única sala
-\begin{equation*}
-  \sum_{r \in  \{1,2,...,|V|\}}y_{pr}=1, \quad\forall p \in U
-\end{equation*}
+  \begin{equation*}
+    \sum_{r \in  \{1,2,...,|V|\}}y_{pr}=1, \quad\forall p \in U
+  \end{equation*}
 
 \item Número de máquinas por sala não deve exceder limite K
-\begin{equation*}
-  \sum_{m \in V }x_{mr}\leq K,\quad \forall r \in \{1,2,...,|V|\}
-\end{equation*}
+  \begin{equation*}
+    \sum_{m \in V }x_{mr}\leq K,\quad \forall r \in \{1,2,...,|V|\}
+  \end{equation*}
 
 \item Se uma máquina estiver em sala diferente de sua peça, $rdiff=1$
-\begin{equation*}
-  rdiff_{mp}\geq x_{mr}-y_{pr},\quad \forall r \in \{1,2,...,|V|\}, \forall (p,m) \in E
-\end{equation*}
+  \begin{equation*}
+    rdiff_{mp}\geq x_{mr}-y_{pr},\quad \forall r \in \{1,2,...,|V|\}, \forall (p,m) \in E
+  \end{equation*}
 
 \end{itemize}
 
@@ -356,7 +358,7 @@ Objetivo: minimizar o tempo de término de todos os projetos:
 Objetivo: minimizar a soma do custo de transporte de uma peça $p$ para
 a mesma sala da máquina $m$:
 \begin{equation}
-min\sum_{(i,j) \in E}c_{i,j}*rdiff_{i,j}
+  min\sum_{(i,j) \in E}c_{i,j}*rdiff_{i,j}
 \end{equation}
 
 
@@ -371,37 +373,66 @@ min\sum_{(i,j) \in E}c_{i,j}*rdiff_{i,j}
 \addtocounter{footnote}{1}
 
 \begin{table}[h!]
-\begin{centering}
-\begin{tabular}{|c|c|c|c|}
-\hline 
-ID exercício & 1 & 2 & 3\tabularnewline
-\hline 
-\hline 
-{[}nd30{]}  & 3 & 13  & 21 \tabularnewline
-\hline 
- {[}mn27{]} & 3 & 7 & 13 \tabularnewline
-\hline 
- {[}ss2{]} & 1 & 6  & 17 \tabularnewline
-\hline 
-{[}ss15{]} & 8 & 165  & 245$^{\decimal{footnote}}$\addtocounter{footnote}{1}  \tabularnewline
-\hline 
- {[}mn22{]} & 1 & 4131  & 1 \tabularnewline
-\hline 
-\end{tabular}
-\par\end{centering}
-\caption{Resultados da parte 1}
+  \begin{centering}
+    \begin{tabular}{|c|c|c|c|}
+      \hline 
+      ID exercício & 1 & 2 & 3\tabularnewline
+      \hline 
+      \hline 
+      {[}nd30{]}  & 3 & 13  & 21 \tabularnewline
+      \hline 
+      {[}mn27{]} & 3 & 7 & 13$^{\decimal{footnote}}$\addtocounter{footnote}{1} \tabularnewline
+      \hline 
+      {[}ss2{]} & 1 & 6  & 17 \tabularnewline
+      \hline 
+      {[}ss15{]} & 8 & 165  & 245$^{\decimal{footnote}}$\addtocounter{footnote}{1}  \tabularnewline
+      \hline 
+      {[}mn22{]} & 1 & 4131  & 3691$^{\decimal{footnote}}$\addtocounter{footnote}{1} \tabularnewline
+      \hline 
+    \end{tabular}
+    \par\end{centering}
+  \caption{Resultados da parte 1 - Modelagem gmpl}
 \end{table}
 
-%\newpage
-\addtocounter{footnote}{-1} 
+\begin{table}[h!]
+  \begin{centering}
+    \begin{tabular}{|c|c|c|c|}
+      \hline 
+      ID exercício & 1 & 2 & 3\tabularnewline
+      \hline 
+      \hline 
+      {[}nd30{]}  & 3 & 13  & 21 \tabularnewline
+      \hline 
+      {[}mn27{]} & 3 & 7 & Não terminou \tabularnewline
+      \hline 
+      {[}ss2{]} & 1 & Não terminou  & Não terminou \tabularnewline
+      \hline 
+      {[}ss15{]} & 8 & Não terminou  & Não terminou  \tabularnewline
+      \hline 
+      {[}mn22{]} & 1 & Não terminou  & Não terminou \tabularnewline
+      \hline 
+    \end{tabular}
+    \par\end{centering}
+  \caption{Resultados da parte 1 - Modelagem planilha}
+\end{table}
+
+% \newpage
+\addtocounter{footnote}{-3} 
+\footnotetext{Rodou-se durante 30 minutos para somente 13 cores (13
+  cores havia sido uma solução encontrada anteriormente, diminui-se os
+  número de cores para o número de restrições diminuir e assim o
+  processamento ser mais rápido);}
+\addtocounter{footnote}{1} 
+\footnotetext{Rodou-se durante 30 minutos para somente 4 salas;}
+\addtocounter{footnote}{1} 
 \footnotetext{ Utilizando a abordagem apresentada na seção do
   problema, e utilizando-a durante 8 horas em um servidor do
-laboratório de redes da Unicamp encontrou-se o resultado não ótimo
-257. Contudo, se considerarmos somente a ordem dos projetos a solução é
-encontrada em questão de segundos e o resultado é melhor, 245, porém
-talvez não seja o ótimo. Como
-sabe-se que esse resultado é um resultado para a abordagem 
-da seção do problema (seção 2.4) esse resultado foi considerado o melhor que encontramos.}
+  laboratório de redes da Unicamp encontrou-se o resultado não ótimo
+  257. Contudo, se considerarmos somente a ordem dos projetos a solução é
+  encontrada em questão de segundos e o resultado é melhor, 245, porém
+  talvez não seja o ótimo. Como
+  sabe-se que esse resultado é um resultado para a abordagem 
+  da seção do problema (seção 2.4) esse resultado foi considerado o melhor que encontramos;}
 % ******************************************************
 % Parte 2
 % ******************************************************
@@ -433,6 +464,25 @@ que o tempo limite seja atingido.
 A idéia inicial do algoritmo guloso era dar uma solução boa em tempo
 curto e a busca local seria justamente inserir uma variabilidade no algoritmo.
 
+\subsection{Estruturas implementadas}
+Foram utilizadas algumas estruturas, dentre elas:
+\begin{description}
+\item[Estrutura Shard] contendo dois inteiros x e y correspondentes aos
+satélites que conseguem tirar foto do shard. Dois inteiro hcost e
+vcost representam o custo de armazenamento dos shards para cada
+satélite x e y. E uma flag active, se o shard já está ou não na
+solução.
+\item[Estrutura Satélite] Contem dois inteiro que contem o tamanho da
+  memória de cada satélite sendo um na horizontal e outro na vertical.
+\item[Estrutura CSShard] Contém shards inseridos na solução, contém x
+  e y do shard, a direção do satélite responsável pela foto, o indíce
+  idx do shard na estrutura com todos os shards.
+\item[Estrutura Solution] Contém valor da solução ótima encontrada, o
+  número de shards inseridos na solução, e um vetor de CSshards.
+
+\end{description}
+
+
 \subsection{Análise de complexidade do algoritmo}
 Denotaremos a $|Sat|= m $ e $|Shards|= n $. 
 
@@ -458,11 +508,11 @@ Denotaremos a $|Sat|= m $ e $|Shards|= n $.
 Observações:
 \begin{itemize}
 \item Local\underline{ }search executa $|n|$ as  funções de $i$ até $vi$
-listadas acima;
+  listadas acima;
 
 \item A função main tem sua complexidade delimitada pela função
-Local\underline{ }search; e exata é executada até
-que o tempo seja atingido.
+  Local\underline{ }search; e exata é executada até
+  que o tempo seja atingido.
 \end{itemize}
 
 \subsection{Resultados}
@@ -475,161 +525,177 @@ tabela \ref{tab:loc})sobre a solução gulosa encontrada.
 Posteriormente, utilizando duas instâncias de entrada (big-0 e
 small-0) projetou-se um gráfico (ver figuras  \ref{graf:big} e \ref{graf:small}) com a melhora da
 solução em relação ao número de iterações para a heurística.
- 
+
 % reset the counter to the first footnote's value
 \addtocounter{footnote}{1}
 
 \begin{table}[h!]
-\begin{centering}
-\begin{tabular}{|c|c|c|}
-\hline 
-Instância & Melhor solução encontrada & Parâmetro Tempo  \tabularnewline
-\hline 
-\hline 
-small-0 & 8874 & 5s \tabularnewline %8882
-\hline 
-small-1 & 56435 & 5s  \tabularnewline %56435
-\hline 
-small-2 & 29430 & 5s \tabularnewline %29430
-\hline 
-small-3 & 14848 & 5s \tabularnewline %14848
-\hline 
-small-4 & 31403 & 5s \tabularnewline %31403
-\hline 
-medium-0 & 3354366 & 5s \tabularnewline %3354366
-\hline 
-medium-1 & 1334090 & 5s \tabularnewline %1334090
-\hline 
-medium-2 & 3590494 & 5s \tabularnewline %3590494
-\hline 
-medium-3 & 1927658 & 5s \tabularnewline %1927658
-\hline 
-medium-4 & 3696487 & 5s \tabularnewline %3696487
-\hline 
-medium-5 & 2350322 & 5s \tabularnewline %2350322
-\hline 
-medium-6 & 743412 & 5s \tabularnewline %743412
-\hline 
-medium-7 & 1157211 & 5s \tabularnewline %1157211
-\hline 
-big-0 & 10148418 & 5s \tabularnewline %10148418
-\hline 
-big-1 & 19194050 & 5s \tabularnewline %19194050
-\hline 
+  \begin{centering}
+    \begin{tabular}{|c|c|c|}
+      \hline 
+      Instância & Melhor solução encontrada & Parâmetro Tempo  \tabularnewline
+      \hline 
+      \hline 
+      small-0 & 8874 & 5s \tabularnewline %8882
+      \hline 
+      small-1 & 56435 & 5s  \tabularnewline %56435
+      \hline 
+      small-2 & 29430 & 5s \tabularnewline %29430
+      \hline 
+      small-3 & 14848 & 5s \tabularnewline %14848
+      \hline 
+      small-4 & 31403 & 5s \tabularnewline %31403
+      \hline 
+      medium-0 & 3354366 & 5s \tabularnewline %3354366
+      \hline 
+      medium-1 & 1334090 & 5s \tabularnewline %1334090
+      \hline 
+      medium-2 & 3590494 & 5s \tabularnewline %3590494
+      \hline 
+      medium-3 & 1927658 & 5s \tabularnewline %1927658
+      \hline 
+      medium-4 & 3696487 & 5s \tabularnewline %3696487
+      \hline 
+      medium-5 & 2350322 & 5s \tabularnewline %2350322
+      \hline 
+      medium-6 & 743412 & 5s \tabularnewline %743412
+      \hline 
+      medium-7 & 1157211 & 5s \tabularnewline %1157211
+      \hline 
+      big-0 & 10148418 & 5s \tabularnewline %10148418
+      \hline 
+      big-1 & 19194050 & 5s \tabularnewline %19194050
+      \hline 
 
-\end{tabular}
-\par\end{centering}
-\caption{Resultados da parte 2 - Somente parte gulosa}
-\label{tab:gul}
+    \end{tabular}
+    \par\end{centering}
+  \caption{Resultados da parte 2 - Somente parte gulosa}
+  \label{tab:gul}
 \end{table}
 
 
 \begin{table}[h!]
-\begin{centering}
-\begin{tabular}{|c|c|c|}
-\hline 
-Instância & Melhor solução encontrada & Parâmetro Tempo  \tabularnewline
-\hline 
-\hline 
-small-0 & 9937 & 2 min  \tabularnewline %max 13666
-\hline 
-small-1 & 58763 & 2 min  \tabularnewline %max 76022
-\hline 
-small-2 & 33013 & 2 min  \tabularnewline %max 39212
-\hline 
-small-3 & 17449 & 2 min  \tabularnewline %max 21307
-\hline 
-small-4 & 33029 & 2 min  \tabularnewline %max 49391
-\hline 
-medium-0 &  3484321 & 2 min  \tabularnewline %max 4718409
-\hline 
-medium-1 & 1394863 & 2 min  \tabularnewline %max 1845683
-\hline 
-medium-2 & 3756501 & 2 min  \tabularnewline %max 5002484
-\hline 
-medium-3 & 2001891 & 2 min  \tabularnewline %max 2804919
-\hline 
-medium-4 & 3858310 & 2 min  \tabularnewline %max  5021152
-\hline 
-medium-5 & 2454255 & 2 min  \tabularnewline %max 3194956
-\hline 
-medium-6 & 779016 & 2 min  \tabularnewline %max 1139797
-\hline 
-medium-7 & 1203455 & 2 min  \tabularnewline %max 1690257
-\hline 
-big-0 & 10538294 & 2 min  \tabularnewline %max 14510868
-\hline 
-big-1 & 19714711 & 2 min  \tabularnewline %max 25453577 
-\hline 
+  \begin{centering}
+    \begin{tabular}{|c|c|c|}
+      \hline 
+      Instância & Melhor solução encontrada & Parâmetro Tempo  \tabularnewline
+      \hline 
+      \hline 
+      small-0 & 9937 & 2 min  \tabularnewline %max 13666
+      \hline 
+      small-1 & 58763 & 2 min  \tabularnewline %max 76022
+      \hline 
+      small-2 & 33013 & 2 min  \tabularnewline %max 39212
+      \hline 
+      small-3 & 17449 & 2 min  \tabularnewline %max 21307
+      \hline 
+      small-4 & 33029 & 2 min  \tabularnewline %max 49391
+      \hline 
+      medium-0 &  3484321 & 2 min  \tabularnewline %max 4718409
+      \hline 
+      medium-1 & 1394863 & 2 min  \tabularnewline %max 1845683
+      \hline 
+      medium-2 & 3756501 & 2 min  \tabularnewline %max 5002484
+      \hline 
+      medium-3 & 2001891 & 2 min  \tabularnewline %max 2804919
+      \hline 
+      medium-4 & 3858310 & 2 min  \tabularnewline %max  5021152
+      \hline 
+      medium-5 & 2454255 & 2 min  \tabularnewline %max 3194956
+      \hline 
+      medium-6 & 779016 & 2 min  \tabularnewline %max 1139797
+      \hline 
+      medium-7 & 1203455 & 2 min  \tabularnewline %max 1690257
+      \hline 
+      big-0 & 10538294 & 2 min  \tabularnewline %max 14510868
+      \hline 
+      big-1 & 19714711 & 2 min  \tabularnewline %max 25453577 
+      \hline 
 
-\end{tabular}
-\par\end{centering}
-\caption{Resultados da parte 2 - parte gulosa e busca local}
-\label{tab:loc}
+    \end{tabular}
+    \par\end{centering}
+  \caption{Resultados da parte 2 - Parte gulosa e busca local}
+  \label{tab:loc}
 \end{table}
 
 
-\begin{figure}
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[
+\begin{figure}[h!]
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
 	x tick label style={
-		/pgf/number format/1000 sep=},
+          /pgf/number format/1000 sep=},
 	ylabel= Valor da função objetivo,
 	enlargelimits=0.15,
         height=8cm,
         width=16cm,
 	bar width=7pt,
+        legend pos=south east,
         xlabel=iterações
- %       xtick ={131, 133, 134, 135, 138, 139,142,144,145,275,277,278,391},
- %       xticklabels ={131, 133, 134, 135, 138,139,142,144,145,275,277,278,391},
+        % xtick ={131, 133, 134, 135, 138, 139,142,144,145,275,277,278,391},
+        % xticklabels ={131, 133, 134, 135, 138,139,142,144,145,275,277,278,391},
         ]
 
-    \addplot  table[x=it,y=ganho] {big.dat};
-\legend{Big-0}
-\end{axis}
-\end{tikzpicture}
-\end{center}
-\caption{Melhora com busca local - Ganho fotografando shards }
-\label{graf:big}
+        \addplot  table[x=it,y=ganho] {big.dat};
+        \legend{Big-0}
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \caption{Melhora com busca local - Ganho fotografando shards -
+    Instância big-0}
+  \label{graf:big}
 \end{figure}
 
 
-\begin{figure}
-\begin{center}
-\begin{tikzpicture}
-\begin{axis}[
+\begin{figure}[h!]
+  \begin{center}
+    \begin{tikzpicture}
+      \begin{axis}[
 	x tick label style={
-		/pgf/number format/1000 sep=},
+          /pgf/number format/1000 sep=},
 	ylabel= Valor da função objetivo,
 	enlargelimits=0.15,
         height=8cm,
         width=16cm,
 	bar width=7pt,
+        legend pos=south east,
         xlabel=iterações
- %       xtick ={131, 133, 134, 135, 138, 139,142,144,145,275,277,278,391},
- %       xticklabels ={131, 133, 134, 135, 138,139,142,144,145,275,277,278,391},
+        % xtick ={131, 133, 134, 135, 138, 139,142,144,145,275,277,278,391},
+        % xticklabels ={131, 133, 134, 135, 138,139,142,144,145,275,277,278,391},
         ]
 
-    \addplot  table[x=it,y=ganho] {small.dat};
-\legend{Small-0}
-\end{axis}
-\end{tikzpicture}
-\end{center}
-\caption{Melhora com busca local - Ganho fotografando shards }
-\label{graf:small}
+        \addplot  table[x=it,y=ganho] {small.dat};
+        \legend{Small-0}
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \caption{Melhora com busca local - Ganho fotografando shards - Instância small-0}
+  \label{graf:small}
 \end{figure}
 
 \section{Ambientes computacionais}
+\begin{enumerate}
+\item Máquina 1
 
+  \begin{description}
+  \item[Memória]2.0 GB
+  \item[Processador]  Intel® Core™2 Duo CPU T5250 @ 1.50GHz × 2
+  \item[Gráfico] Intel® 965GM   
+  \item[Tipo SO] 32 bits   
+  \item[SO] Fedora 15 (Lovelock)   
+  \item[Compilador] gcc (GCC) 4.6.0 20110530 (Red Hat 4.6.0-9)
+  \item[Linguagem de programação] C
+  \end{description}
+
+\end{enumerate}
 
 % ******************************************************
 % REFERENCIAS BIBLIOGRÁFICAS
 % ******************************************************
 % \section{Referências}
-%\bibliographystyle{plain}
-%\begin{small}
-%  \bibliography{referencias}
-%\end{small}
+% \bibliographystyle{plain}
+% \begin{small}
+%   \bibliography{referencias}
+% \end{small}
 
 \end{document}
