@@ -13,14 +13,18 @@
 Solution zf;
 char OUTPUT [100];
 
+Solution oldzf;
+Satelite oldsat[301];
+Shard oldshard [50914];
+
 /*****     FUNCTIONS     *****/
 
-void Local_search(Shard s[],Satelite sat[], int k)
+void Local_search(Shard s[],Satelite sat[], int k,int nsat)
 {
   Solution zrand;
   int LRC[11];/*At least 100 options*/
   int rm_shard,nlrc;
-  int i;
+  int i,it=0;
 
   /* We choose a shard from solution to take off 
      And make a list (lrc) of 11 new possibilities
@@ -40,6 +44,8 @@ void Local_search(Shard s[],Satelite sat[], int k)
       And try to put other shards
     */
     for(rm_shard=zrand.nshards-1; rm_shard>=0; rm_shard--){
+
+      save_state(sat,k,s,nsat);
       
       /*Clear possible candidates to be in place in solution*/    
       for(i=0;i<11;i++){
@@ -58,9 +64,15 @@ void Local_search(Shard s[],Satelite sat[], int k)
       choose_lrc(&zrand,LRC,nlrc,s,sat);
     
       if(zrand.value>zf.value){
+	if(it%100==1)
+	  printf("\n %d %d",zrand.value,it);
 	save_sol(&zrand);
-	verify_solution();
       }
+      else{
+	recover_state(sat,k,s,nsat);
+	copy_sol(&zrand);
+      }
+      it++;
     }
   }
 }
@@ -401,9 +413,46 @@ int main( int argc, char** argv)
   verify_solution();
 
   /* does not get out of local search this except for a given time*/
-  Local_search(shard,sat,k);
+  Local_search(shard,sat,k,nsat);
 
   return 0;	
+}
+
+/*recover Satelite and shards info*/
+void save_state(Satelite sat[], int nsat,Shard shard[],int k){
+  int j;
+  /* Leitura dos satelites */
+  for(j=1;j<=nsat;j++){
+    oldsat[j].hmemory=sat[j].hmemory;
+    oldsat[j].vmemory=sat[j].vmemory;
+  }
+  
+  /* Leitura dos shards */
+  for(j=1;j<=k;j++){
+    oldshard[j].x=shard[j].x;
+    oldshard[j].y=shard[j].y;
+    oldshard[j].hcost=shard[j].hcost;
+    oldshard[j].gain=shard[j].gain;
+    oldshard[j].vcost=shard[j].vcost;
+  }
+}
+
+void recover_state(Satelite sat[],int nsat,Shard shard[],int k){
+  int j;
+  /* Leitura dos satelites */
+  for(j=1;j<=nsat;j++){
+    sat[j].hmemory=oldsat[j].hmemory;
+    sat[j].vmemory=oldsat[j].vmemory;
+  }
+  
+  /* Leitura dos shards */
+  for(j=1;j<=k;j++){
+    shard[j].x=oldshard[j].x;
+    shard[j].y=oldshard[j].y;
+    shard[j].hcost=oldshard[j].hcost;
+    shard[j].gain=oldshard[j].gain;
+    shard[j].vcost=oldshard[j].vcost;
+  }
 }
 
 void copy_sol(Solution* a)
