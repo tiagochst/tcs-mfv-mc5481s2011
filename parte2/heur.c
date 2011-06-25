@@ -30,9 +30,10 @@ void Local_search(Shard s[],Satelite sat[], int k)
      if better result, save 
      if not a better result try other random shard
   */
+  copy_sol(&zrand);
+
   while(1){
     /*get the best solution, this will be our start point*/
-    copy_sol(&zrand);
    
     /*
       For every shard of solution we take it out
@@ -48,9 +49,9 @@ void Local_search(Shard s[],Satelite sat[], int k)
       nlrc=find_lrc(LRC,k,s,rm_shard);
  
       /*insert removed node at end of lrc*/
-      LRC[nlrc]=zrand.chosen[rm_shard].idx;
+      /*     LRC[nlrc]=zrand.chosen[rm_shard].idx;
       nlrc++;
-      
+      */
       /*removing node from solution*/
       rm(rm_shard,&zrand,sat,s);
 
@@ -58,6 +59,7 @@ void Local_search(Shard s[],Satelite sat[], int k)
     
       if(zrand.value>zf.value){
 	save_sol(&zrand);
+	verify_solution();
       }
     }
   }
@@ -72,12 +74,12 @@ int choose_lrc(Solution* zrand,int LRC[],int nshard,Shard s[],
   for(i=0;i<nshard;i++){
 
     /*If it fits in solution, put it in*/
-    if(sat[s[LRC[i]].x].hmemory>= s[LRC[i]].hcost){
+    if(sat[s[LRC[i]].x].hmemory>= s[LRC[i]].hcost && s[LRC[i]].active==1 ){
       save=1;
       (*zrand).chosen[(*zrand).nshards].dir='h';
       sat[s[LRC[i]].x].hmemory-=s[LRC[i]].hcost;
     }
-    else if(sat[s[LRC[i]].y].vmemory>= s[LRC[i]].vcost){
+    else if(sat[s[LRC[i]].y].vmemory>= s[LRC[i]].vcost && s[LRC[i]].active==1){
       save=1;
       (*zrand).chosen[(*zrand).nshards].dir='v';
       sat[s[LRC[i]].y].vmemory-=s[LRC[i]].vcost;
@@ -117,6 +119,9 @@ void rm(int rm_shard,Solution* zrand,Satelite sat[],Shard s[])
   for(i=rm_shard;i<(*zrand).nshards;i++){
     (*zrand).chosen[i]=(*zrand).chosen[i+1];
   }
+  (*zrand).chosen[i].idx=-1;
+  (*zrand).chosen[i].x=-1;
+  (*zrand).chosen[i].y=-1;
   (*zrand).nshards--;
 }
 
@@ -393,6 +398,7 @@ int main( int argc, char** argv)
   zf.nshards=0;
 
   Greedy_solver(shard,sat,k);
+  verify_solution();
 
   /* does not get out of local search this except for a given time*/
   Local_search(shard,sat,k);
