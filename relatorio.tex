@@ -276,21 +276,21 @@ Objetivo: minimizar o número de tarefas que terminem fora do prazo:
   Em que M é um número grande e para calculá-lo somou-se todos os tempos
   das tarefas de todos os projetos. 
 
-\item  Se um projeto $k$ precede um projeto $j$ o tempo de término da
-  tarefa $i$ do projeto $j$ deve ser maior que o tempo de término da
-  tarefa $i$ do projeto $k$ mais o seu tempo de execução.
+  % \item  Se um projeto $k$ precede um projeto $j$ o tempo de término da
+  %   tarefa $i$ do projeto $j$ deve ser maior que o tempo de término da
+  %   tarefa $i$ do projeto $k$ mais o seu tempo de execução.
   
-  \begin{equation*}
-    begin_{k,i} + t_{k,i} \leq begin_{j,i}+x_{j,k,i}*M,\quad \forall i \in T , \forall j,k \in J : k!=j 
-  \end{equation*}
+  %   \begin{equation*}
+  %     begin_{k,i} + t_{k,i} \leq begin_{j,i}+x_{j,k,i}*M,\quad \forall i \in T , \forall j,k \in J : k!=j 
+  %   \end{equation*}
 
-  Em que M é um número grande e para calculá-lo somou-se todos os tempos
-  das tarefas de todos os projetos. 
+  %   Em que M é um número grande e para calculá-lo somou-se todos os tempos
+  %   das tarefas de todos os projetos. 
 
 
-  \begin{equation*}
-    M = \sum_{j \in J,i \in T} (t_{j,i}) 
-  \end{equation*}
+  %   \begin{equation*}
+  %     M = \sum_{j \in J,i \in T} (t_{j,i}) 
+  %   \end{equation*}
 
 \item O tempo total da execução dos projetos deve ser igual ao tempo
   do último terminar.
@@ -402,13 +402,13 @@ a mesma sala da máquina $m$:
       \hline 
       {[}nd30{]}  & 3 & 13  & 21 \tabularnewline
       \hline 
-      {[}mn27{]} & 3 & 7 & Não terminou \tabularnewline
+      {[}mn27{]} & 3 & 7 & Não terminou$^{\decimal{footnote}}$\addtocounter{footnote}{1} \tabularnewline
       \hline 
-      {[}ss2{]} & 1 & Não terminou  & Não terminou \tabularnewline
+      {[}ss2{]} & 1 & 6  & Não fizemos$^{\decimal{footnote}}$\addtocounter{footnote}{-1} \tabularnewline
       \hline 
-      {[}ss15{]} & 8 & Não terminou  & Não terminou  \tabularnewline
+      {[}ss15{]} & 8 & 165  & Não terminou$^{\decimal{footnote}}$  \tabularnewline
       \hline 
-      {[}mn22{]} & 1 & Não terminou  & Não terminou \tabularnewline
+      {[}mn22{]} & 1 & Não terminou$^{\decimal{footnote}}$  & Não terminou$^{\decimal{footnote}}$ \tabularnewline
       \hline 
     \end{tabular}
     \par\end{centering}
@@ -432,6 +432,13 @@ a mesma sala da máquina $m$:
   talvez não seja o ótimo. Como
   sabe-se que esse resultado é um resultado para a abordagem 
   da seção do problema (seção 2.4) esse resultado foi considerado o melhor que encontramos;}
+\addtocounter{footnote}{1} 
+\footnotetext{Não terminou significa que o openoffice capotou durante
+  a execução, ou que não atingiu um resultado em um período de 30 minutos;}
+\addtocounter{footnote}{1} 
+\footnotetext{Infelizmente, não fizemos devido ao grande tamanho da instância e por
+  falta de tempo.}   
+
 % ******************************************************
 % Parte 2
 % ******************************************************
@@ -467,10 +474,10 @@ curto e a busca local seria justamente inserir uma variabilidade no algoritmo.
 Foram utilizadas algumas estruturas, dentre elas:
 \begin{description}
 \item[Estrutura Shard] contendo dois inteiros x e y correspondentes aos
-satélites que conseguem tirar foto do shard. Dois inteiro hcost e
-vcost representam o custo de armazenamento dos shards para cada
-satélite x e y. E uma flag active, se o shard já está ou não na
-solução.
+  satélites que conseguem tirar foto do shard. Dois inteiro hcost e
+  vcost representam o custo de armazenamento dos shards para cada
+  satélite x e y. E uma flag active, se o shard já está ou não na
+  solução.
 \item[Estrutura Satélite] Contem dois inteiro que contem o tamanho da
   memória de cada satélite sendo um na horizontal e outro na vertical.
 \item[Estrutura CSShard] Contém shards inseridos na solução, contém x
@@ -694,8 +701,8 @@ solução em relação ao número de iterações para a heurística.
 \item Máquina 2 - Usada na parte 1 (planilhas)
 
   \begin{description}
-  \item[Memória]4.0 GB
-  \item[Processador]  Intel®  Core 2 Quad 2.66GHz
+  \item[Memória]3.8 GB
+  \item[Processador]   Intel(R) Core(TM) 2Quad CPU  Q8400 @2.66GHz x4
   \item[Tipo SO] 32 bits   
   \item[SO] Fedora 14 - linux 2.6.35 
   \item[Compilador] gcc 4.5.1 
