@@ -19,6 +19,7 @@ Shard oldshard [50914];
 int gain;
 /*****     FUNCTIONS     *****/
 
+
 void Local_search(Shard s[],Satelite sat[], int k,int nsat)
 {
   Solution zrand;
@@ -53,18 +54,18 @@ void Local_search(Shard s[],Satelite sat[], int k,int nsat)
       }
     
       nlrc=find_lrc(LRC,k,s,rm_shard);
-
-      /*removing node from solution*/
+     
       rm(rm_shard,&zrand,sat,s);
 
       choose_lrc(&zrand,LRC,nlrc,s,sat);
-    
       if(zrand.value>zf.value){
 	save_sol(&zrand);
       }
       else{
-	recover_state(sat,k,s,nsat);
+	recover_state(sat,nsat,s,k);
+
 	copy_sol(&zrand);
+
       }
     }
   }
@@ -76,7 +77,7 @@ int choose_lrc(Solution* zrand,int LRC[],int nshard,Shard s[],
   int save=0,i;
 
   /*Every shard of lrc is tried*/
-  for(i=0;i<nshard;i++){
+  for(i=nshard-1;i>=0;i--){
 
     /*If it fits in solution, put it in*/
     if(sat[s[LRC[i]].x].hmemory>= s[LRC[i]].hcost && s[LRC[i]].active==1 ){
@@ -90,6 +91,7 @@ int choose_lrc(Solution* zrand,int LRC[],int nshard,Shard s[],
       sat[s[LRC[i]].y].vmemory-=s[LRC[i]].vcost;
     }
     if(save==1){
+      /* printf("ESCOLHI: x %d y %d act %d ",s[LRC[i]].x,s[LRC[i]].y, s[LRC[i]].active);*/
       s[LRC[i]].active=0;
       (*zrand).value=(*zrand).value+s[LRC[i]].gain;
       (*zrand).chosen[(*zrand).nshards].idx=LRC[i];
@@ -97,14 +99,15 @@ int choose_lrc(Solution* zrand,int LRC[],int nshard,Shard s[],
       (*zrand).chosen[(*zrand).nshards].y=s[LRC[i]].y;
       (*zrand).nshards++;
       save=0;
+      return LRC[i];
     }
   }
   return i;
 }
 
-void rm(int rm_shard,Solution* zrand,Satelite sat[],Shard s[])
+int rm(int rm_shard,Solution* zrand,Satelite sat[],Shard s[])
 {
-  int i;
+  int i,d;
 
   /*Remove shard and restore memory, shards avaiability,
     and  decrease value of best solution
@@ -112,10 +115,12 @@ void rm(int rm_shard,Solution* zrand,Satelite sat[],Shard s[])
   if((*zrand).chosen[rm_shard].dir=='h'){
     sat[(*zrand).chosen[rm_shard].x].hmemory+=s[(*zrand).chosen[rm_shard].idx].hcost;
     s[(*zrand).chosen[rm_shard].idx].active=1;
+    d=(*zrand).chosen[rm_shard].idx;
   }
   else{
     sat[(*zrand).chosen[rm_shard].y].vmemory+=s[(*zrand).chosen[rm_shard].idx].vcost;
     s[(*zrand).chosen[rm_shard].idx].active=1;
+    d=(*zrand).chosen[rm_shard].idx;
   }
   
   (*zrand).value-=s[(*zrand).chosen[rm_shard].idx].gain;
@@ -128,6 +133,7 @@ void rm(int rm_shard,Solution* zrand,Satelite sat[],Shard s[])
   (*zrand).chosen[i].x=-1;
   (*zrand).chosen[i].y=-1;
   (*zrand).nshards--;
+  return d;
 }
 
 int find_lrc(int LRC[],int nshards,Shard s[],int rm_shard)
@@ -357,6 +363,7 @@ void end_heur()
 {
   printf("\nTIME LIMIT EXCEDED");
   write_solution();
+  verify_solution();
   exit(0);
 }
 
